@@ -4,7 +4,7 @@ import ParticleField from "@/components/ParticleField";
 import SocialIcon from "@/components/SocialIcon";
 import ProjectCategory from "@/components/ProjectCategory";
 import StatsCounter from "@/components/StatsCounter";
-import profilePhoto from "@/assets/profile-photo.jpg";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const categories = [
   { label: "SQL", href: "#" },

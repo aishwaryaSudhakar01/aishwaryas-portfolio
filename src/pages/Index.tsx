@@ -62,19 +62,17 @@ const Index = () => {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
                 className="text-5xl sm:text-7xl lg:text-8xl font-display font-black leading-[0.9] tracking-tight mb-2"
               >
-                AISH
+                AISHWARYA
               </motion.h1>
             </div>
-            <div className="overflow-hidden">
-              <motion.h1
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-                className="text-5xl sm:text-7xl lg:text-8xl font-display font-black leading-[0.9] tracking-tight mb-2"
-              >
-                WARYA
-              </motion.h1>
-            </div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="font-mono text-xs tracking-[0.2em] text-muted-foreground mb-4"
+            >
+              (eye-shwar-ya)
+            </motion.p>
             <div className="overflow-hidden">
               <motion.h1
                 initial={{ y: "100%" }}

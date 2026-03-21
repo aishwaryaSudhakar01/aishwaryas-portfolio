@@ -2,54 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 220 20% 7%;
-    --foreground: 220 10% 92%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96%;
 
-    --card: 220 18% 11%;
-    --card-foreground: 220 10% 92%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 220 18% 11%;
-    --popover-foreground: 220 10% 92%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 340 82% 60%;
+    --primary: 12 100% 58%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 16%;
-    --secondary-foreground: 220 10% 85%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 80%;
 
-    --muted: 220 15% 14%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 50%;
 
-    --accent: 340 82% 60%;
+    --accent: 12 100% 58%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 340 82% 60%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 12 100% 58%;
 
-    --radius: 0.75rem;
+    --radius: 0.25rem;
 
-    --glow-primary: 340 82% 60%;
-    --surface-glass: 220 18% 12%;
+    --font-display: 'Playfair Display', serif;
+    --font-mono: 'Space Mono', monospace;
+    --font-body: 'DM Sans', sans-serif;
 
-    --font-display: 'Space Grotesk', sans-serif;
-    --font-body: 'Inter', sans-serif;
-
-    --sidebar-background: 220 20% 7%;
-    --sidebar-foreground: 220 10% 92%;
-    --sidebar-primary: 340 82% 60%;
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 12 100% 58%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 15% 16%;
-    --sidebar-accent-foreground: 220 10% 92%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 340 82% 60%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 12 100% 58%;
   }
 }
 
@@ -66,59 +64,61 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
   }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+  }
 }
 
 @layer utilities {
-  .glass {
-    @apply bg-card/60 backdrop-blur-xl border border-border/50;
-  }
-
-  .glow-sm {
-    box-shadow: 0 0 20px -5px hsl(var(--primary) / 0.3);
-  }
-
-  .glow-md {
-    box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.4);
-  }
-
-  .glow-lg {
-    box-shadow: 0 0 60px -15px hsl(var(--primary) / 0.5);
+  .font-mono {
+    font-family: var(--font-mono);
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-pink-400 to-rose-400;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(30 100% 65%));
   }
 
-  .animated-border {
-    background: linear-gradient(var(--angle, 0deg), hsl(var(--primary)), hsl(340 82% 40%), hsl(var(--primary)));
-    animation: rotate-border 4s linear infinite;
+  .editorial-line {
+    @apply w-16 h-[2px] bg-primary;
   }
 
-  @keyframes rotate-border {
-    to { --angle: 360deg; }
+  .hover-editorial {
+    @apply transition-all duration-500;
   }
 
-  @property --angle {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
+  .hover-editorial:hover {
+    letter-spacing: 0.05em;
   }
 
-  .float-animation {
-    animation: float 6s ease-in-out infinite;
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
 
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
   }
 
-  @keyframes pulse-glow {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 0.8; }
+  @keyframes reveal-up {
+    from { 
+      opacity: 0;
+      transform: translateY(100%);
+      clip-path: inset(100% 0 0 0);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+      clip-path: inset(0 0 0 0);
+    }
   }
 
-  .pulse-glow {
-    animation: pulse-glow 3s ease-in-out infinite;
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }

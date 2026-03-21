@@ -13,18 +13,14 @@ const SocialIcon = ({ icon: Icon, href, label, delay = 0 }: SocialIconProps) => 
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    aria-label={label}
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay, duration: 0.5 }}
-    whileHover={{ scale: 1.2, y: -4 }}
-    whileTap={{ scale: 0.95 }}
-    className="group relative p-3 rounded-xl glass glow-sm hover:glow-md transition-shadow duration-300"
+    className="group flex items-center gap-2 px-4 py-2 border border-border hover:border-primary hover:bg-primary/5 transition-all duration-300 font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-primary"
+    aria-label={label}
   >
-    <Icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
-    <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-      {label}
-    </span>
+    <Icon size={14} />
+    <span>{label}</span>
   </motion.a>
 );
 

@@ -3,26 +3,34 @@ import { motion } from "framer-motion";
 interface ProjectCategoryProps {
   label: string;
   index: number;
-  href?: string;
+  href: string;
+  count?: string;
 }
 
-const ProjectCategory = ({ label, index, href = "#" }: ProjectCategoryProps) => (
+const ProjectCategory = ({ label, index, href, count }: ProjectCategoryProps) => (
   <motion.a
     href={href}
-    initial={{ opacity: 0, scale: 0.8 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ delay: 0.6 + index * 0.1, type: "spring", stiffness: 200 }}
-    whileHover={{ scale: 1.05, y: -2 }}
-    whileTap={{ scale: 0.97 }}
-    className="relative group px-8 py-3 rounded-lg border border-primary/30 hover:border-primary/80 
-               bg-primary/5 hover:bg-primary/10 transition-all duration-300 cursor-pointer
-               overflow-hidden"
+    initial={{ opacity: 0, x: -30 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
+    className="group flex items-center justify-between py-4 border-b border-border hover:border-primary transition-colors duration-300"
   >
-    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 
-                    translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-    <span className="relative font-display font-semibold text-sm tracking-widest uppercase text-primary">
-      {label}
-    </span>
+    <div className="flex items-center gap-4">
+      <span className="font-mono text-xs text-muted-foreground">
+        {String(index + 1).padStart(2, "0")}
+      </span>
+      <span className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 hover-editorial">
+        {label}
+      </span>
+    </div>
+    <div className="flex items-center gap-3">
+      {count && (
+        <span className="font-mono text-xs text-muted-foreground">{count}</span>
+      )}
+      <span className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-300">
+        →
+      </span>
+    </div>
   </motion.a>
 );
 

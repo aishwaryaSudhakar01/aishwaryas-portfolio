@@ -27,12 +27,12 @@ const StatsCounter = ({ value, label, suffix = "", delay = 0 }: StatsCounterProp
       className="text-center"
     >
       <div className="flex items-baseline justify-center gap-0.5">
-        <motion.span className="text-3xl font-display font-bold text-gradient">
+        <motion.span className="text-4xl sm:text-5xl font-display font-black text-foreground">
           {rounded}
         </motion.span>
-        {suffix && <span className="text-xl font-display font-bold text-primary">{suffix}</span>}
+        {suffix && <span className="text-2xl font-display font-black text-primary">{suffix}</span>}
       </div>
-      <p className="text-xs text-muted-foreground mt-1 uppercase tracking-wider">{label}</p>
+      <p className="font-mono text-[10px] text-muted-foreground mt-2 uppercase tracking-[0.2em]">{label}</p>
     </motion.div>
   );
 };

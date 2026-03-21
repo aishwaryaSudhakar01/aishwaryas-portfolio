@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, FileText, ExternalLink } from "lucide-react";
+import { Mail, Linkedin, Github, ExternalLink } from "lucide-react";
 import GrainOverlay from "@/components/ParticleField";
 import SocialIcon from "@/components/SocialIcon";
 import ProjectCategory from "@/components/ProjectCategory";
@@ -15,11 +15,12 @@ const categories = [
 ];
 
 const socials = [
-  { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: FileText, href: "#", label: "Resume" },
-  { icon: ExternalLink, href: "#", label: "Upwork" },
+  { icon: Mail, href: "mailto:aishwaryasudhakar12@gmail.com", label: "Email" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/aishwaryasudhakar01", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/aishwaryaSudhakar01", label: "GitHub" },
+  { icon: ExternalLink, href: "https://x.com/aishwarya_2212?s=21", label: "X" },
+  { icon: ExternalLink, href: "https://www.upwork.com/freelancers/~01efc0a0f54607df98", label: "Upwork" },
+  { icon: ExternalLink, href: "https://aishwarya2212.gumroad.com/?_gl=1*clejb1*_ga*MTUxMzMxMTg3Ni4xNzcyOTg1MTEy*_ga_6LJN6D94N6*czE3NzQwODU3NjMkbzckZzEkdDE3NzQwODU3NzYkajQ3JGwwJGgw", label: "Gumroad" },
 ];
 
 const Index = () => {

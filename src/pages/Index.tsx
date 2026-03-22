@@ -15,7 +15,7 @@ import profilePhoto from "@/assets/profile-photo.png";
 
 const currentYear = new Date().getFullYear();
 const startDate = new Date(2023, 5); // Jun 2023
-const yearsExp = Math.round((Date.now() - startDate.getTime()) / (365.25 * 24 * 60 * 60 * 1000) * 2) / 2; // round to nearest 0.5
+const yearsExp = Math.floor((Date.now() - startDate.getTime()) / (365.25 * 24 * 60 * 60 * 1000) * 2) / 2; // floor to nearest 0.5
 
 const bannerItems = [
   "Biz Ops", "Analytics", "Data-Driven Decision Making", "Strategic Planning",
@@ -101,21 +101,32 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="mt-8 text-secondary-foreground leading-relaxed max-w-md text-base sm:text-lg"
+              className="mt-8 text-secondary-foreground leading-relaxed max-w-lg text-base sm:text-lg"
             >
-              A dedicated <span className="text-primary font-semibold">Data Analyst</span> with over {yearsExp}+ years 
-              of experience — specializing in data models, advanced analyses, and machine learning techniques.
+              I pick up tools fast and build things that work. With{" "}
+              <span className="text-primary font-semibold">{yearsExp}+ years</span> of
+              experience sitting between data and operations.
             </motion.p>
 
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
-              className="mt-3 text-muted-foreground leading-relaxed max-w-md text-sm"
+              className="mt-4 text-muted-foreground leading-relaxed max-w-lg text-sm space-y-3"
             >
-              Transforming complex data into actionable insights. 
-              Let's explore how data can drive success together.
-            </motion.p>
+              <p>
+                At Uber, I worked on getting people to work — literally. Think city-scale shuttle networks for large corporations. I sat between product and sales, understanding the product deeply enough to configure it for each client, and each client deeply enough to recognise a good solution for them.
+              </p>
+              <p>
+                Outside of that, I build and sell digital products. I've used Claude, Lovable, Cursor, and ElevenLabs to ship tools I actually wanted to exist, then listed them on Gumroad. Some sold. I'm still building.
+              </p>
+              <p>
+                I define the framework, set the metrics, and figure out what needs to exist before anyone else has noticed the gap.
+              </p>
+              <p>
+                Heading to <span className="text-foreground font-medium">NUS for an MSBA</span> in Fall 2026. Until then, I'm freelancing and open to internships where the problem is real and the data is messy.
+              </p>
+            </motion.div>
 
             {/* Social links */}
             <motion.div

@@ -1,6 +1,6 @@
 const ClaudeIcon = ({ size = 14 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M4.709 15.955l4.397-2.783-.52 3.393-3.877-.61zm6.652-4.186L17.339 8 12.3 16.578l-.94-4.809zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" />
+    <path d="M15.31 3.38l-4.63 13.2h3.32l4.63-13.2h-3.32zm-6.63 0L4.05 16.58h3.32l4.63-13.2H8.68zM4.73 20.62h3.32l1.58-4.52H6.31l-1.58 4.52zm9.95-4.52l-1.58 4.52h3.32l1.58-4.52h-3.32z" />
   </svg>
 );
 export default ClaudeIcon;

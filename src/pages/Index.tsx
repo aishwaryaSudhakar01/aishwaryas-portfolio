@@ -27,6 +27,7 @@ const bannerText = bannerItems.join(" ✦ ") + " ✦";
 const socials = [
   { icon: Mail, href: "mailto:aishwaryasudhakar12@gmail.com", label: "Email" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/aishwaryasudhakar01", label: "LinkedIn" },
+  { icon: Github, href: "#", label: "CV" },
   { icon: Github, href: "https://github.com/aishwaryaSudhakar01", label: "GitHub" },
   { customIcon: XIcon, href: "https://x.com/aishwarya_2212?s=21", label: "X" },
   { customIcon: UpworkIcon, href: "https://www.upwork.com/freelancers/~01efc0a0f54607df98", label: "Upwork" },

@@ -1,6 +1,12 @@
 const LovableIcon = ({ size = 14 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M7.14 0C10.09 0 12.5 2.41 12.5 5.38V7.43h1.79c2.95 0 5.36 2.41 5.36 5.38 0 2.97-2.41 5.38-5.36 5.38H0V5.38C0 2.41 2.41 0 5.36 0h1.78z"
+      fill="currentColor"
+      transform="translate(2.5 2.8) scale(1.05)"
+    />
   </svg>
 );
 export default LovableIcon;

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Mail, Linkedin, Github, FileText } from "lucide-react";
 import GrainOverlay from "@/components/ParticleField";
 import SocialIcon from "@/components/SocialIcon";
 import StatsCounter from "@/components/StatsCounter";
@@ -27,6 +27,7 @@ const bannerText = bannerItems.join(" ✦ ") + " ✦";
 const socials = [
   { icon: Mail, href: "mailto:aishwaryasudhakar12@gmail.com", label: "Email" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/aishwaryasudhakar01", label: "LinkedIn" },
+  { icon: FileText, href: "#", label: "CV" },
   { icon: Github, href: "https://github.com/aishwaryaSudhakar01", label: "GitHub" },
   { customIcon: XIcon, href: "https://x.com/aishwarya_2212?s=21", label: "X" },
   { customIcon: UpworkIcon, href: "https://www.upwork.com/freelancers/~01efc0a0f54607df98", label: "Upwork" },
@@ -119,9 +120,6 @@ const Index = () => {
               </p>
               <p>
                 Outside of that, I build and sell digital products. I've used Claude, Lovable, Cursor, and ElevenLabs to ship tools I actually wanted to exist, then listed them on Gumroad. Some sold. I'm still building.
-              </p>
-              <p>
-                I define the framework, set the metrics, and figure out what needs to exist before anyone else has noticed the gap.
               </p>
               <p>
                 Heading to <span className="text-foreground font-medium">NUS for an MSBA</span> in Fall 2026. Until then, I'm freelancing and open to internships where the problem is real and the data is messy.

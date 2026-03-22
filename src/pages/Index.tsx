@@ -1,26 +1,38 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, ExternalLink } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 import GrainOverlay from "@/components/ParticleField";
 import SocialIcon from "@/components/SocialIcon";
-import ProjectCategory from "@/components/ProjectCategory";
 import StatsCounter from "@/components/StatsCounter";
+import WorkExperience from "@/components/WorkExperience";
+import SkillsProjects from "@/components/SkillsProjects";
+import Hackathons from "@/components/Hackathons";
+import XIcon from "@/components/icons/XIcon";
+import UpworkIcon from "@/components/icons/UpworkIcon";
+import GumroadIcon from "@/components/icons/GumroadIcon";
+import LovableIcon from "@/components/icons/LovableIcon";
+import ClaudeIcon from "@/components/icons/ClaudeIcon";
 import profilePhoto from "@/assets/profile-photo.png";
 
-const categories = [
-  { label: "SQL", href: "#", count: "4 projects" },
-  { label: "Power BI", href: "#", count: "3 projects" },
-  { label: "Machine Learning", href: "#", count: "5 projects" },
-  { label: "Internships", href: "#", count: "2 roles" },
-  { label: "Certifications", href: "#", count: "5 earned" },
+const currentYear = new Date().getFullYear();
+const startDate = new Date(2023, 5); // Jun 2023
+const yearsExp = Math.round((Date.now() - startDate.getTime()) / (365.25 * 24 * 60 * 60 * 1000) * 2) / 2; // round to nearest 0.5
+
+const bannerItems = [
+  "Biz Ops", "Analytics", "Data-Driven Decision Making", "Strategic Planning",
+  "Process Optimization", "AI-Augmented Workflows", "SQL · Python · Power BI",
+  "Claude · Lovable · Cursor · ElevenLabs"
 ];
+const bannerText = bannerItems.join(" ✦ ") + " ✦";
 
 const socials = [
   { icon: Mail, href: "mailto:aishwaryasudhakar12@gmail.com", label: "Email" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/aishwaryasudhakar01", label: "LinkedIn" },
   { icon: Github, href: "https://github.com/aishwaryaSudhakar01", label: "GitHub" },
-  { icon: ExternalLink, href: "https://x.com/aishwarya_2212?s=21", label: "X" },
-  { icon: ExternalLink, href: "https://www.upwork.com/freelancers/~01efc0a0f54607df98", label: "Upwork" },
-  { icon: ExternalLink, href: "https://aishwarya2212.gumroad.com/?_gl=1*clejb1*_ga*MTUxMzMxMTg3Ni4xNzcyOTg1MTEy*_ga_6LJN6D94N6*czE3NzQwODU3NjMkbzckZzEkdDE3NzQwODU3NzYkajQ3JGwwJGgw", label: "Gumroad" },
+  { customIcon: XIcon, href: "https://x.com/aishwarya_2212?s=21", label: "X" },
+  { customIcon: UpworkIcon, href: "https://www.upwork.com/freelancers/~01efc0a0f54607df98", label: "Upwork" },
+  { customIcon: GumroadIcon, href: "https://aishwarya2212.gumroad.com/?_gl=1*clejb1*_ga*MTUxMzMxMTg3Ni4xNzcyOTg1MTEy*_ga_6LJN6D94N6*czE3NzQwODU3NjMkbzckZzEkdDE3NzQwODU3NzYkajQ3JGwwJGgw", label: "Gumroad" },
+  { customIcon: LovableIcon, href: "https://lovable.dev/@aishwarya_2212", label: "Lovable" },
+  { customIcon: ClaudeIcon, href: "https://claude.ai", label: "Claude" },
 ];
 
 const Index = () => {
@@ -31,9 +43,9 @@ const Index = () => {
       {/* Marquee ticker */}
       <div className="fixed top-0 left-0 right-0 z-20 border-b border-border bg-background/80 backdrop-blur-sm py-2 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
-          {Array.from({ length: 8 }).map((_, i) => (
+          {Array.from({ length: 4 }).map((_, i) => (
             <span key={i} className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mx-8">
-              Data Analyst · SQL Expert · Power BI · Machine Learning · Python · Tableau ✦
+              {bannerText}
             </span>
           ))}
         </div>
@@ -51,34 +63,34 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4">
-                Portfolio / 2024
+                Portfolio / {currentYear}
               </p>
               <div className="editorial-line mb-8" />
             </motion.div>
 
             <div className="overflow-hidden">
               <motion.h1
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+                initial={{ y: "100%", rotateX: 90 }}
+                animate={{ y: 0, rotateX: 0 }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
                 className="text-5xl sm:text-7xl lg:text-8xl font-display font-black leading-[0.9] tracking-tight mb-2"
               >
                 AISHWARYA
               </motion.h1>
             </div>
             <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="font-mono text-xs tracking-[0.2em] text-muted-foreground mb-4"
+              initial={{ opacity: 0, scaleX: 0 }}
+              animate={{ opacity: 1, scaleX: 1 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="font-mono text-xs tracking-[0.2em] text-muted-foreground mb-4 origin-left"
             >
               (eye-shwar-ya)
             </motion.p>
             <div className="overflow-hidden">
               <motion.h1
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+                initial={{ y: "100%", rotateX: 90 }}
+                animate={{ y: 0, rotateX: 0 }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
                 className="text-5xl sm:text-7xl lg:text-8xl font-display font-black italic leading-[0.9] tracking-tight text-gradient"
               >
                 Sudhakar
@@ -91,7 +103,7 @@ const Index = () => {
               transition={{ delay: 0.8 }}
               className="mt-8 text-secondary-foreground leading-relaxed max-w-md text-base sm:text-lg"
             >
-              A dedicated <span className="text-primary font-semibold">Data Analyst</span> with over a year 
+              A dedicated <span className="text-primary font-semibold">Data Analyst</span> with over {yearsExp}+ years 
               of experience — specializing in data models, advanced analyses, and machine learning techniques.
             </motion.p>
 
@@ -129,10 +141,13 @@ const Index = () => {
               {/* Photo frame with editorial treatment */}
               <div className="relative aspect-[3/4] max-w-sm mx-auto lg:ml-auto overflow-hidden">
                 <div className="absolute inset-0 border border-border" />
-                <img
+                <motion.img
                   src={profilePhoto}
                   alt="Aishwarya Sudhakar"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  initial={{ scale: 1.2 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 1.5, ease: "easeOut" }}
                 />
                 {/* Overlay label */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/80 to-transparent p-6">
@@ -153,44 +168,21 @@ const Index = () => {
                 className="flex justify-between mt-8 pt-6 border-t border-border max-w-sm mx-auto lg:ml-auto"
               >
                 <StatsCounter value={15} suffix="+" label="Projects" delay={0.8} />
-                <StatsCounter value={1} suffix="+" label="Years Exp." delay={0.9} />
+                <StatsCounter value={yearsExp} suffix="+" label="Years Exp." delay={0.9} />
                 <StatsCounter value={5} label="Certifications" delay={1.0} />
               </motion.div>
             </motion.div>
           </div>
         </div>
 
-        {/* Projects section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="mt-24 sm:mt-32"
-        >
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-2">
-                Selected Work
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-display font-black">
-                Projects
-              </h2>
-            </div>
-            <div className="editorial-line hidden sm:block" />
-          </div>
+        {/* Work Experience */}
+        <WorkExperience />
 
-          <div className="border-t border-border">
-            {categories.map((cat, i) => (
-              <ProjectCategory
-                key={cat.label}
-                label={cat.label}
-                index={i}
-                href={cat.href}
-                count={cat.count}
-              />
-            ))}
-          </div>
-        </motion.div>
+        {/* Skills & Projects */}
+        <SkillsProjects />
+
+        {/* Hackathons */}
+        <Hackathons />
 
         {/* Footer */}
         <motion.footer
@@ -200,7 +192,7 @@ const Index = () => {
           className="mt-24 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4"
         >
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-            © 2024 Aishwarya Sudhakar
+            © {currentYear} Aishwarya Sudhakar
           </p>
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
             Built with passion & data ✦

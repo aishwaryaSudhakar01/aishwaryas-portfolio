@@ -15,7 +15,7 @@ import profilePhoto from "@/assets/profile-photo.png";
 
 const currentYear = new Date().getFullYear();
 const startDate = new Date(2023, 5); // Jun 2023
-const yearsExp = Math.round((Date.now() - startDate.getTime()) / (365.25 * 24 * 60 * 60 * 1000) * 2) / 2; // round to nearest 0.5
+const yearsExp = Math.floor((Date.now() - startDate.getTime()) / (365.25 * 24 * 60 * 60 * 1000) * 2) / 2; // floor to nearest 0.5
 
 const bannerItems = [
   "Biz Ops", "Analytics", "Data-Driven Decision Making", "Strategic Planning",

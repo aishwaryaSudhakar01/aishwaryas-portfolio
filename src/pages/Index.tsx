@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Mail, Linkedin, Github, FileText } from "lucide-react";
 import GrainOverlay from "@/components/ParticleField";
 import SocialIcon from "@/components/SocialIcon";
 import StatsCounter from "@/components/StatsCounter";

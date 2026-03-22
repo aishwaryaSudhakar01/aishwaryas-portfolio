@@ -121,9 +121,6 @@ const Index = () => {
                 Outside of that, I build and sell digital products. I've used Claude, Lovable, Cursor, and ElevenLabs to ship tools I actually wanted to exist, then listed them on Gumroad. Some sold. I'm still building.
               </p>
               <p>
-                I define the framework, set the metrics, and figure out what needs to exist before anyone else has noticed the gap.
-              </p>
-              <p>
                 Heading to <span className="text-foreground font-medium">NUS for an MSBA</span> in Fall 2026. Until then, I'm freelancing and open to internships where the problem is real and the data is messy.
               </p>
             </motion.div>

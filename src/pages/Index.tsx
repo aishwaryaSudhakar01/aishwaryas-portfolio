@@ -53,11 +53,50 @@ const Index = () => {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-12 pt-20 pb-16">
-        {/* Header section — asymmetric grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end pt-8 sm:pt-16">
+        {/* Header section — editorial overlap layout */}
+        <div className="relative pt-8 sm:pt-16">
           
-          {/* Left column — oversized typography */}
-          <div className="lg:col-span-7 order-2 lg:order-1">
+          {/* Floating photo — overlaps into the text area */}
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="hidden lg:block absolute right-0 top-8 z-20 w-[340px] xl:w-[380px]"
+          >
+            <div className="relative aspect-[3/4] overflow-hidden border border-border shadow-2xl shadow-primary/10 -rotate-2 hover:rotate-0 transition-transform duration-700">
+              <motion.img
+                src={profilePhoto}
+                alt="Aishwarya Sudhakar"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                initial={{ scale: 1.2 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/80 to-transparent p-6">
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+                  Based in India
+                </p>
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">
+                  Available for freelance
+                </p>
+              </div>
+            </div>
+
+            {/* Stats row */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+              className="flex justify-between mt-6 pt-4 border-t border-border"
+            >
+              <StatsCounter value={15} suffix="+" label="Products" delay={0.8} />
+              <StatsCounter value={yearsExp} suffix="+" label="Years Exp." delay={0.9} />
+              <StatsCounter value={5} label="Certifications" delay={1.0} />
+            </motion.div>
+          </motion.div>
+
+          {/* Text content — flows around the photo */}
+          <div className="lg:max-w-[58%]">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -142,49 +181,37 @@ const Index = () => {
             </motion.div>
           </div>
 
-          {/* Right column — photo + stats */}
-          <div className="lg:col-span-5 order-1 lg:order-2">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative"
-            >
-              {/* Photo frame with editorial treatment */}
-              <div className="relative aspect-[3/4] max-w-sm mx-auto lg:ml-auto overflow-hidden">
-                <div className="absolute inset-0 border border-border" />
-                <motion.img
-                  src={profilePhoto}
-                  alt="Aishwarya Sudhakar"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                  initial={{ scale: 1.2 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 1.5, ease: "easeOut" }}
-                />
-                {/* Overlay label */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/80 to-transparent p-6">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
-                    Based in India
-                  </p>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">
-                    Available for freelance
-                  </p>
-                </div>
+          {/* Mobile-only photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="lg:hidden mt-12"
+          >
+            <div className="relative aspect-[3/4] max-w-xs mx-auto overflow-hidden border border-border">
+              <motion.img
+                src={profilePhoto}
+                alt="Aishwarya Sudhakar"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                initial={{ scale: 1.2 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/80 to-transparent p-6">
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+                  Based in India
+                </p>
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">
+                  Available for freelance
+                </p>
               </div>
-
-              {/* Stats row */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 }}
-                className="flex justify-between mt-8 pt-6 border-t border-border max-w-sm mx-auto lg:ml-auto"
-              >
-                <StatsCounter value={15} suffix="+" label="Products" delay={0.8} />
-                <StatsCounter value={yearsExp} suffix="+" label="Years Exp." delay={0.9} />
-                <StatsCounter value={5} label="Certifications" delay={1.0} />
-              </motion.div>
-            </motion.div>
-          </div>
+            </div>
+            <div className="flex justify-between mt-6 pt-4 border-t border-border max-w-xs mx-auto">
+              <StatsCounter value={15} suffix="+" label="Products" delay={0.8} />
+              <StatsCounter value={yearsExp} suffix="+" label="Years Exp." delay={0.9} />
+              <StatsCounter value={5} label="Certifications" delay={1.0} />
+            </div>
+          </motion.div>
         </div>
 
         {/* Work Experience */}

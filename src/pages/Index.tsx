@@ -179,7 +179,7 @@ const Index = () => {
                 transition={{ delay: 0.7 }}
                 className="flex justify-between mt-8 pt-6 border-t border-border max-w-sm mx-auto lg:ml-auto"
               >
-                <StatsCounter value={15} suffix="+" label="Projects" delay={0.8} />
+                <StatsCounter value={15} suffix="+" label="Products" delay={0.8} />
                 <StatsCounter value={yearsExp} suffix="+" label="Years Exp." delay={0.9} />
                 <StatsCounter value={5} label="Certifications" delay={1.0} />
               </motion.div>

@@ -11,7 +11,7 @@ import XIcon from "@/components/icons/XIcon";
 import UpworkIcon from "@/components/icons/UpworkIcon";
 import GumroadIcon from "@/components/icons/GumroadIcon";
 import LovableIcon from "@/components/icons/LovableIcon";
-import ClaudeIcon from "@/components/icons/ClaudeIcon";
+
 import profilePhoto from "@/assets/profile-photo.png";
 
 const currentYear = new Date().getFullYear();

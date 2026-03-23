@@ -116,13 +116,16 @@ const Index = () => {
               className="mt-4 text-muted-foreground leading-relaxed max-w-lg text-sm space-y-3"
             >
               <p>
-                At Uber, I worked on getting people to work — literally. Think city-scale shuttle networks for large corporations. I sat between product and sales, understanding the product deeply enough to configure it for each client, and each client deeply enough to recognise a good solution for them.
+                At Uber, I worked on getting people to work — literally. Think city-scale shuttle networks for large corporations. I sat between product and sales, understanding the product deeply enough to configure it for each client, and each client deeply enough to know a good solution from a good-looking one.
               </p>
               <p>
-                Outside of that, I build and sell digital products. I've used Claude, Lovable, Cursor, and ElevenLabs to ship tools I actually wanted to exist, then listed them on Gumroad. Some sold. I'm still building.
+                Outside of that, I build and sell digital products. I've used Claude, Lovable, and Stitch to ship tools I actually wanted to exist, then listed them on Gumroad. Some sold. Still building. Along the way, I've picked up ElevenLabs and Cursor too — mostly because a problem needed it.
               </p>
               <p>
-                Heading to <span className="text-foreground font-medium">NUS for an MSBA</span> in Fall 2026. Until then, I'm freelancing and open to internships where the problem is real and the data is messy.
+                I sit between data and operations, which makes me useful in roles that don't fit a clean job description. I define the framework, set the metrics, and figure out what needs to be in place before anyone else notices the gap.
+              </p>
+              <p>
+                Heading to <span className="text-foreground font-medium">NUS for an MSBA</span> in Fall 2026. Until then, I'm freelancing and exploring problems where the data is real and the answers aren't obvious.
               </p>
             </motion.div>
 

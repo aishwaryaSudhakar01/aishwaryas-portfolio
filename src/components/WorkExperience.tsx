@@ -6,7 +6,7 @@ interface WorkItem {
   company: string;
   role: string;
   period: string;
-  description: string;
+  bullets: string[];
 }
 
 const workItems: WorkItem[] = [
@@ -14,22 +14,28 @@ const workItems: WorkItem[] = [
     company: "Uber",
     role: "Associate Operations Manager",
     period: "Oct 2024 – Apr 2026",
-    description:
-      "Managed city-scale shuttle networks for large corporations. Sat between product and sales — configuring the product for each client and recognising the right solution for their needs. Drove operational efficiency across multiple accounts.",
+    bullets: [
+      "Served as the subject matter expert for routing algorithms in Uber's enterprise commute services, translating client travel requirements into effective solver constraints. Evaluated and recommended optimized routing solutions to enhance efficiency, meet client needs, and improve service delivery and client satisfaction.",
+      "Designed and scaled citywide B2C Shuttle networks using routing and scheduling algorithms on internal demand data and travel time models to solve large-scale home-to-work and airport-to-transit commute problems.",
+    ],
   },
   {
     company: "Ernst & Young",
     role: "Intern & Associate Data Science Consultant",
     period: "Jan 2024 – Oct 2024",
-    description:
-      "Built data pipelines and analytical models for client engagements. Worked across teams to translate business problems into data-driven solutions using Python, SQL, and Power BI.",
+    bullets: [
+      "Designed a real-time surveillance-based crime detection prototype on Streamlit using TensorFlow and OpenCV, incorporating automated notifications and geolocation logic for rapid response workflows.",
+      "Built Power BI dashboards for a municipal corporation to track grievance KPIs, monitor resolution status, analyze trends by geography and department, and support data-driven decision-making for civic resource allocation.",
+    ],
   },
   {
     company: "Convin.ai",
     role: "Data Analyst Intern",
     period: "Jun 2023 – Nov 2023",
-    description:
-      "Analysed conversation intelligence data to surface actionable insights. Built dashboards and automated reporting workflows to support the product and sales teams.",
+    bullets: [
+      "Reviewed customer care call transcriptions to understand customer behavior patterns, which helped improve conversion rates by ~2.6× and boost sales efficiency by 42.5%.",
+      "Simplified data preprocessing workflows using SQL and Python, cutting manual effort by 50%.",
+    ],
   },
 ];
 

@@ -110,9 +110,14 @@ const WorkExperience = () => {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <p className="text-sm text-muted-foreground leading-relaxed pb-5 pl-10 sm:pl-14 max-w-xl">
-                    {item.description}
-                  </p>
+                  <ul className="space-y-3 pb-5 pl-10 sm:pl-14 max-w-2xl">
+                    {item.bullets.map((bullet, j) => (
+                      <li key={j} className="text-sm text-muted-foreground leading-relaxed flex gap-2">
+                        <span className="text-primary mt-1 shrink-0">•</span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </motion.div>
               )}
             </AnimatePresence>

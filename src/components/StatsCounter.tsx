@@ -10,7 +10,10 @@ interface StatsCounterProps {
 
 const StatsCounter = ({ value, label, suffix = "", delay = 0 }: StatsCounterProps) => {
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (v) => Math.round(v));
+  const rounded = useTransform(count, (v) => {
+    if (value % 1 !== 0) return (Math.round(v * 2) / 2).toFixed(1);
+    return Math.round(v).toString();
+  });
 
   useEffect(() => {
     const timeout = setTimeout(() => {

@@ -192,7 +192,10 @@ const Index = () => {
         <WorkExperience />
 
         {/* Skills & Projects */}
-        <SkillsProjects />
+        <Skills />
+
+        {/* Certifications */}
+        <Certifications />
 
         {/* Hackathons */}
         <Hackathons />

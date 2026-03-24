@@ -23,6 +23,7 @@ const workItems: WorkItem[] = [
   },
   {
     company: "Ernst & Young",
+    companyUrl: "https://www.ey.com/en_in",
     role: "Intern & Associate Data Science Consultant",
     period: "Jan 2024 – Oct 2024",
     bullets: [

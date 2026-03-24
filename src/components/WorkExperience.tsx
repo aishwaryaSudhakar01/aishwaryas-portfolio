@@ -4,6 +4,7 @@ import { ChevronDown } from "lucide-react";
 
 interface WorkItem {
   company: string;
+  companyUrl: string;
   role: string;
   period: string;
   bullets: string[];
@@ -12,6 +13,7 @@ interface WorkItem {
 const workItems: WorkItem[] = [
   {
     company: "Uber",
+    companyUrl: "https://www.uber.com/us/en/about/",
     role: "Associate Operations Manager",
     period: "Oct 2024 – Apr 2026",
     bullets: [
@@ -21,6 +23,7 @@ const workItems: WorkItem[] = [
   },
   {
     company: "Ernst & Young",
+    companyUrl: "https://www.ey.com/en_in",
     role: "Intern & Associate Data Science Consultant",
     period: "Jan 2024 – Oct 2024",
     bullets: [
@@ -30,6 +33,7 @@ const workItems: WorkItem[] = [
   },
   {
     company: "Convin.ai",
+    companyUrl: "https://convin.ai/",
     role: "Data Analyst Intern",
     period: "Jun 2023 – Nov 2023",
     bullets: [
@@ -84,6 +88,15 @@ const WorkExperience = () => {
                   <span className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 hover-editorial">
                     {item.company}
                   </span>
+                  <a
+                    href={item.companyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="ml-2 font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors duration-300"
+                  >
+                    ↗
+                  </a>
                   <p className="text-sm text-muted-foreground mt-0.5">
                     {item.role}
                   </p>

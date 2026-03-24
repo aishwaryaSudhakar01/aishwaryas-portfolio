@@ -85,7 +85,7 @@ const Index = () => {
               transition={{ delay: 0.6, duration: 0.6 }}
               className="font-mono text-xs tracking-[0.2em] text-muted-foreground mb-4 origin-left"
             >
-              (eye-shwar-ya)
+              (eye-SHWAR-yah)
             </motion.p>
             <div className="overflow-hidden">
               <motion.h1

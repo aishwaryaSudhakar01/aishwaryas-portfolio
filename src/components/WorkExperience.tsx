@@ -13,6 +13,7 @@ interface WorkItem {
 const workItems: WorkItem[] = [
   {
     company: "Uber",
+    companyUrl: "https://www.uber.com/us/en/about/",
     role: "Associate Operations Manager",
     period: "Oct 2024 – Apr 2026",
     bullets: [

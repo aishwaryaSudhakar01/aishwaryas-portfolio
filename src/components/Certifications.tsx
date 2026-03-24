@@ -28,8 +28,6 @@ const certifications: Certification[] = [
     image: certPowerBi,
     link: "https://www.udemy.com/certificate/UC-97d8b1e0-1c4e-42a9-868d-401768212a08/",
   },
-  { name: "HackerRank SQL (Advanced)" },
-  { name: "Tableau Desktop Specialist" },
 ];
 
 const Certifications = () => {

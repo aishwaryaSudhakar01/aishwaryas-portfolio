@@ -33,6 +33,7 @@ const workItems: WorkItem[] = [
   },
   {
     company: "Convin.ai",
+    companyUrl: "https://convin.ai/",
     role: "Data Analyst Intern",
     period: "Jun 2023 – Nov 2023",
     bullets: [

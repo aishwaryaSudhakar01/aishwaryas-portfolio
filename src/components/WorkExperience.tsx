@@ -85,17 +85,14 @@ const WorkExperience = () => {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <span className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 hover-editorial">
-                    {item.company}
-                  </span>
                   <a
                     href={item.companyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="ml-2 font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors duration-300"
+                    className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 hover-editorial hover:underline underline-offset-4"
                   >
-                    ↗
+                    {item.company} ↗
                   </a>
                   <p className="text-sm text-muted-foreground mt-0.5">
                     {item.role}

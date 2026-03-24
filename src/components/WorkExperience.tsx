@@ -4,6 +4,7 @@ import { ChevronDown } from "lucide-react";
 
 interface WorkItem {
   company: string;
+  companyUrl: string;
   role: string;
   period: string;
   bullets: string[];

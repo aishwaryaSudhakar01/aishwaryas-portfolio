@@ -54,7 +54,7 @@ const Index = () => {
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-12 pt-20 pb-16">
         {/* Header section — asymmetric grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end pt-8 sm:pt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pt-8 sm:pt-16">
           
           {/* Left column — oversized typography */}
           <div className="lg:col-span-7 order-2 lg:order-1">

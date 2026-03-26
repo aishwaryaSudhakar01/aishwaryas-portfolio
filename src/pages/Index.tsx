@@ -150,21 +150,20 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="relative"
             >
-              {/* Photo frame with blurred edges */}
+              {/* Photo with soft vignette mask */}
               <div className="relative aspect-[3/4] max-w-sm mx-auto lg:ml-auto overflow-hidden">
                 <motion.img
                   src={profilePhoto}
                   alt="Aishwarya Sudhakar"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  style={{
+                    maskImage: "radial-gradient(ellipse 70% 65% at 50% 40%, black 50%, transparent 100%)",
+                    WebkitMaskImage: "radial-gradient(ellipse 70% 65% at 50% 40%, black 50%, transparent 100%)",
+                  }}
                   initial={{ scale: 1.2 }}
                   animate={{ scale: 1 }}
                   transition={{ duration: 1.5, ease: "easeOut" }}
                 />
-                {/* Edge blurs — all four sides */}
-                <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-background to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background via-background/80 to-transparent" />
-                <div className="absolute top-0 bottom-0 left-0 w-16 bg-gradient-to-r from-background to-transparent" />
-                <div className="absolute top-0 bottom-0 right-0 w-16 bg-gradient-to-l from-background to-transparent" />
               </div>
 
               {/* Hero stat + tagline */}

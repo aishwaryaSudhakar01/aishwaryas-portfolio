@@ -150,9 +150,8 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="relative"
             >
-              {/* Photo frame with editorial treatment */}
+              {/* Photo frame with blurred edges */}
               <div className="relative aspect-[3/4] max-w-sm mx-auto lg:ml-auto overflow-hidden">
-                <div className="absolute inset-0 border border-border" />
                 <motion.img
                   src={profilePhoto}
                   alt="Aishwarya Sudhakar"
@@ -161,27 +160,25 @@ const Index = () => {
                   animate={{ scale: 1 }}
                   transition={{ duration: 1.5, ease: "easeOut" }}
                 />
-                {/* Overlay label */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/80 to-transparent p-6">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
-                    Based in India
-                  </p>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">
-                    Available for freelance
-                  </p>
-                </div>
+                {/* Edge blurs — all four sides */}
+                <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-background to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background via-background/80 to-transparent" />
+                <div className="absolute top-0 bottom-0 left-0 w-16 bg-gradient-to-r from-background to-transparent" />
+                <div className="absolute top-0 bottom-0 right-0 w-16 bg-gradient-to-l from-background to-transparent" />
               </div>
 
-              {/* Stats row */}
+              {/* Hero stat + tagline */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
-                className="flex justify-between mt-8 pt-6 border-t border-border max-w-sm mx-auto lg:ml-auto"
+                className="mt-8 max-w-sm mx-auto lg:ml-auto text-center"
               >
-                <StatsCounter value={15} suffix="+" label="Products" delay={0.8} />
-                <StatsCounter value={yearsExp} suffix="+" label="Years Exp." delay={0.9} />
-                <StatsCounter value={5} label="Certifications" delay={1.0} />
+                <StatsCounter value={yearsExp} suffix="+" label="Years of Experience" delay={0.8} />
+                <div className="editorial-line my-4 mx-auto" />
+                <p className="font-display italic text-base text-muted-foreground tracking-wide">
+                  "I vibe code what I wish existed."
+                </p>
               </motion.div>
             </motion.div>
           </div>

@@ -94,7 +94,7 @@ const WorkExperience = () => {
                     onClick={(e) => e.stopPropagation()}
                     className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 hover-editorial hover:underline underline-offset-4"
                   >
-                    {item.company} ↗
+                    {item.company}
                   </a>
                   <p className="text-sm text-muted-foreground mt-0.5">
                     {item.role}

@@ -66,9 +66,15 @@ const Hackathons = () => (
                   <span className="font-mono text-xs text-muted-foreground">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                  <a
+                    href={h.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 hover:underline"
+                    onClick={(e) => e.stopPropagation()}
+                  >
                     {h.name}
-                  </span>
+                  </a>
                   <span className="font-mono text-xs text-muted-foreground hidden sm:inline">
                     {h.description}
                   </span>

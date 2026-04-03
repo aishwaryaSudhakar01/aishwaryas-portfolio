@@ -11,6 +11,7 @@ const hackathons = [
   {
     name: "ElevenHacks",
     description: "ElevenLabs Hackathon",
+    url: "https://hacks.elevenlabs.io/",
     hacks: [
       {
         tag: "Hack #1 · Firecrawl",

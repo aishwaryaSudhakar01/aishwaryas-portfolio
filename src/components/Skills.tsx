@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const skillCategories = [
   { label: "Languages", items: "Python, SQL, R, Java" },
-  { label: "Analytics & BI", items: "Power BI, Tableau, Advanced Excel" },
+  { label: "Analytics & BI", items: "Power BI, Tableau, Advanced Google Sheets/Excel" },
   { label: "Automation & Tools", items: "Lovable, Google Maps APIs, Google Sheets Scripting, QGIS, Streamlit" },
 ];
 

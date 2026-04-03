@@ -19,6 +19,8 @@ const workItems: WorkItem[] = [
     bullets: [
       "Served as the subject matter expert for routing algorithms in Uber's enterprise commute services, translating client travel requirements into effective solver constraints. Evaluated and recommended optimized routing solutions to enhance efficiency, meet client needs, and improve service delivery and client satisfaction.",
       "Designed and scaled citywide B2C Shuttle networks using routing and scheduling algorithms on internal demand data and travel time models to solve large-scale home-to-work and airport-to-transit commute problems.",
+      "Led cross-market benchmarking of Uber's 5 routing solvers across 7 countries, standardizing inputs and building a Python-based metrics normalization layer to enable comparable evaluation. Consolidated 5 tools to 3 with clearly defined use cases, replacing subjective tool selection with a repeatable decision framework now used by sales and operations teams.",
+      "Replaced a manual spreadsheet-based request process by building an automated intake platform on Lovable, now handling 20+ network generation requests per month across 10+ users with built-in progress tracking and automated email notifications to the operations team.",
     ],
   },
   {

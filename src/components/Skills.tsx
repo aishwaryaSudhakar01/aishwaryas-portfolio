@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 
-const skills = [
-  "SQL",
-  "Python",
-  "Power BI",
-  "Advanced Excel / Google Sheets",
+const skillCategories = [
+  { label: "Languages", items: "Python, SQL, R, Java" },
+  { label: "Analytics & BI", items: "Power BI, Tableau, Advanced Excel" },
+  { label: "Automation & Tools", items: "Lovable, Google Maps APIs, Google Sheets Scripting, QGIS, Streamlit" },
 ];
 
 const Skills = () => (
@@ -27,19 +26,22 @@ const Skills = () => (
     </div>
 
     <div className="border-t border-border">
-      {skills.map((skill, i) => (
+      {skillCategories.map((cat, i) => (
         <motion.div
-          key={skill}
+          key={cat.label}
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.9 + i * 0.1, duration: 0.5 }}
-          className="group flex items-center py-4 border-b border-border hover:border-primary transition-colors duration-300 cursor-default"
+          className="group flex flex-col sm:flex-row sm:items-center py-4 border-b border-border hover:border-primary transition-colors duration-300 cursor-default gap-1 sm:gap-4"
         >
-          <span className="font-mono text-xs text-muted-foreground mr-4">
+          <span className="font-mono text-xs text-muted-foreground shrink-0 mr-4 hidden sm:inline">
             {String(i + 1).padStart(2, "0")}
           </span>
-          <span className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 hover-editorial">
-            {skill}
+          <span className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 shrink-0">
+            {cat.label}
+          </span>
+          <span className="font-mono text-xs text-muted-foreground">
+            {cat.items}
           </span>
         </motion.div>
       ))}

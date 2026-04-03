@@ -170,7 +170,7 @@ const Index = () => {
                 <StatsCounter value={yearsExp} suffix="+" label="Years of Experience" delay={0.8} />
                 <div className="editorial-line my-4 mx-auto" />
                 <p className="font-display italic text-base text-muted-foreground tracking-wide">
-                  "I vibe code what I wish existed."
+                  
                 </p>
               </motion.div>
             </motion.div>

@@ -168,10 +168,6 @@ const Index = () => {
                 className="mt-8 max-w-sm mx-auto lg:ml-auto text-center"
               >
                 <StatsCounter value={yearsExp} suffix="+" label="Years of Experience" delay={0.8} />
-                <div className="editorial-line my-4 mx-auto" />
-                <p className="font-display italic text-base text-muted-foreground tracking-wide">
-                  
-                </p>
               </motion.div>
             </motion.div>
           </div>

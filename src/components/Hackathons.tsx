@@ -16,7 +16,7 @@ const hackathons = [
         tag: "Hack #1 · Firecrawl",
         name: "Sophie — Voice Shopping Agent",
         description:
-          "A conversational AI agent that lets you shop entirely by voice. Speak naturally, get ranked product recommendations read back to you in real time. Built with ElevenLabs Conversational AI, Firecrawl Search, and Claude — no typing required.",
+          "Online shopping is still stuck in the search-and-scroll era. You type keywords, open 12 tabs, compare reviews across sites, and still second-guess your choice.\n\nI built Sophie — a voice agent that replaces that entire workflow with a conversation.\n\nYou talk. She listens. She asks smart follow-ups (name, what you need, budget, currency — one at a time). Then she searches the live web using Firecrawl, ranks the top 3 with Claude, reads them aloud through ElevenLabs Conversational AI, and opens the buy link when you say \"yes.\"\n\nThe whole thing runs on a single HTML file, a Node.js backend, and three APIs. No framework. No React. Just vanilla JS and a conversation that actually works.\n\nIf you're building with voice, the lesson I keep learning: the agent should never go silent. Sophie is always alive — even if you switch tabs, she's still listening and working.",
         github: "https://github.com/aishwaryaSudhakar01/sophie",
       },
       {

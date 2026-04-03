@@ -105,11 +105,6 @@ const WorkExperience = () => {
                 <span className="font-mono text-xs text-muted-foreground">
                   {item.period}
                 </span>
-                <ChevronDown
-                  className={`w-4 h-4 text-muted-foreground transition-transform duration-300 ${
-                    expanded === item.company ? "rotate-180" : ""
-                  }`}
-                />
               </div>
             </button>
 

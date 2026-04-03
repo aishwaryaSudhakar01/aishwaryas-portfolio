@@ -1,7 +1,33 @@
 import { motion } from "framer-motion";
+import { ChevronDown, Github } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const hackathons = [
-  { name: "ElevenHacks", description: "ElevenLabs Hackathon" },
+  {
+    name: "ElevenHacks",
+    description: "ElevenLabs Hackathon",
+    hacks: [
+      {
+        tag: "Hack #1 · Firecrawl",
+        name: "Sophie — Voice Shopping Agent",
+        description:
+          "A conversational AI agent that lets you shop entirely by voice. Speak naturally, get ranked product recommendations read back to you in real time. Built with ElevenLabs Conversational AI, Firecrawl Search, and Claude — no typing required.",
+        github: "https://github.com/aishwaryaSudhakar01/sophie",
+      },
+      {
+        tag: "Hack #2 · Cloudflare",
+        name: "Voyage — Voice Travel Agent",
+        description:
+          "Planning a trip today means 15 browser tabs, 3 comparison sites, and hours of copy-pasting. Voyage replaces all of that with a single voice conversation. Say \"5 days in Bali for two, 1.5 lakhs\" and watch a full itinerary — real flights, real hotels, day-by-day activities, weather, and a live budget — appear in seconds.\n\nElevenLabs Conversational AI is the core interaction layer. Cloudflare Workers AI runs Llama 3.1 for structured itineraries. Durable Objects with SQLite remembers preferences across trips. Vectorize enables semantic search. Browser Rendering scrapes live prices. The result is a full travel-agent UI with voice-driven pipeline, context chips, deep-linked booking, and a real-time budget tracker.",
+        github: "https://github.com/aishwaryaSudhakar01/voyage",
+      },
+    ],
+  },
 ];
 
 const Hackathons = () => (
@@ -30,17 +56,51 @@ const Hackathons = () => (
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1.1 + i * 0.1, duration: 0.5 }}
-          className="group flex items-center justify-between py-4 border-b border-border hover:border-primary transition-colors duration-300 cursor-default"
+          className="border-b border-border"
         >
-          <div className="flex items-center gap-4">
-            <span className="font-mono text-xs text-muted-foreground">
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <span className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 hover-editorial">
-              {h.name}
-            </span>
-          </div>
-          <span className="font-mono text-xs text-muted-foreground">{h.description}</span>
+          <Accordion type="single" collapsible>
+            <AccordionItem value={h.name} className="border-b-0">
+              <AccordionTrigger className="py-4 hover:no-underline group">
+                <div className="flex items-center gap-4">
+                  <span className="font-mono text-xs text-muted-foreground">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                    {h.name}
+                  </span>
+                  <span className="font-mono text-xs text-muted-foreground hidden sm:inline">
+                    {h.description}
+                  </span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="space-y-6 pl-8 sm:pl-12 pb-2">
+                  {h.hacks.map((hack) => (
+                    <div key={hack.name} className="space-y-2">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary">
+                        {hack.tag}
+                      </p>
+                      <h3 className="font-display text-base sm:text-lg font-bold text-foreground">
+                        {hack.name}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
+                        {hack.description}
+                      </p>
+                      <a
+                        href={hack.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:underline mt-1"
+                      >
+                        <Github className="w-3.5 h-3.5" />
+                        GitHub
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </motion.div>
       ))}
     </div>

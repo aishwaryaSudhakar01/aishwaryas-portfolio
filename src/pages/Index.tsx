@@ -30,7 +30,7 @@ const socials = [
   { icon: Linkedin, href: "https://www.linkedin.com/in/aishwaryasudhakar01", label: "LinkedIn" },
   { icon: FileText, href: "https://drive.google.com/file/d/14JP3zhjgE3m1efNyM4QSnZxsk8juQ7dK/view?usp=sharing", label: "CV" },
   { icon: Github, href: "https://github.com/aishwaryaSudhakar01", label: "GitHub" },
-  { customIcon: XIcon, href: "https://x.com/aishwarya_2212?s=21", label: "X" },
+  { customIcon: XIcon, href: "https://x.com/Aishwarya_2212", label: "X" },
   { customIcon: UpworkIcon, href: "https://www.upwork.com/freelancers/~01efc0a0f54607df98", label: "Upwork" },
   { customIcon: GumroadIcon, href: "https://aishwarya2212.gumroad.com/?_gl=1*clejb1*_ga*MTUxMzMxMTg3Ni4xNzcyOTg1MTEy*_ga_6LJN6D94N6*czE3NzQwODU3NjMkbzckZzEkdDE3NzQwODU3NzYkajQ3JGwwJGgw", label: "Gumroad" },
   { customIcon: LovableIcon, href: "https://lovable.dev/@aishwarya_2212", label: "Lovable" },

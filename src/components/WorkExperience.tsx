@@ -12,21 +12,23 @@ interface WorkItem {
 
 const workItems: WorkItem[] = [
   {
-    company: "Uber",
+    company: "Uber Technologies",
     companyUrl: "https://www.uber.com/us/en/about/",
     role: "Associate Operations Manager",
     period: "Oct 2024 – Apr 2026",
     bullets: [
-      "Served as the subject matter expert for routing algorithms in Uber's enterprise commute services, translating client travel requirements into effective solver constraints. Evaluated and recommended optimized routing solutions to enhance efficiency, meet client needs, and improve service delivery and client satisfaction.",
-      "Designed and scaled citywide B2C Shuttle networks using routing and scheduling algorithms on internal demand data and travel time models to solve large-scale home-to-work and airport-to-transit commute problems.",
-      "Led cross-market benchmarking of Uber's 5 routing solvers across 7 countries, standardizing inputs and building a Python-based metrics normalization layer to enable comparable evaluation. Consolidated 5 tools to 3 with clearly defined use cases, replacing subjective tool selection with a repeatable decision framework now used by sales and operations teams.",
-      "Replaced a manual spreadsheet-based request process by building an automated intake platform on Lovable, now handling 20+ network generation requests per month across 10+ users with built-in progress tracking and automated email notifications to the operations team.",
+      "Worked across Uber's B2B commute product (ETS) and B2C shuttle network, in a role that sat between analytics and operations.",
+      "B2B analytics: took client employee commute data, tuned the routing algorithm to fit their geography and shift patterns, and handed back networks that ran leaner than what they were already using.",
+      "B2C analytics: identified where latent demand existed in a city to justify launching a shuttle line, working across India and Egypt by digging into pickup and drop-off patterns.",
+      "Benchmarked Uber's routing solvers across regions and turned the results into a framework teams now use to pick the right solver per engagement, instead of relying on whoever happened to be running the deal.",
+      "Built tooling to remove manual coordination friction: an automated intake platform to replace a spreadsheet-based request process, a Lovable-built tool that pulled three separate hotspot sources into one place, and a QGIS plugin that gave regional planners a single visual interface to edit route data instead of jumping between tools.",
+      "Designed the sales enablement process for ETS, replacing deal-by-deal improvisation with a structured flow the team could run repeatably.",
     ],
   },
   {
     company: "Ernst & Young",
     companyUrl: "https://www.ey.com/en_in",
-    role: "Intern & Associate Data Science Consultant",
+    role: "Data Science Associate Consultant",
     period: "Jan 2024 – Oct 2024",
     bullets: [
       "Designed a real-time surveillance-based crime detection prototype on Streamlit using TensorFlow and OpenCV, incorporating automated notifications and geolocation logic for rapid response workflows.",

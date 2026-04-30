@@ -134,7 +134,7 @@ const WorkExperience = () => {
                       </p>
                     ))}
                     {item.letters && item.letters.length > 0 && (
-                      <div className="flex flex-wrap gap-2 pt-2">
+                      <div className="flex flex-wrap gap-3 pt-3">
                         {item.letters.map((l, k) => (
                           <button
                             key={k}
@@ -142,10 +142,14 @@ const WorkExperience = () => {
                               e.stopPropagation();
                               setLightbox(l);
                             }}
-                            className="inline-flex items-center gap-2 px-3 py-1.5 border border-border hover:border-primary hover:text-primary text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground transition-colors"
+                            className="block border border-border hover:border-primary transition-colors cursor-zoom-in"
+                            aria-label={l.alt}
                           >
-                            <FileText size={12} />
-                            {item.letters!.length > 1 ? `Experience Letter ${k + 1}` : "Experience Letter"}
+                            <img
+                              src={l.src}
+                              alt={l.alt}
+                              className="h-32 w-auto object-contain bg-white"
+                            />
                           </button>
                         ))}
                       </div>

@@ -1,13 +1,17 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { FileText, X } from "lucide-react";
+import letterConvin from "@/assets/letter-convin.png";
+import letterEy1 from "@/assets/letter-ey-1.png";
+import letterEy2 from "@/assets/letter-ey-2.png";
 
 interface WorkItem {
   company: string;
   companyUrl: string;
   role: string;
   period: string;
-  bullets: string[];
+  paragraphs: string[];
+  letters?: { src: string; alt: string }[];
 }
 
 const workItems: WorkItem[] = [
@@ -16,13 +20,11 @@ const workItems: WorkItem[] = [
     companyUrl: "https://www.uber.com/us/en/about/",
     role: "Associate Operations Manager",
     period: "Oct 2024 – Apr 2026",
-    bullets: [
+    paragraphs: [
       "Worked across Uber's B2B commute product (ETS) and B2C shuttle network, in a role that sat between analytics and operations.",
-      "B2B analytics: took client employee commute data, tuned the routing algorithm to fit their geography and shift patterns, and handed back networks that ran leaner than what they were already using.",
-      "B2C analytics: identified where latent demand existed in a city to justify launching a shuttle line, working across India and Egypt by digging into pickup and drop-off patterns.",
-      "Benchmarked Uber's routing solvers across regions and turned the results into a framework teams now use to pick the right solver per engagement, instead of relying on whoever happened to be running the deal.",
-      "Built tooling to remove manual coordination friction: an automated intake platform to replace a spreadsheet-based request process, a Lovable-built tool that pulled three separate hotspot sources into one place, and a QGIS plugin that gave regional planners a single visual interface to edit route data instead of jumping between tools.",
-      "Designed the sales enablement process for ETS, replacing deal-by-deal improvisation with a structured flow the team could run repeatably.",
+      "The analytics work was about figuring out where shuttles should run and how routes should be designed. For B2B clients, I'd take their employee commute data, tune the routing algorithm to fit their geography and shift patterns, and hand back a network that ran leaner than what they were already using. For B2C, the question was different: where in a city is there enough latent demand to put a shuttle line at all? I worked on that across India and Egypt by digging into pickup and drop-off patterns. I also benchmarked the different routing solvers Uber used across regions and turned that into a framework teams now use to pick the right one per engagement, instead of relying on whoever happened to be running the deal.",
+      "The tooling work came out of noticing that the slow part of the job was rarely the analysis. It was the manual coordination around it. So I built the things that took that friction out: an automated intake platform to replace a spreadsheet-based request process, a Lovable-built tool that pulled three separate hotspot sources into one place, and a QGIS plugin that gave regional planners a single visual interface to edit route data instead of jumping between tools.",
+      "Underneath all of it, I also designed the sales enablement process for ETS itself, replacing deal-by-deal improvisation with a structured flow that the team could actually run repeatably.",
     ],
   },
   {
@@ -30,9 +32,13 @@ const workItems: WorkItem[] = [
     companyUrl: "https://www.ey.com/en_in",
     role: "Data Science Associate Consultant",
     period: "Jan 2024 – Oct 2024",
-    bullets: [
-      "Designed a real-time surveillance-based crime detection prototype on Streamlit using TensorFlow and OpenCV, incorporating automated notifications and geolocation logic for rapid response workflows.",
-      "Built Power BI dashboards for a municipal corporation to track grievance KPIs, monitor resolution status, analyze trends by geography and department, and support data-driven decision-making for civic resource allocation.",
+    paragraphs: [
+      "Worked on a smart-city proof of concept for the Pune Municipal Corporation, using computer vision to detect civic incidents from street imagery and route each one to the right patrol unit.",
+      "My approach was to start with the detection model (trained on a large incident image dataset across fourteen categories), then make the system feel real to the client by wrapping it in a Streamlit prototype that took video input and walked through the full flow from detection to resolution. Alongside it, I designed a Power BI dashboard that gave municipal departments a real-time view of citizen grievances, replacing the manual Excel reporting they'd been relying on. The impact was less about scale (it stayed at POC) and more about showing what a production version of a system like this could look like.",
+    ],
+    letters: [
+      { src: letterEy1, alt: "EY experience letter — Trainee" },
+      { src: letterEy2, alt: "EY experience letter — Associate Consultant" },
     ],
   },
   {
@@ -40,15 +46,17 @@ const workItems: WorkItem[] = [
     companyUrl: "https://convin.ai/",
     role: "Data Analyst Intern",
     period: "Jun 2023 – Nov 2023",
-    bullets: [
-      "Reviewed customer care call transcriptions to understand customer behavior patterns, which helped improve conversion rates by ~2.6× and boost sales efficiency by 42.5%.",
-      "Simplified data preprocessing workflows using SQL and Python, cutting manual effort by 50%.",
+    paragraphs: [
+      "Convin builds conversation intelligence for sales teams, so most of my work meant sitting with call transcript data and pulling patterns out of it. For one client, I worked through their calls to surface the specific conversational phrases that tracked with higher conversion, which gave them something concrete to coach their sales team on instead of generic feedback.",
+      "The quieter half of the role was building the pipes. I automated the team's data preprocessing in SQL and Python, which turned an inconsistent manual process into something repeatable and gave the analysts back real time to do actual analysis.",
     ],
+    letters: [{ src: letterConvin, alt: "Convin experience letter" }],
   },
 ];
 
 const WorkExperience = () => {
   const [expanded, setExpanded] = useState<string | null>(null);
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
 
   return (
     <motion.div
@@ -119,20 +127,67 @@ const WorkExperience = () => {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <ul className="space-y-3 pb-5 pl-10 sm:pl-14 max-w-2xl">
-                    {item.bullets.map((bullet, j) => (
-                      <li key={j} className="text-sm text-muted-foreground leading-relaxed flex gap-2">
-                        <span className="text-primary mt-1 shrink-0">•</span>
-                        <span>{bullet}</span>
-                      </li>
+                  <div className="space-y-3 pb-5 pl-10 sm:pl-14 max-w-2xl">
+                    {item.paragraphs.map((p, j) => (
+                      <p key={j} className="text-sm text-muted-foreground leading-relaxed">
+                        {p}
+                      </p>
                     ))}
-                  </ul>
+                    {item.letters && item.letters.length > 0 && (
+                      <div className="flex flex-wrap gap-2 pt-2">
+                        {item.letters.map((l, k) => (
+                          <button
+                            key={k}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setLightbox(l);
+                            }}
+                            className="inline-flex items-center gap-2 px-3 py-1.5 border border-border hover:border-primary hover:text-primary text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground transition-colors"
+                          >
+                            <FileText size={12} />
+                            {item.letters!.length > 1 ? `Experience Letter ${k + 1}` : "Experience Letter"}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>
           </motion.div>
         ))}
       </div>
+
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setLightbox(null)}
+            className="fixed inset-0 z-50 bg-background/90 backdrop-blur-sm flex items-center justify-center p-4 sm:p-8 cursor-zoom-out"
+          >
+            <button
+              onClick={() => setLightbox(null)}
+              aria-label="Close"
+              className="absolute top-4 right-4 p-2 border border-border hover:border-primary hover:text-primary text-muted-foreground transition-colors"
+            >
+              <X size={18} />
+            </button>
+            <motion.img
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              src={lightbox.src}
+              alt={lightbox.alt}
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-full max-h-full object-contain shadow-2xl cursor-default bg-white"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };

@@ -28,7 +28,7 @@ const bannerText = bannerItems.join(" ✦ ") + " ✦";
 const socials = [
   { icon: Mail, href: "mailto:aishwaryasudhakar12@gmail.com", label: "Email" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/aishwaryasudhakar01", label: "LinkedIn" },
-  { icon: FileText, href: "https://drive.google.com/file/d/14JP3zhjgE3m1efNyM4QSnZxsk8juQ7dK/view?usp=sharing", label: "CV" },
+  { icon: FileText, href: "https://drive.google.com/file/d/1ZTpvaAMTMLcgLxbOJpg_qmURWEL68tfD/view?usp=sharing", label: "CV" },
   { icon: Github, href: "https://github.com/aishwaryaSudhakar01", label: "GitHub" },
   { customIcon: XIcon, href: "https://x.com/Aishwarya_2212", label: "X" },
   { customIcon: UpworkIcon, href: "https://www.upwork.com/freelancers/~01efc0a0f54607df98", label: "Upwork" },

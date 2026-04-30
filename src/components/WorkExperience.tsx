@@ -21,10 +21,10 @@ const workItems: WorkItem[] = [
     role: "Associate Operations Manager",
     period: "Oct 2024 – Apr 2026",
     paragraphs: [
-      "Worked across Uber's B2B commute product (ETS) and B2C shuttle network, in a role that sat between analytics and operations.",
-      "The analytics work was about figuring out where shuttles should run and how routes should be designed. For B2B clients, I'd take their employee commute data, tune the routing algorithm to fit their geography and shift patterns, and hand back a network that ran leaner than what they were already using. For B2C, the question was different: where in a city is there enough latent demand to put a shuttle line at all? I worked on that across India and Egypt by digging into pickup and drop-off patterns. I also benchmarked the different routing solvers Uber used across regions and turned that into a framework teams now use to pick the right one per engagement, instead of relying on whoever happened to be running the deal.",
-      "The tooling work came out of noticing that the slow part of the job was rarely the analysis. It was the manual coordination around it. So I built the things that took that friction out: an automated intake platform to replace a spreadsheet-based request process, a Lovable-built tool that pulled three separate hotspot sources into one place, and a QGIS plugin that gave regional planners a single visual interface to edit route data instead of jumping between tools.",
-      "Underneath all of it, I also designed the sales enablement process for ETS itself, replacing deal-by-deal improvisation with a structured flow that the team could actually run repeatably.",
+      "Worked across Uber's **B2B commute product (ETS)** and **B2C shuttle network**, in a role that sat between **analytics and operations**.",
+      "The analytics work was about figuring out where shuttles should run and how routes should be designed. For B2B clients, I'd take their employee commute data, **tune the routing algorithm** to fit their geography and shift patterns, and hand back a network that ran leaner than what they were already using. For B2C, the question was different: where in a city is there enough **latent demand** to put a shuttle line at all? I worked on that across **India and Egypt** by digging into pickup and drop-off patterns. I also **benchmarked the different routing solvers** Uber used across regions and turned that into a **framework teams now use to pick the right one per engagement**, instead of relying on whoever happened to be running the deal.",
+      "The tooling work came out of noticing that the slow part of the job was rarely the analysis. It was the manual coordination around it. So I built the things that took that friction out: an **automated intake platform** to replace a spreadsheet-based request process, a **Lovable-built tool that pulled three separate hotspot sources into one place**, and a **QGIS plugin** that gave regional planners a single visual interface to edit route data instead of jumping between tools.",
+      "Underneath all of it, I also designed the **sales enablement process for ETS** itself, replacing deal-by-deal improvisation with a **structured flow that the team could actually run repeatably**.",
     ],
   },
   {
@@ -33,8 +33,8 @@ const workItems: WorkItem[] = [
     role: "Data Science Associate Consultant",
     period: "Jan 2024 – Oct 2024",
     paragraphs: [
-      "Worked on a smart-city proof of concept for the Pune Municipal Corporation, using computer vision to detect civic incidents from street imagery and route each one to the right patrol unit.",
-      "My approach was to start with the detection model (trained on a large incident image dataset across fourteen categories), then make the system feel real to the client by wrapping it in a Streamlit prototype that took video input and walked through the full flow from detection to resolution. Alongside it, I designed a Power BI dashboard that gave municipal departments a real-time view of citizen grievances, replacing the manual Excel reporting they'd been relying on. The impact was less about scale (it stayed at POC) and more about showing what a production version of a system like this could look like.",
+      "Worked on a **smart-city proof of concept for the Pune Municipal Corporation**, using **computer vision** to detect civic incidents from street imagery and route each one to the right patrol unit.",
+      "My approach was to start with the **detection model** (trained on a large incident image dataset across **fourteen categories**), then make the system feel real to the client by wrapping it in a **Streamlit prototype** that took video input and walked through the full flow from detection to resolution. Alongside it, I designed a **Power BI dashboard** that gave municipal departments a **real-time view of citizen grievances**, replacing the manual Excel reporting they'd been relying on. The impact was less about scale (it stayed at POC) and more about showing what a production version of a system like this could look like.",
     ],
     letters: [
       { src: letterEy1, alt: "EY experience letter — Trainee" },
@@ -47,12 +47,25 @@ const workItems: WorkItem[] = [
     role: "Data Analyst Intern",
     period: "Jun 2023 – Nov 2023",
     paragraphs: [
-      "Convin builds conversation intelligence for sales teams, so most of my work meant sitting with call transcript data and pulling patterns out of it. For one client, I worked through their calls to surface the specific conversational phrases that tracked with higher conversion, which gave them something concrete to coach their sales team on instead of generic feedback.",
-      "The quieter half of the role was building the pipes. I automated the team's data preprocessing in SQL and Python, which turned an inconsistent manual process into something repeatable and gave the analysts back real time to do actual analysis.",
+      "Convin builds **conversation intelligence for sales teams**, so most of my work meant sitting with **call transcript data** and pulling patterns out of it. For one client, I worked through their calls to surface the **specific conversational phrases that tracked with higher conversion**, which gave them something concrete to coach their sales team on instead of generic feedback.",
+      "The quieter half of the role was building the pipes. I **automated the team's data preprocessing in SQL and Python**, which turned an inconsistent manual process into something repeatable and gave the analysts back real time to do actual analysis.",
     ],
     letters: [{ src: letterConvin, alt: "Convin experience letter" }],
   },
 ];
+
+const renderWithBold = (text: string) => {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) =>
+    part.startsWith("**") && part.endsWith("**") ? (
+      <strong key={i} className="font-semibold text-foreground">
+        {part.slice(2, -2)}
+      </strong>
+    ) : (
+      <span key={i}>{part}</span>
+    )
+  );
+};
 
 const WorkExperience = () => {
   const [expanded, setExpanded] = useState<string | null>(null);
@@ -130,7 +143,7 @@ const WorkExperience = () => {
                   <div className="space-y-3 pb-5 pl-10 sm:pl-14 max-w-2xl">
                     {item.paragraphs.map((p, j) => (
                       <p key={j} className="text-sm text-muted-foreground leading-relaxed">
-                        {p}
+                        {renderWithBold(p)}
                       </p>
                     ))}
                     {item.letters && item.letters.length > 0 && (

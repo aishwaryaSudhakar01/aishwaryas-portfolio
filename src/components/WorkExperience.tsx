@@ -143,7 +143,7 @@ const WorkExperience = () => {
                   <div className="space-y-3 pb-5 pl-10 sm:pl-14 max-w-2xl">
                     {item.paragraphs.map((p, j) => (
                       <p key={j} className="text-sm text-muted-foreground leading-relaxed">
-                        {p}
+                        {renderWithBold(p)}
                       </p>
                     ))}
                     {item.letters && item.letters.length > 0 && (

@@ -5,12 +5,17 @@ import letterConvin from "@/assets/letter-convin.png";
 import letterEy1 from "@/assets/letter-ey-1.png";
 import letterEy2 from "@/assets/letter-ey-2.png";
 
+interface Bullet {
+  title: string;
+  body: string;
+}
+
 interface WorkItem {
   company: string;
   companyUrl: string;
   role: string;
   period: string;
-  paragraphs: string[];
+  bullets: Bullet[];
   letters?: { src: string; alt: string }[];
 }
 
@@ -19,22 +24,44 @@ const workItems: WorkItem[] = [
     company: "Uber Technologies",
     companyUrl: "https://www.uber.com/us/en/about/",
     role: "Associate Operations Manager",
-    period: "Oct 2024 – Apr 2026",
-    paragraphs: [
-      "Worked across Uber's **B2B commute product (ETS)** and **B2C shuttle network**, in a role that sat between **analytics and operations**.",
-      "The analytics work was about figuring out where shuttles should run and how routes should be designed. For B2B clients, I'd take their employee commute data, **tune the routing algorithm** to fit their geography and shift patterns, and hand back a network that ran leaner than what they were already using. For B2C, the question was different: where in a city is there enough **latent demand** to put a shuttle line at all? I worked on that across **India and Egypt** by digging into pickup and drop-off patterns. I also **benchmarked the different routing solvers** Uber used across regions and turned that into a **framework teams now use to pick the right one per engagement**, instead of relying on whoever happened to be running the deal.",
-      "The tooling work came out of noticing that the slow part of the job was rarely the analysis. It was the manual coordination around it. So I built the things that took that friction out: an **automated intake platform** to replace a spreadsheet-based request process, a **Lovable-built tool that pulled three separate hotspot sources into one place**, and a **QGIS plugin** that gave regional planners a single visual interface to edit route data instead of jumping between tools.",
-      "Underneath all of it, I also designed the **sales enablement process for ETS** itself, replacing deal-by-deal improvisation with a **structured flow that the team could actually run repeatably**.",
+    period: "2024 – 2026",
+    bullets: [
+      {
+        title: "Sales enablement process for Uber ETS",
+        body: "Built the sales enablement process for Uber's **B2B commute product** from scratch: **success metrics, delivery timelines, deck format**. Cut turnaround from **5 days to 2.5**.",
+      },
+      {
+        title: "Pre-sales route optimization",
+        body: "Turned prospect commute data into operating route networks across **20+ enterprise engagements**. Plans ran on **~25% fewer trips per month** than what clients were operating.",
+      },
+      {
+        title: "Solver benchmarking framework",
+        body: "Replaced person-dependent solver picks with a **benchmarked evaluation framework** across **Brazil, US&C, and Egypt**. Now the basis for pre-sales analysis on **50+ enterprise accounts**.",
+      },
+      {
+        title: "Hotspot consolidation platform",
+        body: "Built a **Lovable platform** that pulls **Uber data, OpenStreetMap, and client rider locations** into one place. Data prep dropped from **24 hours to 3** per request. Feeds routing across **15+ city operations**.",
+      },
+      {
+        title: "Automated routing intake",
+        body: "Replaced a spreadsheet intake with an **automated platform** that handles **15 to 20 requests a month**. Saved the ops team about **5 hours a week**.",
+      },
+      {
+        title: "QGIS plugin for route editing",
+        body: "Built a **Python plugin** giving planners one interface to **edit and sync route data**. Adopted by **4 regional teams**, used on **10+ enterprise accounts**.",
+      },
     ],
   },
   {
     company: "Ernst & Young",
     companyUrl: "https://www.ey.com/en_in",
     role: "Data Science Associate Consultant",
-    period: "Jan 2024 – Oct 2024",
-    paragraphs: [
-      "Worked on a **smart-city proof of concept for the Pune Municipal Corporation**, using **computer vision** to detect civic incidents from street imagery and route each one to the right patrol unit.",
-      "My approach was to start with the **detection model** (trained on a large incident image dataset across **fourteen categories**), then make the system feel real to the client by wrapping it in a **Streamlit prototype** that took video input and walked through the full flow from detection to resolution. Alongside it, I designed a **Power BI dashboard** that gave municipal departments a **real-time view of citizen grievances**, replacing the manual Excel reporting they'd been relying on. The impact was less about scale (it stayed at POC) and more about showing what a production version of a system like this could look like.",
+    period: "2024",
+    bullets: [
+      {
+        title: "Computer vision for incident detection",
+        body: "Trained a **computer vision model** on **1M+ images across 14 incident categories** for **Pune Municipal Corporation's smart-city POC**. Reached **88% accuracy** and packaged it into a **Streamlit app** that routed detected incidents to the **nearest patrol vehicle and police station**.",
+      },
     ],
     letters: [
       { src: letterEy1, alt: "EY experience letter — Trainee" },
@@ -45,10 +72,12 @@ const workItems: WorkItem[] = [
     company: "Convin.ai",
     companyUrl: "https://convin.ai/",
     role: "Data Analyst Intern",
-    period: "Jun 2023 – Nov 2023",
-    paragraphs: [
-      "Convin builds **conversation intelligence for sales teams**, so most of my work meant sitting with **call transcript data** and pulling patterns out of it. For one client, I worked through their calls to surface the **specific conversational phrases that tracked with higher conversion**, which gave them something concrete to coach their sales team on instead of generic feedback.",
-      "The quieter half of the role was building the pipes. I **automated the team's data preprocessing in SQL and Python**, which turned an inconsistent manual process into something repeatable and gave the analysts back real time to do actual analysis.",
+    period: "2023",
+    bullets: [
+      {
+        title: "Conversational phrase analysis",
+        body: "Analyzed **call transcripts** to surface the phrases and patterns that aligned with a **2.6x conversion lift** for a Convin client.",
+      },
     ],
     letters: [{ src: letterConvin, alt: "Convin experience letter" }],
   },
@@ -140,12 +169,20 @@ const WorkExperience = () => {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <div className="space-y-3 pb-5 pl-10 sm:pl-14 max-w-2xl">
-                    {item.paragraphs.map((p, j) => (
-                      <p key={j} className="text-sm text-muted-foreground leading-relaxed">
-                        {renderWithBold(p)}
-                      </p>
-                    ))}
+                  <div className="space-y-4 pb-5 pl-10 sm:pl-14 max-w-2xl">
+                    <ul className="space-y-3">
+                      {item.bullets.map((b, j) => (
+                        <li key={j} className="text-sm text-muted-foreground leading-relaxed flex gap-3">
+                          <span className="text-primary mt-1.5 shrink-0">▸</span>
+                          <span>
+                            <span className="font-display font-bold text-foreground block mb-0.5">
+                              {b.title}
+                            </span>
+                            {renderWithBold(b.body)}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                     {item.letters && item.letters.length > 0 && (
                       <div className="flex flex-wrap gap-3 pt-3">
                         {item.letters.map((l, k) => (

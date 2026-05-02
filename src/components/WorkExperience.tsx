@@ -48,7 +48,7 @@ const workItems: WorkItem[] = [
       },
       {
         title: "QGIS plugin for route editing",
-        body: "Built a **Python plugin** giving planners one interface to **edit and sync route data**. Adopted by **4 regional teams**, used on **10+ enterprise accounts**.",
+        body: "Built a **Python plugin** giving planners one interface to edit and sync route data. Adopted by **4 regional teams**, used on **10+ enterprise accounts**.",
       },
     ],
   },
@@ -60,7 +60,7 @@ const workItems: WorkItem[] = [
     bullets: [
       {
         title: "Computer vision for incident detection",
-        body: "Trained a **computer vision model** on **1M+ images across 14 incident categories** for **Pune Municipal Corporation's smart-city POC**. Reached **88% accuracy** and packaged it into a **Streamlit app** that routed detected incidents to the **nearest patrol vehicle and police station**.",
+        body: "Trained a **computer vision model** on **1M+ images across 14 incident categories** for **Pune Municipal Corporation's smart-city POC**. Reached **88% accuracy** and packaged it into a **Streamlit app** that routed detected incidents to the nearest patrol vehicle and police station.",
       },
     ],
     letters: [
@@ -76,7 +76,7 @@ const workItems: WorkItem[] = [
     bullets: [
       {
         title: "Conversational phrase analysis",
-        body: "Analyzed **call transcripts** to surface the phrases and patterns that aligned with a **2.6x conversion lift** for a Convin client.",
+        body: "Analyzed call transcripts to surface the phrases and patterns that aligned with a **2.6x conversion lift** for a Convin client.",
       },
     ],
     letters: [{ src: letterConvin, alt: "Convin experience letter" }],

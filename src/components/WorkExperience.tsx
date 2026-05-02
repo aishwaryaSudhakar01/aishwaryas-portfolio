@@ -28,27 +28,27 @@ const workItems: WorkItem[] = [
     bullets: [
       {
         title: "Sales enablement process for Uber ETS",
-        body: "Built the sales enablement process for Uber's **B2B commute product** from scratch: **success metrics, delivery timelines, deck format**. Cut turnaround from **5 days to 2.5**.",
+        body: "Built the sales enablement process for Uber's B2B commute product from scratch: success metrics, delivery timelines, deck format. Cut turnaround from 5 days to 2.5.",
       },
       {
         title: "Pre-sales route optimization",
-        body: "Turned prospect commute data into operating route networks across **20+ enterprise engagements**. Plans ran on **~25% fewer trips per month** than what clients were operating.",
+        body: "Turned prospect commute data into operating route networks across 20+ enterprise engagements. Plans ran on ~25% fewer trips per month than what clients were operating.",
       },
       {
         title: "Solver benchmarking framework",
-        body: "Replaced person-dependent solver picks with a **benchmarked evaluation framework** across **Brazil, US&C, and Egypt**. Now the basis for pre-sales analysis on **50+ enterprise accounts**.",
+        body: "Replaced person-dependent solver picks with a benchmarked evaluation framework across Brazil, US&C, and Egypt. Now the basis for pre-sales analysis on 50+ enterprise accounts.",
       },
       {
         title: "Hotspot consolidation platform",
-        body: "Built a **Lovable platform** that pulls **Uber data, OpenStreetMap, and client rider locations** into one place. Data prep dropped from **24 hours to 3** per request. Feeds routing across **15+ city operations**.",
+        body: "Built a Lovable platform that pulls Uber data, OpenStreetMap, and client rider locations into one place. Data prep dropped from 24 hours to 3 per request. Feeds routing across 15+ city operations.",
       },
       {
         title: "Automated routing intake",
-        body: "Replaced a spreadsheet intake with an **automated platform** that handles **15 to 20 requests a month**. Saved the ops team about **5 hours a week**.",
+        body: "Replaced a spreadsheet intake with an automated platform that handles 15 to 20 requests a month. Saved the ops team about 5 hours a week.",
       },
       {
         title: "QGIS plugin for route editing",
-        body: "Built a **Python plugin** giving planners one interface to edit and sync route data. Adopted by **4 regional teams**, used on **10+ enterprise accounts**.",
+        body: "Built a Python plugin giving planners one interface to edit and sync route data. Adopted by 4 regional teams, used on 10+ enterprise accounts.",
       },
     ],
   },
@@ -60,7 +60,7 @@ const workItems: WorkItem[] = [
     bullets: [
       {
         title: "Computer vision for incident detection",
-        body: "Trained a **computer vision model** on **1M+ images across 14 incident categories** for **Pune Municipal Corporation's smart-city POC**. Reached **88% accuracy** and packaged it into a **Streamlit app** that routed detected incidents to the nearest patrol vehicle and police station.",
+        body: "Trained a computer vision model on 1M+ images across 14 incident categories for Pune Municipal Corporation's smart-city POC. Reached 88% accuracy and packaged it into a Streamlit app that routed detected incidents to the nearest patrol vehicle and police station.",
       },
     ],
     letters: [
@@ -76,7 +76,7 @@ const workItems: WorkItem[] = [
     bullets: [
       {
         title: "Conversational phrase analysis",
-        body: "Analyzed call transcripts to surface the phrases and patterns that aligned with a **2.6x conversion lift** for a Convin client.",
+        body: "Analyzed call transcripts to surface the phrases and patterns that aligned with a 2.6x conversion lift for a Convin client.",
       },
     ],
     letters: [{ src: letterConvin, alt: "Convin experience letter" }],

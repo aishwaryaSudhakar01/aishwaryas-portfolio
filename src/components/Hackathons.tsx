@@ -47,7 +47,7 @@ const Hackathons = () => (
       </h2>
     </div>
 
-    <div>
+    <div className="space-y-4">
       {hackathons.map((h, i) => (
         <motion.div
           key={h.name}

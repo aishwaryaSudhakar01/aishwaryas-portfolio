@@ -11,38 +11,32 @@ const Skills = () => (
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ delay: 0.8 }}
-    className="mt-24 sm:mt-32"
+    className="mt-20 sm:mt-28"
   >
-    <div className="flex items-center justify-between mb-8">
-      <div>
-        <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-2">
-          Expertise
-        </p>
-        <h2 className="text-3xl sm:text-4xl font-display font-black">
-          Skills
-        </h2>
-      </div>
-      <div className="editorial-line hidden sm:block" />
+    <div className="text-center mb-10">
+      <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3 font-medium">
+        Expertise
+      </p>
+      <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+        Skills
+      </h2>
     </div>
 
-    <div className="border-t border-border">
+    <div className="grid sm:grid-cols-3 gap-4">
       {skillCategories.map((cat, i) => (
         <motion.div
           key={cat.label}
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.9 + i * 0.1, duration: 0.5 }}
-          className="group flex flex-col sm:flex-row sm:items-center py-4 border-b border-border hover:border-primary transition-colors duration-300 cursor-default gap-1 sm:gap-4"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9 + i * 0.08, duration: 0.4 }}
+          className="rounded-2xl border border-border p-5 hover:border-primary/40 hover:shadow-sm transition-all"
         >
-          <span className="font-mono text-xs text-muted-foreground shrink-0 mr-4 hidden sm:inline">
-            {String(i + 1).padStart(2, "0")}
-          </span>
-          <span className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 shrink-0">
+          <p className="text-xs uppercase tracking-[0.15em] text-primary font-medium mb-3">
             {cat.label}
-          </span>
-          <span className="font-mono text-xs text-muted-foreground">
+          </p>
+          <p className="text-sm text-muted-foreground leading-relaxed">
             {cat.items}
-          </span>
+          </p>
         </motion.div>
       ))}
     </div>

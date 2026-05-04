@@ -15,15 +15,15 @@ const SocialIcon = ({ icon: Icon, customIcon: CustomIcon, href, label, delay = 0
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    initial={{ opacity: 0, y: 20 }}
+    initial={{ opacity: 0, y: 10 }}
     animate={{ opacity: 1, y: 0 }}
-    transition={{ delay, duration: 0.5 }}
-    className="group flex items-center gap-2 px-4 py-2 border border-border hover:border-primary hover:bg-primary/5 transition-all duration-300 font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-primary"
+    transition={{ delay, duration: 0.4 }}
+    className="group inline-flex items-center justify-center w-9 h-9 rounded-full border border-border text-muted-foreground hover:border-primary hover:text-primary hover:bg-primary/5 transition-all"
     aria-label={label}
+    title={label}
   >
-    {Icon && <Icon size={14} />}
-    {CustomIcon && <CustomIcon size={14} />}
-    <span>{label}</span>
+    {Icon && <Icon size={15} />}
+    {CustomIcon && <CustomIcon size={15} />}
   </motion.a>
 );
 

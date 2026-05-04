@@ -105,18 +105,15 @@ const WorkExperience = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.6 }}
-      className="mt-24 sm:mt-32"
+      className="mt-20 sm:mt-28"
     >
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-2">
-            Career
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-display font-black">
-            Work Experience
-          </h2>
-        </div>
-        <div className="editorial-line hidden sm:block" />
+      <div className="text-center mb-10">
+        <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3 font-medium">
+          Career
+        </p>
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+          Work Experience
+        </h2>
       </div>
 
       <div className="border-t border-border">
@@ -134,27 +131,22 @@ const WorkExperience = () => {
               }
               className="group w-full flex flex-col sm:flex-row sm:items-center justify-between py-5 text-left cursor-pointer"
             >
-              <div className="flex items-center gap-4">
-                <span className="font-mono text-xs text-muted-foreground">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <a
-                    href={item.companyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 hover-editorial hover:underline underline-offset-4"
-                  >
-                    {item.company}
-                  </a>
-                  <p className="text-sm text-muted-foreground mt-0.5">
-                    {item.role}
-                  </p>
-                </div>
+              <div>
+                <a
+                  href={item.companyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="font-semibold text-base text-foreground group-hover:text-primary transition-colors hover:underline underline-offset-4"
+                >
+                  {item.company}
+                </a>
+                <p className="text-sm text-muted-foreground mt-0.5">
+                  {item.role}
+                </p>
               </div>
-              <div className="flex items-center gap-3 mt-2 sm:mt-0 ml-10 sm:ml-0">
-                <span className="font-mono text-xs text-muted-foreground">
+              <div className="flex items-center gap-3 mt-2 sm:mt-0">
+                <span className="text-xs text-muted-foreground">
                   {item.period}
                 </span>
               </div>
@@ -169,13 +161,13 @@ const WorkExperience = () => {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <div className="space-y-4 pb-5 pl-10 sm:pl-14 max-w-2xl">
-                    <ul className="space-y-3">
+                  <div className="space-y-4 pb-6 max-w-2xl">
+                    <ul className="space-y-4">
                       {item.bullets.map((b, j) => (
                         <li key={j} className="text-sm text-muted-foreground leading-relaxed flex gap-3">
                           <span className="text-primary mt-1.5 shrink-0">▸</span>
                           <span>
-                            <span className="font-display font-bold text-foreground block mb-0.5">
+                            <span className="font-semibold text-foreground block mb-0.5">
                               {b.title}
                             </span>
                             {renderWithBold(b.body)}

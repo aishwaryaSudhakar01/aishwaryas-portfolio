@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, FileText } from "lucide-react";
 import GrainOverlay from "@/components/ParticleField";
 import SocialIcon from "@/components/SocialIcon";
-import StatsCounter from "@/components/StatsCounter";
 import WorkExperience from "@/components/WorkExperience";
 import Skills from "@/components/Skills";
 import Certifications from "@/components/Certifications";
@@ -15,15 +14,8 @@ import LovableIcon from "@/components/icons/LovableIcon";
 import profilePhoto from "@/assets/profile-photo.png";
 
 const currentYear = new Date().getFullYear();
-const startDate = new Date(2023, 5); // Jun 2023
-const yearsExp = Math.floor((Date.now() - startDate.getTime()) / (365.25 * 24 * 60 * 60 * 1000) * 2) / 2; // floor to nearest 0.5
-
-const bannerItems = [
-  "Biz Ops", "Analytics", "Data-Driven Decision Making", "Strategic Planning",
-  "Process Optimization", "AI-Augmented Workflows", "SQL · Python · Power BI",
-  "Claude · Lovable · Cursor · ElevenLabs"
-];
-const bannerText = bannerItems.join(" ✦ ") + " ✦";
+const startDate = new Date(2023, 5);
+const yearsExp = Math.floor((Date.now() - startDate.getTime()) / (365.25 * 24 * 60 * 60 * 1000) * 2) / 2;
 
 const socials = [
   { icon: Mail, href: "mailto:aishwaryasudhakar12@gmail.com", label: "Email" },
@@ -32,174 +24,144 @@ const socials = [
   { icon: Github, href: "https://github.com/aishwaryaSudhakar01", label: "GitHub" },
   { customIcon: XIcon, href: "https://x.com/Aishwarya_2212", label: "X" },
   { customIcon: UpworkIcon, href: "https://www.upwork.com/freelancers/~01efc0a0f54607df98", label: "Upwork" },
-  { customIcon: GumroadIcon, href: "https://aishwarya2212.gumroad.com/?_gl=1*clejb1*_ga*MTUxMzMxMTg3Ni4xNzcyOTg1MTEy*_ga_6LJN6D94N6*czE3NzQwODU3NjMkbzckZzEkdDE3NzQwODU3NzYkajQ3JGwwJGgw", label: "Gumroad" },
+  { customIcon: GumroadIcon, href: "https://aishwarya2212.gumroad.com/", label: "Gumroad" },
   { customIcon: LovableIcon, href: "https://lovable.dev/@aishwarya_2212", label: "Lovable" },
+];
+
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
 ];
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen bg-background">
       <GrainOverlay />
 
-      {/* Marquee ticker */}
-      <div className="fixed top-0 left-0 right-0 z-20 border-b border-border bg-background/80 backdrop-blur-sm py-2 overflow-hidden">
-        <div className="flex animate-marquee whitespace-nowrap">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <span key={i} className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mx-8">
-              {bannerText}
-            </span>
-          ))}
+      {/* Top nav */}
+      <header className="sticky top-0 z-30 bg-background/80 backdrop-blur-md border-b border-border/60">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 h-16 flex items-center justify-between">
+          <a href="#" className="flex items-center gap-2">
+            <img src={profilePhoto} alt="" className="w-8 h-8 rounded-full object-cover ring-2 ring-primary/30" />
+            <span className="font-semibold text-sm">Aishwarya</span>
+          </a>
+          <nav className="hidden sm:flex items-center gap-7">
+            {navLinks.map((l) => (
+              <a
+                key={l.label}
+                href={l.href}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
         </div>
-      </div>
+      </header>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-12 pt-20 pb-16">
-        {/* Header section — asymmetric grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pt-8 sm:pt-16">
-          
-          {/* Left column — oversized typography */}
-          <div className="lg:col-span-7 order-2 lg:order-1">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4">
-                Portfolio / {currentYear}
-              </p>
-              <div className="editorial-line mb-8" />
-            </motion.div>
-
-            <div className="overflow-hidden">
-              <motion.h1
-                initial={{ y: "100%", rotateX: 90 }}
-                animate={{ y: 0, rotateX: 0 }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-                className="text-5xl sm:text-7xl lg:text-8xl font-display font-black leading-[0.9] tracking-tight mb-2"
-              >
-                AISHWARYA
-              </motion.h1>
+      <main className="max-w-3xl mx-auto px-6 sm:px-8 pt-16 sm:pt-24 pb-20">
+        {/* Hero — centered */}
+        <section id="about" className="text-center flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="relative mb-8"
+          >
+            <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden ring-4 ring-primary/10 shadow-lg">
+              <img src={profilePhoto} alt="Aishwarya Sudhakar" className="w-full h-full object-cover" />
             </div>
-            <motion.p
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="font-mono text-xs tracking-[0.2em] text-muted-foreground mb-4 origin-left"
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-muted text-xs text-muted-foreground mb-6"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            Open to opportunities · {yearsExp}+ years experience
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05]"
+          >
+            Hi, I'm Aishwarya.
+            <br />
+            <span className="text-gradient">I sit between data &amp; ops.</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="mt-6 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed"
+          >
+            I pick up tools fast and build things that work. At Uber, I worked on getting people to work — city-scale shuttle networks for large corporations, sitting between product and sales.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="mt-3 text-sm text-muted-foreground/80 max-w-xl leading-relaxed"
+          >
+            I define the framework, set the metrics, and figure out what needs to be in place before anyone else notices the gap.
+          </motion.p>
+
+          {/* CTA buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="mt-8 flex flex-wrap justify-center gap-3"
+          >
+            <a
+              href="mailto:aishwaryasudhakar12@gmail.com"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
             >
-              (eye-SHWAR-yah)
-            </motion.p>
-            <div className="overflow-hidden">
-              <motion.h1
-                initial={{ y: "100%", rotateX: 90 }}
-                animate={{ y: 0, rotateX: 0 }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-                className="text-5xl sm:text-7xl lg:text-8xl font-display font-black italic leading-[0.9] tracking-tight text-gradient"
-              >
-                Sudhakar
-              </motion.h1>
-            </div>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-              className="mt-8 text-secondary-foreground leading-relaxed max-w-lg text-base sm:text-lg"
+              <Mail size={15} />
+              Get in touch
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1ZTpvaAMTMLcgLxbOJpg_qmURWEL68tfD/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border bg-background text-sm font-medium hover:border-primary hover:text-primary transition-colors"
             >
-              I pick up tools fast and build things that work. With{" "}
-              <span className="text-primary font-semibold">{yearsExp}+ years</span> of
-              experience sitting between data and operations.
-            </motion.p>
+              <FileText size={15} />
+              View CV
+            </a>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
-              className="mt-4 text-muted-foreground leading-relaxed max-w-lg text-sm space-y-3"
-            >
-              <p>
-                At Uber, I worked on getting people to work — literally. Think city-scale shuttle networks for large corporations. I sat between product and sales, understanding the product deeply enough to configure it for each client, and each client deeply enough to know a good solution from a good-looking one.
-              </p>
-              <p>
-                I sit between data and operations, which makes me useful in roles that don't fit a clean job description. I define the framework, set the metrics, and figure out what needs to be in place before anyone else notices the gap.
-              </p>
-            </motion.div>
+          {/* Socials */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7 }}
+            className="mt-6 flex flex-wrap justify-center gap-2"
+          >
+            {socials.map((s, i) => (
+              <SocialIcon key={s.label} {...s} delay={0.7 + i * 0.05} />
+            ))}
+          </motion.div>
+        </section>
 
-            {/* Social links */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
-              className="flex flex-wrap gap-2 mt-8"
-            >
-              {socials.map((s, i) => (
-                <SocialIcon key={s.label} {...s} delay={1 + i * 0.08} />
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Right column — photo + stats */}
-          <div className="lg:col-span-5 order-1 lg:order-2">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative"
-            >
-              {/* Photo with soft vignette mask */}
-              <div className="relative aspect-[3/4] max-w-sm mx-auto lg:ml-auto overflow-hidden">
-                <motion.img
-                  src={profilePhoto}
-                  alt="Aishwarya Sudhakar"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                  style={{
-                    maskImage: "radial-gradient(ellipse 70% 65% at 50% 40%, black 50%, transparent 100%)",
-                    WebkitMaskImage: "radial-gradient(ellipse 70% 65% at 50% 40%, black 50%, transparent 100%)",
-                  }}
-                  initial={{ scale: 1.2 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 1.5, ease: "easeOut" }}
-                />
-              </div>
-
-              {/* Hero stat + tagline */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 }}
-                className="mt-8 max-w-sm mx-auto lg:ml-auto text-center"
-              >
-                <StatsCounter value={yearsExp} suffix="+" label="Years of Experience" delay={0.8} />
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Work Experience */}
-        <WorkExperience />
-
-        {/* Skills & Projects */}
-        <Skills />
-
-        {/* Certifications */}
+        <div id="experience"><WorkExperience /></div>
+        <div id="skills"><Skills /></div>
+        <div id="projects"><Hackathons /></div>
         <Certifications />
 
-        {/* Hackathons */}
-        <Hackathons />
-
-        {/* Footer */}
-        <motion.footer
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.5 }}
-          transition={{ delay: 1.5 }}
-          className="mt-24 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4"
-        >
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-            © {currentYear} Aishwarya Sudhakar
-          </p>
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-            Built with passion & data ✦
-          </p>
-        </motion.footer>
-      </div>
+        <footer className="mt-24 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-muted-foreground">
+          <p>© {currentYear} Aishwarya Sudhakar</p>
+          <p>Built with care</p>
+        </footer>
+      </main>
     </div>
   );
 };

@@ -36,52 +36,58 @@ const Hackathons = () => (
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ delay: 1.0 }}
-    className="mt-20 sm:mt-28"
+    className="mt-24 sm:mt-32"
   >
-    <div className="text-center mb-10">
-      <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3 font-medium">
-        Projects
-      </p>
-      <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
-        Hackathons
-      </h2>
+    <div className="flex items-center justify-between mb-8">
+      <div>
+        <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-2">
+          Competitions
+        </p>
+        <h2 className="text-3xl sm:text-4xl font-display font-black">
+          Hackathons
+        </h2>
+      </div>
+      <div className="editorial-line hidden sm:block" />
     </div>
 
-    <div className="space-y-4">
+    <div className="border-t border-border">
       {hackathons.map((h, i) => (
         <motion.div
           key={h.name}
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1.1 + i * 0.1, duration: 0.5 }}
-          className="rounded-2xl border border-border p-5 hover:border-primary/40 hover:shadow-sm transition-all"
+          className="border-b border-border"
         >
           <Accordion type="single" collapsible>
             <AccordionItem value={h.name} className="border-b-0">
-              <AccordionTrigger className="py-1 hover:no-underline group">
-                <div className="flex items-center gap-3">
+              <AccordionTrigger className="py-4 hover:no-underline group">
+                <div className="flex items-center gap-4">
+                  <span className="font-mono text-xs text-muted-foreground">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <a
                     href={h.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-base text-foreground group-hover:text-primary transition-colors hover:underline"
+                    className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 hover:underline"
                     onClick={(e) => e.stopPropagation()}
                   >
                     {h.name}
                   </a>
-                  <span className="text-xs text-muted-foreground hidden sm:inline">
+                  <span className="font-mono text-xs text-muted-foreground hidden sm:inline">
                     {h.description}
                   </span>
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                <div className="space-y-6 pt-2">
+                <div className="space-y-6 pl-8 sm:pl-12 pb-2">
                   {h.hacks.map((hack) => (
                     <div key={hack.name} className="space-y-2">
-                      <p className="text-[10px] uppercase tracking-[0.15em] text-primary font-medium">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary">
                         {hack.tag}
                       </p>
-                      <h3 className="text-base font-semibold text-foreground">
+                      <h3 className="font-display text-base sm:text-lg font-bold text-foreground">
                         {hack.name}
                       </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
@@ -91,7 +97,7 @@ const Hackathons = () => (
                         href={hack.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs text-primary hover:underline mt-1"
+                        className="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:underline mt-1"
                       >
                         <Github className="w-3.5 h-3.5" />
                         GitHub

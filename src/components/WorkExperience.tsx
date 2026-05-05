@@ -4,6 +4,7 @@ import { FileText, X } from "lucide-react";
 import letterConvin from "@/assets/letter-convin.png";
 import letterEy1 from "@/assets/letter-ey-1.png";
 import letterEy2 from "@/assets/letter-ey-2.png";
+import letterUber from "@/assets/letter-uber.png";
 
 interface Bullet {
   title: string;

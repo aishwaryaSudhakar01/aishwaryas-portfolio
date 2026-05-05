@@ -52,6 +52,7 @@ const workItems: WorkItem[] = [
         body: "Built a Python plugin giving planners one interface to edit and sync route data. Adopted by 4 regional teams, used on 10+ enterprise accounts.",
       },
     ],
+    letters: [{ src: letterUber, alt: "Uber experience letter" }],
   },
   {
     company: "Ernst & Young",

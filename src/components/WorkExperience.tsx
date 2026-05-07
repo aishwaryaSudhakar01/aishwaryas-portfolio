@@ -24,7 +24,7 @@ const workItems: WorkItem[] = [
   {
     company: "Uber Technologies",
     companyUrl: "https://www.uber.com/us/en/about/",
-    role: "Associate Operations Manager",
+    role: "Operations Associate",
     period: "2024 – 2026",
     bullets: [
       {

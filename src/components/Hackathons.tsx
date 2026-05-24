@@ -29,6 +29,20 @@ const hackathons = [
       },
     ],
   },
+  {
+    name: "Lovable May Sweepstake",
+    description: "Lovable",
+    url: "https://pdf-edits.lovable.app",
+    hacks: [
+      {
+        tag: "May 2025",
+        name: "PDF Edits",
+        description:
+          "A web-based PDF editing tool built for the Lovable May Sweepstake. Upload, annotate, and modify PDFs directly in the browser with a clean, responsive interface.",
+        github: "https://github.com/aishwaryaSudhakar01/pdf-edits",
+      },
+    ],
+  },
 ];
 
 const Hackathons = () => (

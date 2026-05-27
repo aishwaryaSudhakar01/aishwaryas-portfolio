@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { FileText, X } from "lucide-react";
+import { FileText, X, ChevronDown } from "lucide-react";
 import letterConvin from "@/assets/letter-convin.png";
 import letterEy1 from "@/assets/letter-ey-1.png";
 import letterEy2 from "@/assets/letter-ey-2.png";

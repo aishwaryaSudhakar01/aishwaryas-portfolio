@@ -16,6 +16,7 @@ interface WorkItem {
   companyUrl: string;
   role: string;
   period: string;
+  description?: string;
   bullets: Bullet[];
   letters?: { src: string; alt: string }[];
 }

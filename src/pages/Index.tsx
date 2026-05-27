@@ -104,9 +104,7 @@ const Index = () => {
               transition={{ delay: 0.8 }}
               className="mt-8 text-secondary-foreground leading-relaxed max-w-lg text-base sm:text-lg"
             >
-              I pick up tools fast and build things that work. With{" "}
-              <span className="text-primary font-semibold">{yearsExp}+ years</span> of
-              experience sitting between data and operations.
+              I pick up tools fast and build things that work.
             </motion.p>
 
             <motion.div
@@ -116,10 +114,10 @@ const Index = () => {
               className="mt-4 text-muted-foreground leading-relaxed max-w-lg text-sm space-y-3"
             >
               <p>
-                At Uber, I worked on getting people to work — literally. Think city-scale shuttle networks for large corporations. I sat between product and sales, understanding the product deeply enough to configure it for each client, and each client deeply enough to know a good solution from a good-looking one.
+                I sit between data and operations, which makes me useful in roles that don't fit a clean job description. I define the framework, set the metrics, and figure out what needs to be in place before anyone else notices the gap.
               </p>
               <p>
-                I sit between data and operations, which makes me useful in roles that don't fit a clean job description. I define the framework, set the metrics, and figure out what needs to be in place before anyone else notices the gap.
+                UCLA MSBA'26 candidate
               </p>
             </motion.div>
 

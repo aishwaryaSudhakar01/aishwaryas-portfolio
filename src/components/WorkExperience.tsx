@@ -26,6 +26,7 @@ const workItems: WorkItem[] = [
     companyUrl: "https://www.uber.com/us/en/about/",
     role: "Operations Associate",
     period: "2024 – 2026",
+    description: "At Uber, I worked on getting people to work — literally. Think city-scale shuttle networks for large corporations. I sat between product and sales, understanding the product deeply enough to configure it for each client, and each client deeply enough to know a good solution from a good-looking one.",
     bullets: [
       {
         title: "Sales enablement process for Uber ETS",

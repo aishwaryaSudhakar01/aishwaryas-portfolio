@@ -16,6 +16,7 @@ interface WorkItem {
   companyUrl: string;
   role: string;
   period: string;
+  description?: string;
   bullets: Bullet[];
   letters?: { src: string; alt: string }[];
 }
@@ -26,6 +27,7 @@ const workItems: WorkItem[] = [
     companyUrl: "https://www.uber.com/us/en/about/",
     role: "Operations Associate",
     period: "2024 – 2026",
+    description: "At Uber, I worked on getting people to work — literally. Think city-scale shuttle networks for large corporations. I sat between product and sales, understanding the product deeply enough to configure it for each client, and each client deeply enough to know a good solution from a good-looking one.",
     bullets: [
       {
         title: "Sales enablement process for Uber ETS",
@@ -178,6 +180,11 @@ const WorkExperience = () => {
                   className="overflow-hidden"
                 >
                   <div className="space-y-4 pt-2 pb-2 max-w-2xl">
+                    {item.description && (
+                      <p className="text-sm text-muted-foreground leading-relaxed italic border-l-2 border-primary/30 pl-4">
+                        {item.description}
+                      </p>
+                    )}
                     <ul className="space-y-3">
                       {item.bullets.map((b, j) => (
                         <li key={j} className="text-sm text-muted-foreground leading-relaxed flex gap-3">

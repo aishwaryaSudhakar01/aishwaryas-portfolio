@@ -121,49 +121,55 @@ const WorkExperience = () => {
         <div className="editorial-line hidden sm:block" />
       </div>
 
-      <div className="border-t border-border">
-        {workItems.map((item, i) => (
+      <div className="relative pl-8 sm:pl-10">
+        {/* Vertical timeline line */}
+        <div className="absolute left-2 sm:left-3 top-2 bottom-2 w-px bg-border" aria-hidden="true" />
+
+        {workItems.map((item, i) => {
+          const isOpen = expanded === item.company;
+          return (
           <motion.div
             key={item.company}
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.7 + i * 0.1, duration: 0.5 }}
-            className="border-b border-border hover:border-primary transition-colors duration-300"
+            className="relative pb-8 last:pb-0"
           >
+            {/* Timeline dot */}
+            <span
+              className={`absolute -left-[26px] sm:-left-[32px] top-6 h-3 w-3 rounded-full border-2 transition-colors duration-300 ${
+                isOpen ? "bg-primary border-primary" : "bg-background border-border"
+              }`}
+              aria-hidden="true"
+            />
+
             <button
               onClick={() =>
                 setExpanded(expanded === item.company ? null : item.company)
               }
-              className="group w-full flex flex-col sm:flex-row sm:items-center justify-between py-5 text-left cursor-pointer"
+              className="group w-full flex flex-col sm:flex-row sm:items-center justify-between py-3 text-left cursor-pointer"
             >
-              <div className="flex items-center gap-4">
-                <span className="font-mono text-xs text-muted-foreground">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <a
-                    href={item.companyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 hover-editorial hover:underline underline-offset-4"
-                  >
-                    {item.company}
-                  </a>
-                  <p className="text-sm text-muted-foreground mt-0.5">
-                    {item.role}
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 mt-2 sm:mt-0 ml-10 sm:ml-0">
-                <span className="font-mono text-xs text-muted-foreground">
+              <div>
+                <span className="font-mono text-xs text-muted-foreground block mb-1">
                   {item.period}
                 </span>
+                <a
+                  href={item.companyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 hover-editorial hover:underline underline-offset-4"
+                >
+                  {item.company}
+                </a>
+                <p className="text-sm text-muted-foreground mt-0.5">
+                  {item.role}
+                </p>
               </div>
             </button>
 
             <AnimatePresence>
-              {expanded === item.company && (
+              {isOpen && (
                 <motion.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
@@ -171,7 +177,7 @@ const WorkExperience = () => {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <div className="space-y-4 pb-5 pl-10 sm:pl-14 max-w-2xl">
+                  <div className="space-y-4 pt-2 pb-2 max-w-2xl">
                     <ul className="space-y-3">
                       {item.bullets.map((b, j) => (
                         <li key={j} className="text-sm text-muted-foreground leading-relaxed flex gap-3">

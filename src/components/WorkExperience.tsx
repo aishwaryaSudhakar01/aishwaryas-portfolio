@@ -217,7 +217,8 @@ const WorkExperience = () => {
               )}
             </AnimatePresence>
           </motion.div>
-        ))}
+          );
+        })}
       </div>
 
       <AnimatePresence>

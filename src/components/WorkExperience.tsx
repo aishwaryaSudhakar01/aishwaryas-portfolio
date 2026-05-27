@@ -123,36 +123,61 @@ const WorkExperience = () => {
         <div className="editorial-line hidden sm:block" />
       </div>
 
-      <div className="relative pl-8 sm:pl-10">
-        {/* Vertical timeline line */}
-        <div className="absolute left-2 sm:left-3 top-2 bottom-2 w-px bg-border" aria-hidden="true" />
+      <div className="relative pl-12 sm:pl-16">
+        {/* Vertical timeline line — gradient, fades at top and bottom */}
+        <div
+          className="absolute left-4 sm:left-6 top-4 bottom-4 w-[2px] bg-gradient-to-b from-transparent via-primary/40 to-transparent"
+          aria-hidden="true"
+        />
 
         {workItems.map((item, i) => {
           const isOpen = expanded === item.company;
+          const idx = String(i + 1).padStart(2, "0");
           return (
           <motion.div
             key={item.company}
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.7 + i * 0.1, duration: 0.5 }}
-            className="relative pb-8 last:pb-0"
+            className="relative pb-10 last:pb-0"
           >
-            {/* Timeline dot */}
-            <span
-              className={`absolute -left-[26px] sm:-left-[32px] top-6 h-3 w-3 rounded-full border-2 transition-colors duration-300 ${
-                isOpen ? "bg-primary border-primary" : "bg-background border-border"
-              }`}
+            {/* Timeline marker — numbered circle with pulsing ring when open */}
+            <div
+              className="absolute -left-12 sm:-left-16 top-3 flex items-center justify-center"
               aria-hidden="true"
-            />
+            >
+              {isOpen && (
+                <motion.span
+                  initial={{ scale: 0.6, opacity: 0 }}
+                  animate={{ scale: [1, 1.6, 1], opacity: [0.5, 0, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary/30"
+                />
+              )}
+              <motion.span
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                className={`relative h-8 w-8 sm:h-9 sm:w-9 rounded-full border-2 flex items-center justify-center font-mono text-[10px] sm:text-xs transition-all duration-300 ${
+                  isOpen
+                    ? "bg-primary border-primary text-primary-foreground shadow-lg shadow-primary/40"
+                    : "bg-background border-border text-muted-foreground"
+                }`}
+              >
+                {idx}
+              </motion.span>
+            </div>
 
             <button
               onClick={() =>
                 setExpanded(expanded === item.company ? null : item.company)
               }
-              className="group w-full flex flex-col sm:flex-row sm:items-center justify-between py-3 text-left cursor-pointer"
+              className={`group w-full flex items-start justify-between gap-4 py-3 px-4 sm:px-5 text-left cursor-pointer rounded-xl border transition-all duration-300 ${
+                isOpen
+                  ? "border-primary/40 bg-primary/[0.03] shadow-sm"
+                  : "border-transparent hover:border-border hover:bg-card/40"
+              }`}
             >
-              <div>
-                <span className="font-mono text-xs text-muted-foreground block mb-1">
+              <div className="flex-1 min-w-0">
+                <span className="inline-block font-mono text-[10px] sm:text-xs tracking-[0.15em] text-primary uppercase mb-1.5 px-2 py-0.5 rounded-full border border-primary/30 bg-primary/5">
                   {item.period}
                 </span>
                 <a
@@ -160,7 +185,7 @@ const WorkExperience = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 hover-editorial hover:underline underline-offset-4"
+                  className="block font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 hover-editorial hover:underline underline-offset-4"
                 >
                   {item.company}
                 </a>
@@ -168,7 +193,13 @@ const WorkExperience = () => {
                   {item.role}
                 </p>
               </div>
+              <ChevronDown
+                className={`shrink-0 w-4 h-4 mt-2 text-muted-foreground transition-all duration-300 ${
+                  isOpen ? "rotate-180 text-primary" : "group-hover:text-primary"
+                }`}
+              />
             </button>
+
 
             <AnimatePresence>
               {isOpen && (

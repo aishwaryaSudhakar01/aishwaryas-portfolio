@@ -177,7 +177,7 @@ const WorkExperience = () => {
               }`}
             >
               <div className="flex-1 min-w-0">
-                <span className="inline-block font-mono text-[10px] sm:text-xs tracking-[0.15em] text-primary uppercase mb-1.5 px-2 py-0.5 rounded-full border border-primary/30 bg-primary/5">
+                <span className="block text-xs text-muted-foreground mb-1">
                   {item.period}
                 </span>
                 <a

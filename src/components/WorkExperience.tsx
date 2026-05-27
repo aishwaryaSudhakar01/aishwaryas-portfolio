@@ -180,6 +180,11 @@ const WorkExperience = () => {
                   className="overflow-hidden"
                 >
                   <div className="space-y-4 pt-2 pb-2 max-w-2xl">
+                    {item.description && (
+                      <p className="text-sm text-muted-foreground leading-relaxed italic border-l-2 border-primary/30 pl-4">
+                        {item.description}
+                      </p>
+                    )}
                     <ul className="space-y-3">
                       {item.bullets.map((b, j) => (
                         <li key={j} className="text-sm text-muted-foreground leading-relaxed flex gap-3">

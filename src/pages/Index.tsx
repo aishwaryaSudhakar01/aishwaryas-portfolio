@@ -98,15 +98,6 @@ const Index = () => {
               </motion.h1>
             </div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-              className="mt-8 text-secondary-foreground leading-relaxed max-w-lg text-base sm:text-lg"
-            >
-              I pick up tools fast and build things that work.
-            </motion.p>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

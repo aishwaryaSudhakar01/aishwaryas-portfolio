@@ -48,8 +48,8 @@ const hackathons = [
 const Hackathons = () => (
   <motion.div
     initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ delay: 1.0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true, margin: "-80px" }}
     className="mt-24 sm:mt-32"
   >
     <div className="flex items-center justify-between mb-8">

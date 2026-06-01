@@ -131,7 +131,7 @@ const Index = () => {
               className="relative"
             >
               {/* Photo with soft vignette mask */}
-              <div className="relative aspect-[3/4] max-w-sm mx-auto lg:ml-auto overflow-hidden">
+              <div className="relative aspect-[3/4] max-w-[15rem] sm:max-w-xs lg:max-w-sm mx-auto lg:ml-auto overflow-hidden">
                 <motion.img
                   src={profilePhoto}
                   alt="Portrait of Aishwarya Sudhakar"

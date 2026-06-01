@@ -134,7 +134,7 @@ const WorkExperience = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="relative pb-10 last:pb-0"
+            className="group relative pb-10 last:pb-0"
           >
             {/* Timeline marker — dot with pulsing ring when open */}
             <div
@@ -154,7 +154,7 @@ const WorkExperience = () => {
                 className={`relative h-3 w-3 sm:h-3.5 sm:w-3.5 rounded-full border-2 transition-all duration-300 ${
                   isOpen
                     ? "bg-primary border-primary shadow-lg shadow-primary/40"
-                    : "bg-background border-border"
+                    : "bg-primary/80 border-primary group-hover:bg-primary group-hover:shadow-md group-hover:shadow-primary/40"
                 }`}
               />
             </div>
@@ -186,8 +186,8 @@ const WorkExperience = () => {
                   </p>
                 </div>
                 <ChevronDown
-                  className={`shrink-0 w-4 h-4 mt-2 text-muted-foreground transition-all duration-300 ${
-                    isOpen ? "rotate-180 text-primary" : "group-hover:text-primary"
+                  className={`shrink-0 w-4 h-4 mt-2 text-primary transition-all duration-300 ${
+                    isOpen ? "rotate-180" : ""
                   }`}
                 />
               </button>

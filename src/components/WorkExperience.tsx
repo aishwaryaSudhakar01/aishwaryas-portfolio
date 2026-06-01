@@ -134,7 +134,7 @@ const WorkExperience = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="relative pb-10 last:pb-0"
+            className="group relative pb-10 last:pb-0"
           >
             {/* Timeline marker — dot with pulsing ring when open */}
             <div

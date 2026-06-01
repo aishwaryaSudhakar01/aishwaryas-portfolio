@@ -154,7 +154,7 @@ const WorkExperience = () => {
                 className={`relative h-3 w-3 sm:h-3.5 sm:w-3.5 rounded-full border-2 transition-all duration-300 ${
                   isOpen
                     ? "bg-primary border-primary shadow-lg shadow-primary/40"
-                    : "bg-background border-border"
+                    : "bg-primary/80 border-primary group-hover:bg-primary group-hover:shadow-md group-hover:shadow-primary/40"
                 }`}
               />
             </div>

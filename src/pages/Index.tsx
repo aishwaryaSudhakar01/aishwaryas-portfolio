@@ -105,7 +105,7 @@ const Index = () => {
                 I define the frameworks, set the metrics, and build the tools, usually spotting what's missing before anyone else notices the gap. Lately I'm doing more of it with AI in the loop.
               </p>
               <p>
-                UCLA MSBA'26 candidate
+                UCLA MSBA '26, open to product and ops roles, with a pull toward AI
               </p>
             </motion.div>
 

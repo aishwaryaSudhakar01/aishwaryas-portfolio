@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 
 const skillCategories = [
-  { label: "Languages", items: "Python, R, Java" },
-  { label: "Analytics & BI", items: "SQL, Power BI, Tableau" },
-  { label: "Automation & Tools", items: "Lovable, Streamlit, Google Sheets Scripting, QGIS, Zapier, n8n" },
+  { label: "Operations", items: "Business & GTM Operations, Sales Enablement, Process Optimization, SOP Development" },
+  { label: "Analytics", items: "Data Analysis, BI & Dashboarding, KPI Tracking, A/B Testing, Decision Frameworks" },
+  { label: "Technical", items: "Python, SQL, Power BI, Tableau, Streamlit, Lovable, Zapier, n8n" },
+  { label: "Collaboration", items: "Stakeholder Management, Cross-Functional Coordination" },
 ];
 
 const Skills = () => (

@@ -48,8 +48,8 @@ const hackathons = [
 const Hackathons = () => (
   <motion.div
     initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ delay: 1.0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true, margin: "-80px" }}
     className="mt-24 sm:mt-32"
   >
     <div className="flex items-center justify-between mb-8">
@@ -69,8 +69,9 @@ const Hackathons = () => (
         <motion.div
           key={h.name}
           initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1.1 + i * 0.1, duration: 0.5 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ delay: i * 0.1, duration: 0.5 }}
           className="border-b border-border"
         >
           <Accordion type="single" collapsible>

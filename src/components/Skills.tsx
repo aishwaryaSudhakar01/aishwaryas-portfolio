@@ -9,8 +9,8 @@ const skillCategories = [
 const Skills = () => (
   <motion.div
     initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ delay: 0.8 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true, margin: "-80px" }}
     className="mt-24 sm:mt-32"
   >
     <div className="flex items-center justify-between mb-8">
@@ -30,8 +30,9 @@ const Skills = () => (
         <motion.div
           key={cat.label}
           initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.9 + i * 0.1, duration: 0.5 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ delay: i * 0.1, duration: 0.5 }}
           className="group flex flex-col sm:flex-row sm:items-center py-4 border-b border-border hover:border-primary transition-colors duration-300 cursor-default gap-1 sm:gap-4"
         >
           <span className="font-mono text-xs text-muted-foreground shrink-0 mr-4 hidden sm:inline">

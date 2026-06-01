@@ -186,8 +186,8 @@ const WorkExperience = () => {
                   </p>
                 </div>
                 <ChevronDown
-                  className={`shrink-0 w-4 h-4 mt-2 text-muted-foreground transition-all duration-300 ${
-                    isOpen ? "rotate-180 text-primary" : "group-hover:text-primary"
+                  className={`shrink-0 w-4 h-4 mt-2 text-primary transition-all duration-300 ${
+                    isOpen ? "rotate-180" : ""
                   }`}
                 />
               </button>

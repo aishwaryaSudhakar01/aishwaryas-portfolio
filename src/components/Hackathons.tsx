@@ -69,8 +69,9 @@ const Hackathons = () => (
         <motion.div
           key={h.name}
           initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1.1 + i * 0.1, duration: 0.5 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ delay: i * 0.1, duration: 0.5 }}
           className="border-b border-border"
         >
           <Accordion type="single" collapsible>

@@ -159,37 +159,49 @@ const WorkExperience = () => {
               />
             </div>
 
-            <button
-              onClick={() =>
-                setExpanded(expanded === item.company ? null : item.company)
-              }
-              aria-expanded={isOpen}
-              className={`group w-full flex items-start justify-between gap-4 py-3 px-4 sm:px-5 text-left cursor-pointer rounded-xl border transition-all duration-300 ${
-                isOpen
-                  ? "border-primary/40 bg-primary/[0.03] shadow-sm"
-                  : "border-transparent hover:border-border hover:bg-card/40"
-              }`}
-            >
-              <div className="flex-1 min-w-0">
-                <span className="block text-xs text-muted-foreground mb-1">
-                  {item.period}
-                </span>
-                <span className="block font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
-                  {item.company}
-                </span>
-                <p className="text-sm text-muted-foreground mt-0.5">
-                  {item.role}
-                </p>
-                <p className="text-sm text-muted-foreground leading-relaxed italic border-l-2 border-primary/30 pl-4 mt-3 max-w-2xl">
-                  {item.description}
-                </p>
-              </div>
-              <ChevronDown
-                className={`shrink-0 w-4 h-4 mt-2 text-muted-foreground transition-all duration-300 ${
-                  isOpen ? "rotate-180 text-primary" : "group-hover:text-primary"
+            <div className="relative">
+              <button
+                onClick={() =>
+                  setExpanded(expanded === item.company ? null : item.company)
+                }
+                aria-expanded={isOpen}
+                className={`group w-full flex items-start justify-between gap-4 py-3 pl-4 sm:pl-5 pr-12 sm:pr-14 text-left cursor-pointer rounded-xl border transition-all duration-300 ${
+                  isOpen
+                    ? "border-primary/40 bg-primary/[0.03] shadow-sm"
+                    : "border-transparent hover:border-border hover:bg-card/40"
                 }`}
-              />
-            </button>
+              >
+                <div className="flex-1 min-w-0">
+                  <span className="block text-xs text-muted-foreground mb-1">
+                    {item.period}
+                  </span>
+                  <span className="block font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                    {item.company}
+                  </span>
+                  <p className="text-sm text-muted-foreground mt-0.5">
+                    {item.role}
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed italic border-l-2 border-primary/30 pl-4 mt-3 max-w-2xl">
+                    {item.description}
+                  </p>
+                </div>
+                <ChevronDown
+                  className={`shrink-0 w-4 h-4 mt-2 text-muted-foreground transition-all duration-300 ${
+                    isOpen ? "rotate-180 text-primary" : "group-hover:text-primary"
+                  }`}
+                />
+              </button>
+              <a
+                href={item.companyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                aria-label={`Visit ${item.company} website`}
+                className="absolute top-3 right-3 p-1.5 rounded-md text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
 
 
             <AnimatePresence>

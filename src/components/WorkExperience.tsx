@@ -137,8 +137,9 @@ const WorkExperience = () => {
           <motion.div
             key={item.company}
             initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.7 + i * 0.1, duration: 0.5 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ delay: i * 0.1, duration: 0.5 }}
             className="relative pb-10 last:pb-0"
           >
             {/* Timeline marker — numbered circle with pulsing ring when open */}

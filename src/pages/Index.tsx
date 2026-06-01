@@ -5,6 +5,7 @@ import SocialIcon from "@/components/SocialIcon";
 import StatsCounter from "@/components/StatsCounter";
 import WorkExperience from "@/components/WorkExperience";
 import Skills from "@/components/Skills";
+import WhatIBuild from "@/components/WhatIBuild";
 import Certifications from "@/components/Certifications";
 import Hackathons from "@/components/Hackathons";
 import XIcon from "@/components/icons/XIcon";
@@ -165,6 +166,9 @@ const Index = () => {
 
         {/* Work Experience */}
         <WorkExperience />
+
+        {/* What I Build */}
+        <WhatIBuild />
 
         {/* Skills & Projects */}
         <Skills />

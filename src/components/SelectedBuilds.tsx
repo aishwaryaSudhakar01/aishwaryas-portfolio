@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 
 interface Build {
   tag: string;
@@ -7,6 +7,7 @@ interface Build {
   description: string;
   stack: string;
   link?: string;
+  github?: string;
 }
 
 const builds: Build[] = [
@@ -30,7 +31,7 @@ const builds: Build[] = [
     description:
       "A voice shopping agent with a personality. Real-time web search mid-conversation, zero typing.",
     stack: "ElevenLabs · Firecrawl · Claude",
-    link: "https://github.com/aishwaryaSudhakar01/sophie",
+    github: "https://github.com/aishwaryaSudhakar01/sophie",
   },
   {
     tag: "VOICE AI · WEEKEND HACKATHON",
@@ -38,7 +39,16 @@ const builds: Build[] = [
     description:
       "Plan a full trip by voice. One conversation returns real flights, hotels, day-by-day activities, and a live budget.",
     stack: "ElevenLabs · Cloudflare Workers AI",
-    link: "https://github.com/aishwaryaSudhakar01/voyage",
+    github: "https://github.com/aishwaryaSudhakar01/voyage",
+  },
+  {
+    tag: "BUILD CHALLENGE · LOVABLE",
+    name: "PDF Edits",
+    description:
+      "A browser-based PDF editor, upload, annotate, and modify PDFs in a clean, responsive interface. Built for Lovable's May Sweepstake build challenge.",
+    stack: "Lovable",
+    link: "https://pdf-edits.lovable.app",
+    github: "https://github.com/aishwaryaSudhakar01/pdf-edits",
   },
 ];
 
@@ -83,16 +93,31 @@ const SelectedBuilds = () => (
           <p className="font-mono text-xs text-muted-foreground mb-3">
             {b.stack}
           </p>
-          {b.link && (
-            <a
-              href={b.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:underline"
-            >
-              <Github className="w-3.5 h-3.5" />
-              GitHub
-            </a>
+          {(b.link || b.github) && (
+            <div className="flex items-center gap-4">
+              {b.link && (
+                <a
+                  href={b.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:underline"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  Live
+                </a>
+              )}
+              {b.github && (
+                <a
+                  href={b.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:underline"
+                >
+                  <Github className="w-3.5 h-3.5" />
+                  GitHub
+                </a>
+              )}
+            </div>
           )}
         </motion.div>
       ))}

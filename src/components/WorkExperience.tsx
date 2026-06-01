@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { FileText, X, ChevronDown } from "lucide-react";
+import { X, ChevronDown } from "lucide-react";
 import letterConvin from "@/assets/letter-convin.png";
 import letterEy1 from "@/assets/letter-ey-1.png";
 import letterEy2 from "@/assets/letter-ey-2.png";
@@ -13,10 +13,9 @@ interface Bullet {
 
 interface WorkItem {
   company: string;
-  companyUrl: string;
   role: string;
   period: string;
-  description?: string;
+  description: string;
   bullets: Bullet[];
   letters?: { src: string; alt: string }[];
 }
@@ -24,47 +23,39 @@ interface WorkItem {
 const workItems: WorkItem[] = [
   {
     company: "Uber Technologies",
-    companyUrl: "https://www.uber.com/us/en/about/",
     role: "Operations Associate",
-    period: "2024 – 2026",
-    description: "At Uber, I worked on getting people to work — literally. Think city-scale shuttle networks for large corporations. I sat between product and sales, understanding the product deeply enough to configure it for each client, and each client deeply enough to know a good solution from a good-looking one.",
+    period: "Oct 2024 – Apr 2026",
+    description:
+      "Getting people to work, literally. City-scale shuttle networks for big companies, sitting between the product and the people buying it.",
     bullets: [
       {
-        title: "Sales enablement process for Uber ETS",
-        body: "Built the sales enablement process for Uber's B2B commute product from scratch: success metrics, delivery timelines, deck format. Cut turnaround from 5 days to 2.5.",
+        title: "Helped close deals on the commute product.",
+        body: "Shaped how Uber pitched its B2B commute product, the success metrics, the timelines, the standard deck, and tuned routing for prospects so their plans ran on ~25% fewer trips a month. Cut deal turnaround from 5 days to 2.5, across 20+ engagements.",
       },
       {
-        title: "Pre-sales route optimization",
-        body: "Turned prospect commute data into operating route networks across 20+ enterprise engagements. Plans ran on ~25% fewer trips per month than what clients were operating.",
+        title: "Made solver choice less of a guessing game.",
+        body: "Benchmarked five routing solvers across Brazil, the US, and Egypt and built the framework Uber's teams now use to pick one per deal. It's backed pre-sales work for 50+ accounts.",
       },
       {
-        title: "Solver benchmarking framework",
-        body: "Replaced person-dependent solver picks with a benchmarked evaluation framework across Brazil, US&C, and Egypt. Now the basis for pre-sales analysis on 50+ enterprise accounts.",
-      },
-      {
-        title: "Hotspot consolidation platform",
-        body: "Built a Lovable platform that pulls Uber data, OpenStreetMap, and client rider locations into one place. Data prep dropped from 24 hours to 3 per request. Feeds routing across 15+ city operations.",
-      },
-      {
-        title: "Automated routing intake",
-        body: "Replaced a spreadsheet intake with an automated platform that handles 15 to 20 requests a month. Saved the ops team about 5 hours a week.",
-      },
-      {
-        title: "QGIS plugin for route editing",
-        body: "Built a Python plugin giving planners one interface to edit and sync route data. Adopted by 4 regional teams, used on 10+ enterprise accounts.",
+        title: "Retired a few spreadsheets.",
+        body: "Built internal tools that replaced manual prep and tracking, a routing-data platform that took prep from a day to three hours, and an intake system that handed the ops team back ~5 hours a week.",
       },
     ],
     letters: [{ src: letterUber, alt: "Uber experience letter" }],
   },
   {
     company: "Ernst & Young",
-    companyUrl: "https://www.ey.com/en_in",
     role: "Data Science Associate Consultant",
-    period: "2024",
+    period: "Jan 2024 – Oct 2024",
+    description: "Helping a city government see its own data in real time.",
     bullets: [
       {
-        title: "Computer vision for incident detection",
-        body: "Trained a computer vision model on 1M+ images across 14 incident categories for Pune Municipal Corporation's smart-city POC. Reached 88% accuracy and packaged it into a Streamlit app that routed detected incidents to the nearest patrol vehicle and police station.",
+        title: "Replaced manual reporting with a live dashboard.",
+        body: "Built a Power BI dashboard for Pune Municipal Corporation that swapped Excel reports for a real-time view of citizen grievances across ~20 departments.",
+      },
+      {
+        title: "Taught a computer to spot civic problems.",
+        body: "Trained a computer vision model on 1M+ images to flag 14 kinds of incidents at 88% accuracy, then prototyped an app that routed each one to the nearest patrol vehicle.",
       },
     ],
     letters: [
@@ -74,13 +65,13 @@ const workItems: WorkItem[] = [
   },
   {
     company: "Convin.ai",
-    companyUrl: "https://convin.ai/",
     role: "Data Analyst Intern",
-    period: "2023",
+    period: "Jun 2023 – Nov 2023",
+    description: "First real taste of finding signal in messy data.",
     bullets: [
       {
-        title: "Conversational phrase analysis",
-        body: "Analyzed call transcripts to surface the phrases and patterns that aligned with a 2.6x conversion lift for a Convin client.",
+        title: "Dug through sales calls for what worked.",
+        body: "Found the conversational patterns tied to a 2.6x conversion lift for a client, and automated the data prep around it to save ~10 hours a week.",
       },
     ],
     letters: [{ src: letterConvin, alt: "Convin experience letter" }],
@@ -132,7 +123,6 @@ const WorkExperience = () => {
 
         {workItems.map((item, i) => {
           const isOpen = expanded === item.company;
-          const idx = String(i + 1).padStart(2, "0");
           return (
           <motion.div
             key={item.company}
@@ -142,9 +132,9 @@ const WorkExperience = () => {
             transition={{ delay: i * 0.1, duration: 0.5 }}
             className="relative pb-10 last:pb-0"
           >
-            {/* Timeline marker — numbered circle with pulsing ring when open */}
+            {/* Timeline marker — dot with pulsing ring when open */}
             <div
-              className="absolute -left-12 sm:-left-16 top-3 flex items-center justify-center"
+              className="absolute -left-12 sm:-left-16 top-5 flex items-center justify-center"
               aria-hidden="true"
             >
               {isOpen && (
@@ -152,25 +142,24 @@ const WorkExperience = () => {
                   initial={{ scale: 0.6, opacity: 0 }}
                   animate={{ scale: [1, 1.6, 1], opacity: [0.5, 0, 0.5] }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary/30"
+                  className="absolute h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-primary/30"
                 />
               )}
               <motion.span
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                className={`relative h-8 w-8 sm:h-9 sm:w-9 rounded-full border-2 flex items-center justify-center font-mono text-[10px] sm:text-xs transition-all duration-300 ${
+                whileHover={{ scale: 1.2 }}
+                className={`relative h-3 w-3 sm:h-3.5 sm:w-3.5 rounded-full border-2 transition-all duration-300 ${
                   isOpen
-                    ? "bg-primary border-primary text-primary-foreground shadow-lg shadow-primary/40"
-                    : "bg-background border-border text-muted-foreground"
+                    ? "bg-primary border-primary shadow-lg shadow-primary/40"
+                    : "bg-background border-border"
                 }`}
-              >
-                {idx}
-              </motion.span>
+              />
             </div>
 
             <button
               onClick={() =>
                 setExpanded(expanded === item.company ? null : item.company)
               }
+              aria-expanded={isOpen}
               className={`group w-full flex items-start justify-between gap-4 py-3 px-4 sm:px-5 text-left cursor-pointer rounded-xl border transition-all duration-300 ${
                 isOpen
                   ? "border-primary/40 bg-primary/[0.03] shadow-sm"
@@ -181,17 +170,14 @@ const WorkExperience = () => {
                 <span className="block text-xs text-muted-foreground mb-1">
                   {item.period}
                 </span>
-                <a
-                  href={item.companyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="block font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 hover-editorial hover:underline underline-offset-4"
-                >
+                <span className="block font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                   {item.company}
-                </a>
+                </span>
                 <p className="text-sm text-muted-foreground mt-0.5">
                   {item.role}
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed italic border-l-2 border-primary/30 pl-4 mt-3 max-w-2xl">
+                  {item.description}
                 </p>
               </div>
               <ChevronDown
@@ -211,12 +197,7 @@ const WorkExperience = () => {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <div className="space-y-4 pt-2 pb-2 max-w-2xl">
-                    {item.description && (
-                      <p className="text-sm text-muted-foreground leading-relaxed italic border-l-2 border-primary/30 pl-4">
-                        {item.description}
-                      </p>
-                    )}
+                  <div className="space-y-4 pt-4 pb-2 px-4 sm:px-5 max-w-2xl">
                     <ul className="space-y-3">
                       {item.bullets.map((b, j) => (
                         <li key={j} className="text-sm text-muted-foreground leading-relaxed flex gap-3">

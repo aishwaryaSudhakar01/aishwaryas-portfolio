@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 
 interface Build {
   tag: string;
@@ -7,6 +7,7 @@ interface Build {
   description: string;
   stack: string;
   link?: string;
+  github?: string;
 }
 
 const builds: Build[] = [

@@ -1,0 +1,9 @@
+# Aishwarya Sudhakar
+
+> Portfolio of Aishwarya Sudhakar, UCLA MSBA'26 candidate working at the intersection of data and operations.
+
+Aishwarya defines frameworks, sets metrics, and ships AI-augmented workflows. Background includes Uber (city-scale shuttle networks for enterprise clients) and freelance/consulting work.
+
+## Pages
+
+- [Home](/): Bio, work experience, skills, certifications, hackathons, and contact links.

@@ -69,33 +69,36 @@ const Index = () => {
               <div className="editorial-line mb-8" />
             </motion.div>
 
-            <div className="overflow-hidden">
-              <motion.h1
-                initial={{ y: "100%", rotateX: 90 }}
-                animate={{ y: 0, rotateX: 0 }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-                className="text-5xl sm:text-7xl lg:text-8xl font-display font-black leading-[0.9] tracking-tight mb-2"
+            <h1 className="sr-only">Aishwarya Sudhakar — Data & Operations Portfolio</h1>
+            <div aria-hidden="true">
+              <div className="overflow-hidden">
+                <motion.span
+                  initial={{ y: "100%", rotateX: 90 }}
+                  animate={{ y: 0, rotateX: 0 }}
+                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+                  className="block text-5xl sm:text-7xl lg:text-8xl font-display font-black leading-[0.9] tracking-tight mb-2"
+                >
+                  AISHWARYA
+                </motion.span>
+              </div>
+              <motion.p
+                initial={{ opacity: 0, scaleX: 0 }}
+                animate={{ opacity: 1, scaleX: 1 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="font-mono text-xs tracking-[0.2em] text-muted-foreground mb-4 origin-left"
               >
-                AISHWARYA
-              </motion.h1>
-            </div>
-            <motion.p
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="font-mono text-xs tracking-[0.2em] text-muted-foreground mb-4 origin-left"
-            >
-              (eye-SHWAR-yah)
-            </motion.p>
-            <div className="overflow-hidden">
-              <motion.h1
-                initial={{ y: "100%", rotateX: 90 }}
-                animate={{ y: 0, rotateX: 0 }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-                className="text-5xl sm:text-7xl lg:text-8xl font-display font-black italic leading-[0.9] tracking-tight text-gradient"
-              >
-                Sudhakar
-              </motion.h1>
+                (eye-SHWAR-yah)
+              </motion.p>
+              <div className="overflow-hidden">
+                <motion.span
+                  initial={{ y: "100%", rotateX: 90 }}
+                  animate={{ y: 0, rotateX: 0 }}
+                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+                  className="block text-5xl sm:text-7xl lg:text-8xl font-display font-black italic leading-[0.9] tracking-tight text-gradient"
+                >
+                  Sudhakar
+                </motion.span>
+              </div>
             </div>
 
             <motion.div
@@ -137,7 +140,11 @@ const Index = () => {
               <div className="relative aspect-[3/4] max-w-sm mx-auto lg:ml-auto overflow-hidden">
                 <motion.img
                   src={profilePhoto}
-                  alt="Aishwarya Sudhakar"
+                  alt="Portrait of Aishwarya Sudhakar"
+                  width={600}
+                  height={800}
+                  fetchPriority="high"
+                  decoding="async"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                   style={{
                     maskImage: "radial-gradient(ellipse 70% 65% at 50% 40%, black 50%, transparent 100%)",

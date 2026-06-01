@@ -13,6 +13,7 @@ interface Bullet {
 
 interface WorkItem {
   company: string;
+  companyUrl: string;
   role: string;
   period: string;
   description: string;

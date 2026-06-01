@@ -166,17 +166,14 @@ const Index = () => {
         {/* Work Experience */}
         <WorkExperience />
 
-        {/* What I Build */}
-        <WhatIBuild />
+        {/* Selected Builds */}
+        <SelectedBuilds />
 
-        {/* Skills & Projects */}
+        {/* Skills */}
         <Skills />
 
         {/* Certifications */}
         <Certifications />
-
-        {/* Hackathons */}
-        <Hackathons />
 
         {/* Footer */}
         <motion.footer

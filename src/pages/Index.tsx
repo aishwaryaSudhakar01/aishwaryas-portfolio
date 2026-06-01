@@ -12,7 +12,7 @@ import UpworkIcon from "@/components/icons/UpworkIcon";
 import GumroadIcon from "@/components/icons/GumroadIcon";
 import LovableIcon from "@/components/icons/LovableIcon";
 
-import profilePhoto from "@/assets/profile-photo.png";
+import profilePhoto from "@/assets/profile-photo.webp";
 
 const currentYear = new Date().getFullYear();
 const startDate = new Date(2023, 5); // Jun 2023

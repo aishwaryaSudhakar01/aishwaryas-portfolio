@@ -69,46 +69,40 @@ const Index = () => {
               <div className="editorial-line mb-8" />
             </motion.div>
 
-            <h1 className="sr-only">Aishwarya Sudhakar — Data & Operations Portfolio</h1>
-            <div aria-hidden="true">
-              <div className="overflow-hidden">
-                <motion.span
-                  initial={{ y: "100%", rotateX: 90 }}
-                  animate={{ y: 0, rotateX: 0 }}
-                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-                  className="block text-5xl sm:text-7xl lg:text-8xl font-display font-black leading-[0.9] tracking-tight mb-2"
-                >
-                  AISHWARYA
-                </motion.span>
-              </div>
+            <h1 className="sr-only">Aishwarya Sudhakar, Data and Operations Portfolio</h1>
+            <div aria-hidden="true" className="mb-6">
+              <span className="block font-mono text-xs uppercase tracking-[0.3em] text-foreground">
+                Aishwarya Sudhakar
+              </span>
               <motion.p
                 initial={{ opacity: 0, scaleX: 0 }}
                 animate={{ opacity: 1, scaleX: 1 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
-                className="font-mono text-xs tracking-[0.2em] text-muted-foreground mb-4 origin-left"
+                className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground mt-1 origin-left"
               >
                 (eye-SHWAR-yah)
               </motion.p>
-              <div className="overflow-hidden">
-                <motion.span
-                  initial={{ y: "100%", rotateX: 90 }}
-                  animate={{ y: 0, rotateX: 0 }}
-                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-                  className="block text-5xl sm:text-7xl lg:text-8xl font-display font-black italic leading-[0.9] tracking-tight text-gradient"
-                >
-                  Sudhakar
-                </motion.span>
-              </div>
+            </div>
+
+            <div aria-hidden="true" className="overflow-hidden">
+              <motion.p
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+                className="block text-4xl sm:text-6xl lg:text-7xl font-display font-black leading-[1.0] tracking-tight"
+              >
+                I work where data meets <span className="italic text-gradient">operations</span>, and turn the messy middle into something that runs.
+              </motion.p>
             </div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
-              className="mt-4 text-muted-foreground leading-relaxed max-w-lg text-sm space-y-3"
+              className="mt-6 text-muted-foreground leading-relaxed max-w-lg text-sm space-y-3"
             >
               <p>
-                I sit between data and operations, which makes me useful in roles that don't fit a clean job description. I define the framework, set the metrics, and figure out what needs to be in place before anyone else notices the gap.
+                I define the frameworks, set the metrics, and build the tools, usually spotting what's missing before anyone else notices the gap. Lately I'm doing more of it with AI in the loop.
               </p>
               <p>
                 UCLA MSBA'26 candidate

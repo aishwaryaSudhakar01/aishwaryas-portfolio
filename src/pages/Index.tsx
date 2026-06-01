@@ -195,7 +195,7 @@ const Index = () => {
             Built with passion & data ✦
           </p>
         </motion.footer>
-      </div>
+      </main>
     </div>
   );
 };

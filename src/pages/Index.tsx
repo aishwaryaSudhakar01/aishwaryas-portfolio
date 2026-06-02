@@ -141,6 +141,7 @@ const Index = () => {
                   decoding="async"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                   style={{
+                    objectPosition: "42% center",
                     maskImage: "radial-gradient(ellipse 70% 65% at 50% 40%, black 50%, transparent 100%)",
                     WebkitMaskImage: "radial-gradient(ellipse 70% 65% at 50% 40%, black 50%, transparent 100%)",
                   }}

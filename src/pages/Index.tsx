@@ -89,7 +89,7 @@ const Index = () => {
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-                className="block text-4xl sm:text-6xl lg:text-7xl font-display font-black leading-[1.0] tracking-tight"
+                className="block text-3xl sm:text-5xl lg:text-6xl font-display font-black leading-[1.05] tracking-tight"
               >
                 I work where data meets <span className="italic text-gradient">operations</span>, and turn the messy middle into something that runs.
               </motion.p>
@@ -131,7 +131,7 @@ const Index = () => {
               className="relative"
             >
               {/* Photo with soft vignette mask */}
-              <div className="relative aspect-[3/4] max-w-[15rem] sm:max-w-xs lg:max-w-sm mx-auto lg:ml-auto overflow-hidden">
+              <div className="relative aspect-[3/4] max-w-[12rem] sm:max-w-[14rem] lg:max-w-xs mx-auto lg:ml-auto overflow-hidden">
                 <motion.img
                   src={profilePhoto}
                   alt="Portrait of Aishwarya Sudhakar"

@@ -89,7 +89,7 @@ const Index = () => {
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-                className="block text-3xl sm:text-5xl lg:text-6xl font-display font-black leading-[1.05] tracking-tight"
+                className="block text-2xl sm:text-4xl lg:text-5xl font-display font-black leading-[1.1] tracking-tight"
               >
                 I work where data meets <span className="italic text-gradient">operations</span>, and turn the messy middle into something that runs.
               </motion.p>

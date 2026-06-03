@@ -1,5 +1,7 @@
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -59,7 +61,12 @@ const builds: Build[] = [
   },
 ];
 
-const SelectedBuilds = () => (
+const SelectedBuilds = () => {
+  const autoplay = useRef(
+    Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
+
+  return (
   <motion.section
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
@@ -80,12 +87,14 @@ const SelectedBuilds = () => (
 
     <Carousel
       opts={{ align: "start", loop: true }}
+      plugins={[autoplay.current]}
       className="w-full"
     >
-      <CarouselContent className="-ml-4">
+      <CarouselContent className="-ml-4 py-4">
         {builds.map((b) => (
           <CarouselItem key={b.name} className="pl-4 md:basis-1/2">
             <div className="group relative flex flex-col h-full rounded-lg border border-border bg-card p-6 transition-all duration-500 hover:border-primary hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20">
+
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-3">
                 {b.tag}
               </p>
@@ -132,6 +141,8 @@ const SelectedBuilds = () => (
       <CarouselNext className="hidden sm:flex" />
     </Carousel>
   </motion.section>
-);
+  );
+};
+
 
 export default SelectedBuilds;

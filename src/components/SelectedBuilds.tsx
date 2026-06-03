@@ -90,10 +90,20 @@ const SelectedBuilds = () => {
       plugins={[autoplay.current]}
       className="w-full"
     >
-      <CarouselContent className="-ml-4 py-4">
-        {builds.map((b) => (
+      <CarouselContent className="-ml-4 py-4" style={{ perspective: "1200px" }}>
+        {builds.map((b, i) => (
           <CarouselItem key={b.name} className="pl-4 md:basis-1/2">
-            <div className="group relative flex flex-col h-full rounded-lg border border-border bg-card p-6 transition-all duration-500 hover:border-primary hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20">
+            <motion.div
+              initial={{ opacity: 0, rotateX: -18, rotateY: 8, y: 24 }}
+              whileInView={{ opacity: 1, rotateX: 0, rotateY: 0, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ delay: i * 0.12, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              style={{ transformStyle: "preserve-3d" }}
+              className="h-full"
+            >
+              <div className="group relative flex flex-col h-full rounded-lg border border-border bg-card p-6 transition-all duration-500 hover:border-primary hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20">
+
+
 
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-3">
                 {b.tag}
@@ -133,8 +143,10 @@ const SelectedBuilds = () => {
                   )}
                 </div>
               )}
-            </div>
+              </div>
+            </motion.div>
           </CarouselItem>
+
         ))}
       </CarouselContent>
       <CarouselPrevious className="hidden sm:flex" />

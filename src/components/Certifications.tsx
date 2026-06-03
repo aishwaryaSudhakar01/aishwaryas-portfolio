@@ -39,14 +39,14 @@ const Certifications = () => {
         {education.map((edu, i) => (
           <motion.div
             key={edu.school}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="py-5 border-b border-border flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1"
+            className="group py-5 border-b border-border hover:border-primary transition-colors duration-300 cursor-default flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1"
           >
             <div className="flex-1">
-              <p className="font-display text-base sm:text-lg font-bold text-foreground">
+              <p className="font-display text-base sm:text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                 {edu.school}
               </p>
               <p className="text-sm text-muted-foreground mt-0.5">

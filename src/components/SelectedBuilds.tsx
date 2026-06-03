@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 interface Build {
   tag: string;
@@ -71,57 +78,59 @@ const SelectedBuilds = () => (
       <div className="editorial-line hidden sm:block mt-6" />
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-      {builds.map((b, i) => (
-        <motion.div
-          key={b.name}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ delay: i * 0.1, duration: 0.5 }}
-          className="group relative flex flex-col rounded-lg border border-border bg-card p-6 transition-all duration-500 hover:border-primary hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20"
-        >
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-3">
-            {b.tag}
-          </p>
-          <h3 className="font-display text-xl sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 mb-3">
-            {b.name}
-          </h3>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
-            {b.description}
-          </p>
-          <p className="font-mono text-xs text-muted-foreground mb-3">
-            {b.stack}
-          </p>
-          {(b.link || b.github) && (
-            <div className="flex items-center gap-4">
-              {b.link && (
-                <a
-                  href={b.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:underline"
-                >
-                  <ExternalLink className="w-3.5 h-3.5" />
-                  Live
-                </a>
-              )}
-              {b.github && (
-                <a
-                  href={b.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:underline"
-                >
-                  <Github className="w-3.5 h-3.5" />
-                  GitHub
-                </a>
+    <Carousel
+      opts={{ align: "start", loop: true }}
+      className="w-full"
+    >
+      <CarouselContent className="-ml-4">
+        {builds.map((b) => (
+          <CarouselItem key={b.name} className="pl-4 md:basis-1/2">
+            <div className="group relative flex flex-col h-full rounded-lg border border-border bg-card p-6 transition-all duration-500 hover:border-primary hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20">
+              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-3">
+                {b.tag}
+              </p>
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 mb-3">
+                {b.name}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
+                {b.description}
+              </p>
+              <p className="font-mono text-xs text-muted-foreground mb-3">
+                {b.stack}
+              </p>
+              {(b.link || b.github) && (
+                <div className="flex items-center gap-4">
+                  {b.link && (
+                    <a
+                      href={b.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:underline"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      Live
+                    </a>
+                  )}
+                  {b.github && (
+                    <a
+                      href={b.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:underline"
+                    >
+                      <Github className="w-3.5 h-3.5" />
+                      GitHub
+                    </a>
+                  )}
+                </div>
               )}
             </div>
-          )}
-        </motion.div>
-      ))}
-    </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious className="hidden sm:flex" />
+      <CarouselNext className="hidden sm:flex" />
+    </Carousel>
   </motion.section>
 );
 

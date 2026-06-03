@@ -143,8 +143,10 @@ const SelectedBuilds = () => {
                   )}
                 </div>
               )}
-            </div>
+              </div>
+            </motion.div>
           </CarouselItem>
+
         ))}
       </CarouselContent>
       <CarouselPrevious className="hidden sm:flex" />

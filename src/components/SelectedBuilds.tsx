@@ -141,6 +141,8 @@ const SelectedBuilds = () => {
       <CarouselNext className="hidden sm:flex" />
     </Carousel>
   </motion.section>
-);
+  );
+};
+
 
 export default SelectedBuilds;

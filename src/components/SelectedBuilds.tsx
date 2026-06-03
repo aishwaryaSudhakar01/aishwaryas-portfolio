@@ -101,6 +101,8 @@ const SelectedBuilds = () => {
               style={{ transformStyle: "preserve-3d" }}
               className="h-full"
             >
+              <div className="group relative flex flex-col h-full rounded-lg border border-border bg-card p-6 transition-all duration-500 hover:border-primary hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20">
+
 
 
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-3">

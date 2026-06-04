@@ -29,9 +29,9 @@ const builds: Build[] = [
   },
   {
     tag: "INTERNAL TOOL · UBER",
-    name: "QGIS Routing Plugin",
+    name: "Route Network Editor",
     description:
-      "Gave route planners one visual interface to edit and sync route data. Adopted by 4 regional teams across 10+ enterprise accounts.",
+      "An interactive tool for editing route networks directly on the map. Operators move a hotspot and its employees follow, shift stops between routes, add or remove them, with distance and time recalculating live as they edit. Replaced a slow, manual workflow and was adopted by 4 regional teams across 10+ enterprise accounts.",
     stack: "Python · QGIS",
   },
   {
@@ -90,7 +90,7 @@ const SelectedBuilds = () => {
       plugins={[autoplay.current]}
       className="w-full"
     >
-      <CarouselContent className="-ml-4 py-4" style={{ perspective: "1200px" }}>
+      <CarouselContent className="-ml-4 py-4 px-[2px]" style={{ perspective: "1200px" }}>
         {builds.map((b, i) => (
           <CarouselItem key={b.name} className="pl-4 md:basis-1/2">
             <motion.div

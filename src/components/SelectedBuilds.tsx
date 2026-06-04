@@ -29,9 +29,9 @@ const builds: Build[] = [
   },
   {
     tag: "INTERNAL TOOL · UBER",
-    name: "QGIS Routing Plugin",
+    name: "Route Network Editor",
     description:
-      "Gave route planners one visual interface to edit and sync route data. Adopted by 4 regional teams across 10+ enterprise accounts.",
+      "An interactive tool for editing route networks directly on the map. Operators move a hotspot and its employees follow, shift stops between routes, add or remove them, with distance and time recalculating live as they edit. Replaced a slow, manual workflow and was adopted by 4 regional teams across 10+ enterprise accounts.",
     stack: "Python · QGIS",
   },
   {

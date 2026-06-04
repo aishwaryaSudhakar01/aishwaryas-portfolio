@@ -88,11 +88,11 @@ const SelectedBuilds = () => {
     <Carousel
       opts={{ align: "start", loop: true }}
       plugins={[autoplay.current]}
-      className="w-full"
+      className="w-full overflow-visible"
     >
-      <CarouselContent className="-ml-4 py-4 px-[2px]" style={{ perspective: "1200px" }}>
+      <CarouselContent className="-ml-3 py-4 pl-3 pr-1" style={{ perspective: "1200px" }}>
         {builds.map((b, i) => (
-          <CarouselItem key={b.name} className="pl-4 md:basis-1/2">
+          <CarouselItem key={b.name} className="pl-3 md:basis-1/2">
             <motion.div
               initial={{ opacity: 0, rotateX: -18, rotateY: 8, y: 24 }}
               whileInView={{ opacity: 1, rotateX: 0, rotateY: 0, y: 0 }}

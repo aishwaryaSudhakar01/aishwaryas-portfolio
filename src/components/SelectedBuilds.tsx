@@ -90,7 +90,7 @@ const SelectedBuilds = () => {
       plugins={[autoplay.current]}
       className="w-full"
     >
-      <CarouselContent className="-ml-4 py-4" style={{ perspective: "1200px" }}>
+      <CarouselContent className="-ml-4 py-4 px-[2px]" style={{ perspective: "1200px" }}>
         {builds.map((b, i) => (
           <CarouselItem key={b.name} className="pl-4 md:basis-1/2">
             <motion.div

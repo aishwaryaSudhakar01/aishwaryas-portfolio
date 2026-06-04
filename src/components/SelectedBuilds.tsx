@@ -101,7 +101,16 @@ const SelectedBuilds = () => {
               style={{ transformStyle: "preserve-3d" }}
               className="h-full"
             >
-              <div className="group relative flex flex-col h-full rounded-lg border border-border bg-card p-6 transition-all duration-500 hover:border-primary hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20">
+              <div className="group relative flex flex-col h-full rounded-lg border border-border bg-card p-6 transition-all duration-500 ease-out hover:border-primary hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-primary/30 hover:ring-2 hover:ring-primary/40 hover:ring-offset-2 hover:ring-offset-background">
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-500"
+                style={{
+                  background:
+                    "linear-gradient(120deg, transparent 30%, hsl(var(--primary) / 0.12) 50%, transparent 70%)",
+                }}
+              />
+
 
 
 

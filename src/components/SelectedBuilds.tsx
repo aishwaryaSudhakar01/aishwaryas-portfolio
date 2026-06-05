@@ -54,7 +54,7 @@ const builds: Build[] = [
     tag: "BUILD CHALLENGE · LOVABLE",
     name: "PDF Edits",
     description:
-      "A browser-based PDF editor, upload, annotate, and modify PDFs in a clean, responsive interface. Built for Lovable's May Sweepstake build challenge.",
+      "A browser-based PDF editor that batches all your edits into one pass, no re-uploading between tools. Annotate, redact, sign, and convert entirely client-side. Built for Lovable's May Sweepstake challenge.",
     stack: "Lovable",
     link: "https://pdf-edits.lovable.app",
     github: "https://github.com/aishwaryaSudhakar01/pdf-edits",

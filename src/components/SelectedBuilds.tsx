@@ -59,6 +59,14 @@ const builds: Build[] = [
     link: "https://pdf-edits.lovable.app",
     github: "https://github.com/aishwaryaSudhakar01/pdf-edits",
   },
+  {
+    tag: "AI AUTOMATION · PERSONAL",
+    name: "Job Search Automation",
+    description:
+      "An n8n pipeline that watches multiple company career pages and job alert emails, pulls from five sources in parallel, and uses Claude to filter every posting by role and location, then drops a curated digest into Telegram. Fully autonomous, end to end.",
+    stack: "n8n · Claude · Firecrawl · Gmail · Telegram",
+    github: "https://github.com/aishwaryaSudhakar01/job-search-automation",
+  },
 ];
 
 const SelectedBuilds = () => {

@@ -1,7 +1,5 @@
-import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
-import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -70,10 +68,6 @@ const builds: Build[] = [
 ];
 
 const SelectedBuilds = () => {
-  const autoplay = useRef(
-    Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true })
-  );
-
   return (
   <motion.section
     initial={{ opacity: 0 }}
@@ -94,8 +88,7 @@ const SelectedBuilds = () => {
     </div>
 
     <Carousel
-      opts={{ align: "start", loop: true }}
-      plugins={[autoplay.current]}
+      opts={{ align: "start", loop: true, dragFree: false }}
       className="w-full overflow-visible"
     >
       <CarouselContent className="-ml-3 py-4 pl-3 pr-1" style={{ perspective: "1200px" }}>

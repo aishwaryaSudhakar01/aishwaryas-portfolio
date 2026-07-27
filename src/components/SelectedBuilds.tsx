@@ -88,8 +88,7 @@ const SelectedBuilds = () => {
     </div>
 
     <Carousel
-      opts={{ align: "start", loop: true }}
-      plugins={[autoplay.current]}
+      opts={{ align: "start", loop: true, dragFree: false }}
       className="w-full overflow-visible"
     >
       <CarouselContent className="-ml-3 py-4 pl-3 pr-1" style={{ perspective: "1200px" }}>

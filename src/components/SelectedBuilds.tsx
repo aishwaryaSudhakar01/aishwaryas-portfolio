@@ -112,7 +112,8 @@ const SelectedBuilds = () => {
     </div>
 
     <Carousel
-      opts={{ align: "start", loop: true, dragFree: false }}
+      opts={{ align: "start", loop: true }}
+      setApi={setApi}
       className="w-full overflow-visible"
     >
       <CarouselContent className="-ml-3 py-4 pl-3 pr-1" style={{ perspective: "1200px" }}>

@@ -69,7 +69,30 @@ const builds: Build[] = [
   },
 ];
 
+const hoverStyles = [
+  {
+    label: "1 · Clean lift",
+    className:
+      "hover:border-primary hover:-translate-y-1.5 hover:shadow-[0_18px_40px_-16px_hsl(var(--primary)/0.45)]",
+  },
+  {
+    label: "2 · Corner accent",
+    className: "hover:border-border",
+    topBar: true,
+  },
+  {
+    label: "3 · Tint wash",
+    className: "hover:border-primary/40 hover:bg-primary/[0.04]",
+  },
+  {
+    label: "4 · Inner glow",
+    className:
+      "hover:border-primary/60 hover:shadow-[inset_0_0_24px_-6px_hsl(var(--primary)/0.35)]",
+  },
+] as { label: string; className: string; topBar?: boolean }[];
+
 const SelectedBuilds = () => {
+
   const [api, setApi] = useState<CarouselApi>();
   const wrapRef = useRef<HTMLDivElement>(null);
   const lock = useRef(false);

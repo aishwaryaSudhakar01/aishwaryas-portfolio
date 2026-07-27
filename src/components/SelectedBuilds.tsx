@@ -71,26 +71,27 @@ const builds: Build[] = [
 
 const SelectedBuilds = () => {
   const [api, setApi] = useState<CarouselApi>();
-  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const lock = useRef(false);
 
-  const stopEdgeScroll = () => {
-    if (timer.current) {
-      clearInterval(timer.current);
-      timer.current = null;
-    }
-  };
+  // Horizontal trackpad / shift-wheel gesture support
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el || !api) return;
 
-  const startEdgeScroll = (dir: "prev" | "next") => {
-    stopEdgeScroll();
-    const step = () => {
-      if (!api) return;
-      dir === "next" ? api.scrollNext() : api.scrollPrev();
+    const onWheel = (e: WheelEvent) => {
+      const dx = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : 0;
+      if (!dx || Math.abs(dx) < 12) return;
+      e.preventDefault();
+      if (lock.current) return;
+      lock.current = true;
+      dx > 0 ? api.scrollNext() : api.scrollPrev();
+      setTimeout(() => (lock.current = false), 400);
     };
-    step();
-    timer.current = setInterval(step, 900);
-  };
 
-  useEffect(() => stopEdgeScroll, []);
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, [api]);
 
   return (
   <motion.section
@@ -111,6 +112,7 @@ const SelectedBuilds = () => {
       <div className="editorial-line hidden sm:block mt-6" />
     </div>
 
+    <div ref={wrapRef} className="overflow-visible">
     <Carousel
       opts={{ align: "start", loop: true }}
       setApi={setApi}
@@ -186,21 +188,8 @@ const SelectedBuilds = () => {
       </CarouselContent>
       <CarouselPrevious className="hidden sm:flex" />
       <CarouselNext className="hidden sm:flex" />
-
-      {/* Hover edge zones: move cursor to the left/right edge to slide */}
-      <div
-        aria-hidden="true"
-        onMouseEnter={() => startEdgeScroll("prev")}
-        onMouseLeave={stopEdgeScroll}
-        className="hidden sm:block absolute left-0 top-0 h-full w-16 z-10"
-      />
-      <div
-        aria-hidden="true"
-        onMouseEnter={() => startEdgeScroll("next")}
-        onMouseLeave={stopEdgeScroll}
-        className="hidden sm:block absolute right-0 top-0 h-full w-16 z-10"
-      />
     </Carousel>
+    </div>
   </motion.section>
   );
 };

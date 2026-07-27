@@ -129,15 +129,24 @@ const SelectedBuilds = () => {
               style={{ transformStyle: "preserve-3d" }}
               className="h-full"
             >
-              <div className="group relative flex flex-col h-full rounded-lg border border-border bg-card p-6 transition-all duration-500 ease-out hover:border-primary hover:-translate-y-1.5 hover:shadow-[0_18px_40px_-16px_hsl(var(--primary)/0.45)]">
+              <div
+                className={[
+                  "group relative flex flex-col h-full rounded-lg border border-border bg-card p-6 overflow-hidden transition-all duration-500 ease-out",
+                  hoverStyles[i % hoverStyles.length].className,
+                ].join(" ")}
+              >
+              {hoverStyles[i % hoverStyles.length].topBar && (
+                <span className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out" />
+              )}
 
-
-
-
+              <p className="absolute top-2 right-3 font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground/70">
+                {hoverStyles[i % hoverStyles.length].label}
+              </p>
 
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-3">
                 {b.tag}
               </p>
+
               <h3 className="font-display text-xl sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 mb-3">
                 {b.name}
               </h3>

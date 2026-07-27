@@ -187,21 +187,8 @@ const SelectedBuilds = () => {
       </CarouselContent>
       <CarouselPrevious className="hidden sm:flex" />
       <CarouselNext className="hidden sm:flex" />
-
-      {/* Hover edge zones: move cursor to the left/right edge to slide */}
-      <div
-        aria-hidden="true"
-        onMouseEnter={() => startEdgeScroll("prev")}
-        onMouseLeave={stopEdgeScroll}
-        className="hidden sm:block absolute left-0 top-0 h-full w-16 z-10"
-      />
-      <div
-        aria-hidden="true"
-        onMouseEnter={() => startEdgeScroll("next")}
-        onMouseLeave={stopEdgeScroll}
-        className="hidden sm:block absolute right-0 top-0 h-full w-16 z-10"
-      />
     </Carousel>
+    </div>
   </motion.section>
   );
 };

@@ -112,6 +112,7 @@ const SelectedBuilds = () => {
       <div className="editorial-line hidden sm:block mt-6" />
     </div>
 
+    <div ref={wrapRef} className="overflow-visible">
     <Carousel
       opts={{ align: "start", loop: true }}
       setApi={setApi}

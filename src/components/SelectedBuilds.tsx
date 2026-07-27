@@ -68,10 +68,6 @@ const builds: Build[] = [
 ];
 
 const SelectedBuilds = () => {
-  const autoplay = useRef(
-    Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true })
-  );
-
   return (
   <motion.section
     initial={{ opacity: 0 }}

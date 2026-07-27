@@ -68,6 +68,28 @@ const builds: Build[] = [
 ];
 
 const SelectedBuilds = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const stopEdgeScroll = () => {
+    if (timer.current) {
+      clearInterval(timer.current);
+      timer.current = null;
+    }
+  };
+
+  const startEdgeScroll = (dir: "prev" | "next") => {
+    stopEdgeScroll();
+    const step = () => {
+      if (!api) return;
+      dir === "next" ? api.scrollNext() : api.scrollPrev();
+    };
+    step();
+    timer.current = setInterval(step, 900);
+  };
+
+  useEffect(() => stopEdgeScroll, []);
+
   return (
   <motion.section
     initial={{ opacity: 0 }}

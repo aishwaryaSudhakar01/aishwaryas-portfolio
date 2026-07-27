@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
 import {
@@ -6,6 +7,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 
 interface Build {
@@ -68,6 +70,28 @@ const builds: Build[] = [
 ];
 
 const SelectedBuilds = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const stopEdgeScroll = () => {
+    if (timer.current) {
+      clearInterval(timer.current);
+      timer.current = null;
+    }
+  };
+
+  const startEdgeScroll = (dir: "prev" | "next") => {
+    stopEdgeScroll();
+    const step = () => {
+      if (!api) return;
+      dir === "next" ? api.scrollNext() : api.scrollPrev();
+    };
+    step();
+    timer.current = setInterval(step, 900);
+  };
+
+  useEffect(() => stopEdgeScroll, []);
+
   return (
   <motion.section
     initial={{ opacity: 0 }}
@@ -88,7 +112,8 @@ const SelectedBuilds = () => {
     </div>
 
     <Carousel
-      opts={{ align: "start", loop: true, dragFree: false }}
+      opts={{ align: "start", loop: true }}
+      setApi={setApi}
       className="w-full overflow-visible"
     >
       <CarouselContent className="-ml-3 py-4 pl-3 pr-1" style={{ perspective: "1200px" }}>
@@ -161,6 +186,20 @@ const SelectedBuilds = () => {
       </CarouselContent>
       <CarouselPrevious className="hidden sm:flex" />
       <CarouselNext className="hidden sm:flex" />
+
+      {/* Hover edge zones: move cursor to the left/right edge to slide */}
+      <div
+        aria-hidden="true"
+        onMouseEnter={() => startEdgeScroll("prev")}
+        onMouseLeave={stopEdgeScroll}
+        className="hidden sm:block absolute left-0 top-0 h-full w-16 z-10"
+      />
+      <div
+        aria-hidden="true"
+        onMouseEnter={() => startEdgeScroll("next")}
+        onMouseLeave={stopEdgeScroll}
+        className="hidden sm:block absolute right-0 top-0 h-full w-16 z-10"
+      />
     </Carousel>
   </motion.section>
   );

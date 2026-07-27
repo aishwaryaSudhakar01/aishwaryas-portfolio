@@ -71,26 +71,27 @@ const builds: Build[] = [
 
 const SelectedBuilds = () => {
   const [api, setApi] = useState<CarouselApi>();
-  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const lock = useRef(false);
 
-  const stopEdgeScroll = () => {
-    if (timer.current) {
-      clearInterval(timer.current);
-      timer.current = null;
-    }
-  };
+  // Horizontal trackpad / shift-wheel gesture support
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el || !api) return;
 
-  const startEdgeScroll = (dir: "prev" | "next") => {
-    stopEdgeScroll();
-    const step = () => {
-      if (!api) return;
-      dir === "next" ? api.scrollNext() : api.scrollPrev();
+    const onWheel = (e: WheelEvent) => {
+      const dx = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : 0;
+      if (!dx || Math.abs(dx) < 12) return;
+      e.preventDefault();
+      if (lock.current) return;
+      lock.current = true;
+      dx > 0 ? api.scrollNext() : api.scrollPrev();
+      setTimeout(() => (lock.current = false), 400);
     };
-    step();
-    timer.current = setInterval(step, 900);
-  };
 
-  useEffect(() => stopEdgeScroll, []);
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, [api]);
 
   return (
   <motion.section

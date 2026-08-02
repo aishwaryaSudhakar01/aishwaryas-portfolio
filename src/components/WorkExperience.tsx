@@ -136,9 +136,9 @@ const WorkExperience = () => {
             transition={{ delay: i * 0.1, duration: 0.5 }}
             className="group relative pb-10 last:pb-0"
           >
-            {/* Timeline marker — dot with pulsing ring when open */}
+            {/* Timeline marker — open ring the spine passes through */}
             <div
-              className="absolute -left-12 sm:-left-16 top-5 flex items-center justify-center"
+              className="absolute -left-12 sm:-left-16 top-5 w-[34px] sm:w-[50px] flex items-center justify-center"
               aria-hidden="true"
             >
               {isOpen && (
@@ -146,18 +146,19 @@ const WorkExperience = () => {
                   initial={{ scale: 0.6, opacity: 0 }}
                   animate={{ scale: [1, 1.6, 1], opacity: [0.5, 0, 0.5] }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-primary/30"
+                  className="absolute h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-primary/20"
                 />
               )}
               <motion.span
-                whileHover={{ scale: 1.2 }}
-                className={`relative h-3 w-3 sm:h-3.5 sm:w-3.5 rounded-full border-2 transition-all duration-300 ${
+                whileHover={{ scale: 1.15 }}
+                className={`relative h-3.5 w-3.5 sm:h-4 sm:w-4 rounded-full border-2 bg-transparent transition-all duration-300 ${
                   isOpen
-                    ? "bg-primary border-primary shadow-lg shadow-primary/40"
-                    : "bg-primary/80 border-primary group-hover:bg-primary group-hover:shadow-md group-hover:shadow-primary/40"
+                    ? "border-primary shadow-[0_0_10px_hsl(var(--primary)/0.5)]"
+                    : "border-primary/70 group-hover:border-primary group-hover:shadow-[0_0_8px_hsl(var(--primary)/0.4)]"
                 }`}
               />
             </div>
+
 
             <div className="relative">
               <button

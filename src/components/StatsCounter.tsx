@@ -44,7 +44,8 @@ const StatsCounter = ({ value = 0, text, label, suffix = "", delay = 0, compact 
     >
       <div className="flex items-baseline justify-center gap-0.5">
         {text ? (
-          <span className={valueClass}>{text}</span>
+          <span className={compact ? "text-base sm:text-lg font-display font-black text-foreground leading-tight" : valueClass}>{text}</span>
+
         ) : (
           <>
             <motion.span className={valueClass}>{rounded}</motion.span>

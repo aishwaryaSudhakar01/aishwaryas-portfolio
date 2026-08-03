@@ -155,9 +155,9 @@ const Index = () => {
                 transition={{ delay: 0.7 }}
                 className="mt-8 w-full grid grid-cols-3 gap-4 sm:gap-6"
               >
-                <StatsCounter value={15} suffix="+" label="cities running on tools I built" delay={0.8} compact />
-                <StatsCounter text="5 days to 2.5" label="proposal turnaround" delay={0.9} compact />
-                <StatsCounter value={50} suffix="%" label="manual work cut" delay={1} compact />
+                <StatsCounter value={15} suffix="+" label={"cities running on\ntools I built"} delay={0.8} compact />
+                <StatsCounter value={2} suffix="x" label={"faster\nproposals"} delay={0.9} compact />
+                <StatsCounter value={50} suffix="%" label={"manual work\ncut"} delay={1} compact />
               </motion.div>
 
             </motion.div>

@@ -54,8 +54,10 @@ const StatsCounter = ({ value = 0, text, label, suffix = "", delay = 0, compact 
         )}
       </div>
       {/* Reserved min-height label area keeps columns aligned even when one wraps more */}
-      <p className="font-mono text-[9px] sm:text-[10px] text-muted-foreground mt-2 uppercase tracking-[0.1em] leading-snug min-h-[2.6em] flex items-start justify-center text-center text-balance">
-        {label}
+      <p className="font-mono text-[9px] sm:text-[10px] text-muted-foreground mt-2 uppercase tracking-[0.1em] leading-snug h-[2.6em] flex flex-col items-center justify-start text-center">
+        {label.split("\n").map((line) => (
+          <span key={line} className="block whitespace-nowrap">{line}</span>
+        ))}
       </p>
     </motion.div>
   );

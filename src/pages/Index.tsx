@@ -13,15 +13,14 @@ import LovableIcon from "@/components/icons/LovableIcon";
 import profilePhoto from "@/assets/profile-photo.webp";
 
 const currentYear = new Date().getFullYear();
-const startDate = new Date(2023, 5); // Jun 2023
-const yearsExp = Math.floor((Date.now() - startDate.getTime()) / (365.25 * 24 * 60 * 60 * 1000) * 2) / 2; // floor to nearest 0.5
 
 const bannerItems = [
-  "Biz Ops", "Analytics", "Data-Driven Decision Making", "Strategic Planning",
-  "Process Optimization", "AI-Augmented Workflows", "SQL · Python · Power BI",
-  "Claude · Lovable · Cursor · ElevenLabs"
+  "Process Optimisation", "AI-Augmented Workflows", "Workflow Automation", "Pipeline Building",
+  "Internal Tools", "SQL", "Python", "Claude Code", "n8n", "Zapier", "Airtable",
+  "Lovable", "Firecrawl", "ElevenLabs"
 ];
 const bannerText = bannerItems.join(" ✦ ") + " ✦";
+
 
 const socials = [
   { icon: Mail, href: "mailto:aishwaryasudhakar12@gmail.com", label: "Email" },
@@ -87,7 +86,7 @@ const Index = () => {
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
                 className="block text-2xl sm:text-4xl lg:text-5xl font-display font-black leading-[1.1] tracking-tight"
               >
-                I work where data meets <span className="italic text-gradient">operations</span>, and turn the messy middle into something that runs.
+                I build the tools that take the manual work out of <span className="italic text-gradient">operations</span>.
               </motion.p>
             </div>
 
@@ -98,10 +97,10 @@ const Index = () => {
               className="mt-6 text-muted-foreground leading-relaxed max-w-lg text-sm space-y-3"
             >
               <p>
-                I define the frameworks, set the metrics, and build the tools, usually spotting what's missing before anyone else notices the gap. Lately I'm doing more of it with AI in the loop.
+                Most of my work starts as something slow and manual that everyone just puts up with. I find the bottleneck, work out what should replace it, and build it. A pipeline, an internal tool, an AI agent. Almost all of it now built with AI.
               </p>
               <p className="text-foreground">
-                UCLA MSBA '27, open to product and ops roles, with a pull toward AI
+                UCLA MSBA '27, building toward product, ops, and AI automation roles.
               </p>
             </motion.div>
 
@@ -116,7 +115,17 @@ const Index = () => {
                 <SocialIcon key={s.label} {...s} delay={1 + i * 0.08} />
               ))}
             </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.3 }}
+              className="mt-4 font-mono text-[11px] text-muted-foreground max-w-lg leading-relaxed"
+            >
+              Currently building in public and writing about it. Follow along on LinkedIn and X.
+            </motion.p>
           </div>
+
 
           {/* Right column — photo + stats */}
           <div className="lg:col-span-5 order-1 lg:order-2">
@@ -147,15 +156,18 @@ const Index = () => {
                 />
               </div>
 
-              {/* Hero stat + tagline */}
+              {/* Hero stats */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
-                className="mt-8 max-w-sm mx-auto lg:ml-auto text-center"
+                className="mt-8 max-w-sm mx-auto lg:ml-auto grid grid-cols-3 gap-3"
               >
-                <StatsCounter value={yearsExp} suffix="+" label="Years of Experience" delay={0.8} />
+                <StatsCounter value={15} suffix="+" label="cities running on tools I built" delay={0.8} compact />
+                <StatsCounter text="5 days to 2.5" label="proposal turnaround" delay={0.9} compact />
+                <StatsCounter value={50} suffix="%" label="manual work cut" delay={1} compact />
               </motion.div>
+
             </motion.div>
           </div>
         </div>

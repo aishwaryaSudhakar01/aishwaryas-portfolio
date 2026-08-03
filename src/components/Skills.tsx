@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 
 const skillCategories = [
-  { label: "Operations", items: "Business & GTM Operations, Sales Enablement, Process Optimization, SOP Development" },
-  { label: "Analytics", items: "Data Analysis, BI & Dashboarding, KPI Tracking, A/B Testing, Decision Frameworks" },
-  { label: "Technical", items: "Python, SQL, Power BI, Tableau, Streamlit, Lovable, Zapier, n8n" },
-  { label: "Collaboration", items: "Stakeholder Management, Cross-Functional Coordination" },
+  { label: "Data & Automation", items: "SQL, Python, Claude Code, n8n, Zapier, Airtable, Lovable, Firecrawl, ElevenLabs" },
+  { label: "Analytics & BI", items: "Power BI, BigQuery, Dashboarding, KPI Tracking, Model Evaluation, Data Cleaning" },
+  { label: "Operations", items: "Process Design, Sales Enablement, SOP Development, Requirements Gathering, Cross-Functional Coordination" },
 ];
 
 const Skills = () => (

@@ -74,7 +74,7 @@ const workItems: WorkItem[] = [
         title: "Taught a camera to spot trouble",
         points: [
           "Built a computer vision model trained on over a million images that flags 14 kinds of incidents at 88% accuracy",
-          "Prototyped an app that routes each incident to the nearest patrol vehicle",
+          "Prototyped an app that dispatched the nearest patrol vehicle the moment an incident was detected",
         ],
       },
     ],

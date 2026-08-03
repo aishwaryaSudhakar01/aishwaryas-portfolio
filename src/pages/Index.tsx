@@ -153,7 +153,7 @@ const Index = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
-                className="mt-8 w-full grid grid-cols-3 gap-4 sm:gap-6"
+                className="mt-8 grid grid-cols-3 gap-4 max-w-[16rem] sm:max-w-[20rem] mx-auto lg:ml-auto lg:max-w-xs"
               >
                 <StatsCounter value={15} suffix="+" label={"cities running on\ntools I built"} delay={0.8} compact />
                 <StatsCounter value={2} suffix="x" label={"faster\nproposals"} delay={0.9} compact />

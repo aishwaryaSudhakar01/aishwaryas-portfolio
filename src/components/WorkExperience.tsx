@@ -151,10 +151,10 @@ const WorkExperience = () => {
               )}
               <motion.span
                 whileHover={{ scale: 1.15 }}
-                className={`relative h-3.5 w-3.5 sm:h-4 sm:w-4 rounded-full border-2 bg-transparent transition-all duration-300 ${
+                className={`relative h-3.5 w-3.5 sm:h-4 sm:w-4 rounded-full border-2 transition-all duration-300 ${
                   isOpen
-                    ? "border-primary shadow-[0_0_10px_hsl(var(--primary)/0.5)]"
-                    : "border-primary/70 group-hover:border-primary group-hover:shadow-[0_0_8px_hsl(var(--primary)/0.4)]"
+                    ? "border-primary bg-primary shadow-[0_0_10px_hsl(var(--primary)/0.5)]"
+                    : "border-primary bg-primary/70 group-hover:border-primary group-hover:bg-primary group-hover:shadow-[0_0_8px_hsl(var(--primary)/0.4)]"
                 }`}
               />
             </div>

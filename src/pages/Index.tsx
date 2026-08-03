@@ -156,15 +156,18 @@ const Index = () => {
                 />
               </div>
 
-              {/* Hero stat + tagline */}
+              {/* Hero stats */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
-                className="mt-8 max-w-sm mx-auto lg:ml-auto text-center"
+                className="mt-8 max-w-sm mx-auto lg:ml-auto grid grid-cols-3 gap-3"
               >
-                <StatsCounter value={yearsExp} suffix="+" label="Years of Experience" delay={0.8} />
+                <StatsCounter value={15} suffix="+" label="cities running on tools I built" delay={0.8} compact />
+                <StatsCounter text="5 days to 2.5" label="proposal turnaround" delay={0.9} compact />
+                <StatsCounter value={50} suffix="%" label="manual work cut" delay={1} compact />
               </motion.div>
+
             </motion.div>
           </div>
         </div>

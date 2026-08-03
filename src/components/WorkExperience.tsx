@@ -8,7 +8,7 @@ import letterUber from "@/assets/letter-uber.png";
 
 interface Bullet {
   title: string;
-  body: string;
+  points: string[];
 }
 
 interface WorkItem {
@@ -26,21 +26,32 @@ const workItems: WorkItem[] = [
     company: "Uber Technologies",
     companyUrl: "https://www.uber.com/us/en/about/",
     role: "Operations Associate",
-    period: "Oct 2024 – Apr 2026",
+    period: "Oct 2024 to Apr 2026",
     description:
       "Getting people to work, literally. City-scale shuttle networks for big companies, sitting between the product and the people buying it.",
     bullets: [
       {
-        title: "Helped close deals on the commute product.",
-        body: "Shaped how Uber pitched its B2B commute product, the success metrics, the timelines, the standard deck, and tuned routing for prospects so their plans ran on ~25% fewer trips a month. Cut deal turnaround from 5 days to 2.5, across 20+ engagements.",
+        title: "Built the tools that replaced the manual work",
+        points: [
+          "Hotspot platform that pulled three data sources into one screen, cut route data prep from a full day to three hours, now the routing input for 15+ cities",
+          "Route-editing tool in QGIS, picked up by four regional teams across 10+ enterprise accounts",
+          "Self-service intake form on Lovable, handles 15 to 20 requests a month, saves the team five hours a week",
+        ],
       },
       {
-        title: "Made solver choice less of a guessing game.",
-        body: "Benchmarked five routing solvers across Brazil, the US, and Egypt and built the framework Uber's teams now use to pick one per deal. It's backed pre-sales work for 50+ accounts.",
+        title: "Set up the ETS sales pipeline from nothing",
+        points: [
+          "Took Employee Transport Service from raw code to a working pipeline sales could actually use",
+          "Wrote the script that formatted the output, set the metrics and timelines",
+          "Proposal turnaround dropped from five days to two and a half",
+        ],
       },
       {
-        title: "Retired a few spreadsheets.",
-        body: "Built internal tools that replaced manual prep and tracking, a routing-data platform that took prep from a day to three hours, and an intake system that handed the ops team back ~5 hours a week.",
+        title: "Made the routing cheaper to pitch",
+        points: [
+          "Tuned route plans for 20+ prospective clients, projected to run on 25% fewer trips a month",
+          "Benchmarked five routing engines across three countries, built the analysis the team uses to pick one per deal, now backing pre-sales for 50+ accounts",
+        ],
       },
     ],
     letters: [{ src: letterUber, alt: "Uber experience letter" }],
@@ -49,54 +60,58 @@ const workItems: WorkItem[] = [
     company: "Ernst & Young",
     companyUrl: "https://www.ey.com/en_in",
     role: "Data Science Associate Consultant",
-    period: "Jan 2024 – Oct 2024",
-    description: "Helping a city government see its own data in real time.",
+    period: "Jan 2024 to Oct 2024",
+    description: "Building the data tools a city government didn't have yet.",
     bullets: [
       {
-        title: "Replaced manual reporting with a live dashboard.",
-        body: "Built a Power BI dashboard for Pune Municipal Corporation that swapped Excel reports for a real-time view of citizen grievances across ~20 departments.",
+        title: "Turned Excel reports into a live dashboard",
+        points: [
+          "Pune's government collected citizen complaints across 20 departments but had no way to see patterns",
+          "Built a Power BI dashboard that replaced the manual Excel reporting, so they could spot where requests piled up and move resources there",
+        ],
       },
       {
-        title: "Taught a computer to spot civic problems.",
-        body: "Trained a computer vision model on 1M+ images to flag 14 kinds of incidents at 88% accuracy, then prototyped an app that routed each one to the nearest patrol vehicle.",
+        title: "Taught a camera to spot trouble",
+        points: [
+          "Built a computer vision model trained on over a million images that flags 14 kinds of incidents at 88% accuracy",
+          "Prototyped an app that routes each incident to the nearest patrol vehicle",
+        ],
       },
     ],
     letters: [
-      { src: letterEy1, alt: "EY experience letter — Trainee" },
-      { src: letterEy2, alt: "EY experience letter — Associate Consultant" },
+      { src: letterEy1, alt: "EY experience letter, Trainee" },
+      { src: letterEy2, alt: "EY experience letter, Associate Consultant" },
     ],
   },
   {
     company: "Convin.ai",
     companyUrl: "https://convin.ai/",
     role: "Data Analyst Intern",
-    period: "Jun 2023 – Nov 2023",
+    period: "Jun 2023 to Nov 2023",
     description: "First real taste of finding signal in messy data.",
     bullets: [
       {
-        title: "Dug through sales calls for what worked.",
-        body: "Found the conversational patterns tied to a 2.6x conversion lift for a client, and automated the data prep around it to save ~10 hours a week.",
+        title: "Found what actually closed deals",
+        points: [
+          "Dug through sales call transcripts for the phrases that showed up when deals converted",
+          "Calls using them closed 2.6x more often",
+        ],
+      },
+      {
+        title: "Brought code to a team that ran on spreadsheets",
+        points: [
+          "Only technical person on the team, so I introduced SQL and Python where everything was manual",
+          "Cut the busywork in half, saved myself about 10 hours a week",
+        ],
       },
     ],
     letters: [{ src: letterConvin, alt: "Convin experience letter" }],
   },
 ];
 
-const renderWithBold = (text: string) => {
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((part, i) =>
-    part.startsWith("**") && part.endsWith("**") ? (
-      <strong key={i} className="font-semibold text-foreground">
-        {part.slice(2, -2)}
-      </strong>
-    ) : (
-      <span key={i}>{part}</span>
-    )
-  );
-};
-
 const WorkExperience = () => {
-  const [expanded, setExpanded] = useState<string | null>(null);
+  const [expanded, setExpanded] = useState<string | null>(workItems[0].company);
+
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
 
   return (

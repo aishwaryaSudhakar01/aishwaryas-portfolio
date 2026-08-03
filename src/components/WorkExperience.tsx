@@ -119,7 +119,7 @@ const WorkExperience = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-80px" }}
-      className="mt-24 sm:mt-32"
+      className="mt-12 sm:mt-16"
     >
       <div className="flex items-center justify-between mb-8">
         <div>

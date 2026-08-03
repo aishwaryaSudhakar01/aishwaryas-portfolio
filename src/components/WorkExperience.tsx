@@ -33,7 +33,7 @@ const workItems: WorkItem[] = [
       {
         title: "Built the tools that replaced the manual work",
         points: [
-          "Hotspot platform that pulled three data sources into one screen, cut route data prep from a full day to three hours, now the routing input for 15+ cities",
+          "Hotspot platform that pulled three data sources into one screen with a demand heatmap, cut route data prep from a full day to three hours, now the routing input for 15+ cities",
           "Route-editing tool in QGIS, picked up by four regional teams across 10+ enterprise accounts",
           "Self-service intake form on Lovable, handles 15 to 20 requests a month, saves the team five hours a week",
         ],

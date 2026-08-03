@@ -230,19 +230,27 @@ const WorkExperience = () => {
                   className="overflow-hidden"
                 >
                   <div className="space-y-4 pt-4 pb-2 px-4 sm:px-5 max-w-2xl">
-                    <ul className="space-y-3">
+                    <ul className="space-y-4">
                       {item.bullets.map((b, j) => (
                         <li key={j} className="text-sm text-muted-foreground leading-relaxed flex gap-3">
                           <span className="text-primary mt-1.5 shrink-0">▸</span>
-                          <span>
-                            <span className="font-display font-bold text-foreground block mb-0.5">
+                          <div>
+                            <span className="font-display font-bold text-foreground block mb-1.5">
                               {b.title}
                             </span>
-                            {renderWithBold(b.body)}
-                          </span>
+                            <ul className="space-y-1.5">
+                              {b.points.map((p, k) => (
+                                <li key={k} className="flex gap-2">
+                                  <span className="text-primary/60 shrink-0">–</span>
+                                  <span>{p}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
                         </li>
                       ))}
                     </ul>
+
                     {item.letters && item.letters.length > 0 && (
                       <div className="flex flex-wrap gap-3 pt-3">
                         {item.letters.map((l, k) => (

@@ -86,7 +86,7 @@ const Index = () => {
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
                 className="block text-2xl sm:text-4xl lg:text-5xl font-display font-black leading-[1.1] tracking-tight"
               >
-                I work where data meets <span className="italic text-gradient">operations</span>, and turn the messy middle into something that runs.
+                I build the tools that take the manual work out of <span className="italic text-gradient">operations</span>.
               </motion.p>
             </div>
 
@@ -97,10 +97,10 @@ const Index = () => {
               className="mt-6 text-muted-foreground leading-relaxed max-w-lg text-sm space-y-3"
             >
               <p>
-                I define the frameworks, set the metrics, and build the tools, usually spotting what's missing before anyone else notices the gap. Lately I'm doing more of it with AI in the loop.
+                Most of my work starts as something slow and manual that everyone just puts up with. I find the bottleneck, work out what should replace it, and build it. A pipeline, an internal tool, an AI agent. Almost all of it now built with AI.
               </p>
               <p className="text-foreground">
-                UCLA MSBA '27, open to product and ops roles, with a pull toward AI
+                UCLA MSBA '27, building toward product, ops, and AI automation roles.
               </p>
             </motion.div>
 
@@ -115,7 +115,17 @@ const Index = () => {
                 <SocialIcon key={s.label} {...s} delay={1 + i * 0.08} />
               ))}
             </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.3 }}
+              className="mt-4 font-mono text-[11px] text-muted-foreground max-w-lg leading-relaxed"
+            >
+              Currently building in public and writing about it. Follow along on LinkedIn and X.
+            </motion.p>
           </div>
+
 
           {/* Right column — photo + stats */}
           <div className="lg:col-span-5 order-1 lg:order-2">

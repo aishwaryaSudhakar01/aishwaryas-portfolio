@@ -45,7 +45,7 @@ const StatsCounter = ({ value = 0, text, label, suffix = "", delay = 0, compact 
       {/* Fixed-height value row, vertically centered so all three align on one baseline */}
       <div className="flex items-center justify-center gap-0.5 h-12 sm:h-14">
         {text ? (
-          <span className="text-xl sm:text-2xl font-display font-black text-foreground leading-tight">{text}</span>
+          <span className="whitespace-nowrap text-sm sm:text-base lg:text-lg font-display font-black text-foreground leading-none">{text}</span>
         ) : (
           <>
             <motion.span className={valueClass}>{rounded}</motion.span>
@@ -54,7 +54,7 @@ const StatsCounter = ({ value = 0, text, label, suffix = "", delay = 0, compact 
         )}
       </div>
       {/* Reserved min-height label area keeps columns aligned even when one wraps more */}
-      <p className="font-mono text-[10px] text-muted-foreground mt-2 uppercase tracking-[0.2em] leading-relaxed min-h-[3.6em] flex items-center justify-center text-center">
+      <p className="font-mono text-[9px] sm:text-[10px] text-muted-foreground mt-2 uppercase tracking-[0.1em] leading-snug min-h-[2.6em] flex items-start justify-center text-center text-balance">
         {label}
       </p>
     </motion.div>

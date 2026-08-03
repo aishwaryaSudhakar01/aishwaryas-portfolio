@@ -116,14 +116,6 @@ const Index = () => {
               ))}
             </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.3 }}
-              className="mt-4 font-mono text-[11px] text-muted-foreground max-w-lg leading-relaxed"
-            >
-              Currently building in public and writing about it. Follow along on LinkedIn and X.
-            </motion.p>
           </div>
 
 

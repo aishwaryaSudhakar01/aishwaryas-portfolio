@@ -13,15 +13,14 @@ import LovableIcon from "@/components/icons/LovableIcon";
 import profilePhoto from "@/assets/profile-photo.webp";
 
 const currentYear = new Date().getFullYear();
-const startDate = new Date(2023, 5); // Jun 2023
-const yearsExp = Math.floor((Date.now() - startDate.getTime()) / (365.25 * 24 * 60 * 60 * 1000) * 2) / 2; // floor to nearest 0.5
 
 const bannerItems = [
-  "Biz Ops", "Analytics", "Data-Driven Decision Making", "Strategic Planning",
-  "Process Optimization", "AI-Augmented Workflows", "SQL · Python · Power BI",
-  "Claude · Lovable · Cursor · ElevenLabs"
+  "Process Optimisation", "AI-Augmented Workflows", "Workflow Automation", "Pipeline Building",
+  "Internal Tools", "SQL", "Python", "Claude Code", "n8n", "Zapier", "Airtable",
+  "Lovable", "Firecrawl", "ElevenLabs"
 ];
 const bannerText = bannerItems.join(" ✦ ") + " ✦";
+
 
 const socials = [
   { icon: Mail, href: "mailto:aishwaryasudhakar12@gmail.com", label: "Email" },

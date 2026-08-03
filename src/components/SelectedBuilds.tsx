@@ -16,7 +16,7 @@ const builds: Build[] = [
     tag: "INTERNAL TOOL · UBER",
     name: "Hotspot Consolidation Platform",
     description:
-      "Pulled Uber's data, map data, and client locations into one screen. Cut routing data prep from a full day to three hours. Feeds ops in 15+ cities.",
+      "Pulled Uber's data, map data, and client locations into one screen, with a demand heatmap on top. Cut routing data prep from a full day to three hours. Feeds ops in 15+ cities.",
     stack: "Lovable",
     internal: true,
   },

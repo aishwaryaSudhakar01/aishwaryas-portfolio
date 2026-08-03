@@ -116,14 +116,6 @@ const Index = () => {
               ))}
             </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.3 }}
-              className="mt-4 font-mono text-[11px] text-muted-foreground max-w-lg leading-relaxed"
-            >
-              Currently building in public and writing about it. Follow along on LinkedIn and X.
-            </motion.p>
           </div>
 
 
@@ -161,7 +153,7 @@ const Index = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
-                className="mt-8 max-w-sm mx-auto lg:ml-auto grid grid-cols-3 gap-3"
+                className="mt-8 w-full grid grid-cols-3 gap-4 sm:gap-6"
               >
                 <StatsCounter value={15} suffix="+" label="cities running on tools I built" delay={0.8} compact />
                 <StatsCounter text="5 days to 2.5" label="proposal turnaround" delay={0.9} compact />

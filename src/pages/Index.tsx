@@ -58,6 +58,9 @@ const Index = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4">
+                Portfolio / {currentYear}
+              </p>
               <div className="editorial-line mb-8" />
             </motion.div>
 

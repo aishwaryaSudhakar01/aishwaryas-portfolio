@@ -100,7 +100,7 @@ const Index = () => {
                 Most of my work starts as something slow and manual that everyone just puts up with. I find the bottleneck, work out what should replace it, and build it. A pipeline, an internal tool, an AI agent. Almost all of it now built with AI.
               </p>
               <p className="text-foreground">
-                UCLA MSBA '27, building toward product, ops, and AI automation roles.
+                UCLA MSBA '27 and Campus Ambassador at Lovable, building toward product, ops, and AI automation roles.
               </p>
             </motion.div>
 

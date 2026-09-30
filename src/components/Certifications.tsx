@@ -3,9 +3,9 @@ import { ExternalLink } from "lucide-react";
 
 const education = [
   {
-    school: "University of California, Los Angeles",
+    school: "UCLA Anderson School of Management",
     degree: "MSc, Business Analytics",
-    dates: "2026–2027 (Incoming)",
+    dates: "2026–2027",
   },
   {
     school: "Vellore Institute of Technology",

@@ -25,7 +25,7 @@ const bannerText = bannerItems.join(" ✦ ") + " ✦";
 const socials = [
   { icon: Mail, href: "mailto:aishwaryasudhakar12@gmail.com", label: "Email" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/aishwaryasudhakar01", label: "LinkedIn" },
-  { icon: FileText, href: "https://drive.google.com/file/d/1tgKwPr7KW7JQXlSaEUCmWo6YnBsYj0nq/view?usp=sharing", label: "CV" },
+  { icon: FileText, href: "https://drive.google.com/file/d/1tgKwPr7KW7JQXlSaEUCmWo6YnBsYj0nq/view?usp=sharing", label: "Resume" },
   { icon: Github, href: "https://github.com/aishwaryaSudhakar01", label: "GitHub" },
   { customIcon: XIcon, href: "https://x.com/Aishwarya_2212", label: "X" },
   { customIcon: LovableIcon, href: "https://lovable.dev/@aishwarya_2212", label: "Lovable" },

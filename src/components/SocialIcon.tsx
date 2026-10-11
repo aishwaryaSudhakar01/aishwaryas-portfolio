@@ -8,6 +8,7 @@ interface SocialIconProps {
   href: string;
   label: string;
   delay?: number;
+  preserveCase?: boolean;
 }
 
 const SocialIcon = ({ icon: Icon, customIcon: CustomIcon, href, label, delay = 0 }: SocialIconProps) => (

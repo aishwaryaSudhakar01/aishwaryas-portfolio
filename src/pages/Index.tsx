@@ -23,7 +23,7 @@ const bannerText = bannerItems.join(" ✦ ") + " ✦";
 
 
 const socials = [
-  { icon: Mail, href: "mailto:aishwaryasudhakar12@gmail.com", label: "Email" },
+  { icon: Mail, href: "mailto:aishwaryasudhakar12@gmail.com", label: "Email", preserveCase: true },
   { icon: Linkedin, href: "https://www.linkedin.com/in/aishwaryasudhakar01", label: "LinkedIn" },
   { icon: FileText, href: "https://drive.google.com/file/d/1tgKwPr7KW7JQXlSaEUCmWo6YnBsYj0nq/view?usp=sharing", label: "Resume" },
   { icon: Github, href: "https://github.com/aishwaryaSudhakar01", label: "GitHub" },

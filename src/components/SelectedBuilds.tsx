@@ -42,6 +42,7 @@ const builds: Build[] = [
     description:
       "A personal CRM for networking. Tracks contacts and conversations, and shows who to reach out to next using simple rule-based reminders with editable timing. No AI-written messages, nothing sends itself.",
     stack: "Lovable · Lovable Cloud (Postgres)",
+    link: "https://linked-network-crm.lovable.app",
   },
   {
     tag: "VOICE AI · WEEKEND HACKATHON",
@@ -65,6 +66,7 @@ const builds: Build[] = [
     description:
       "A short quiz that matches UCLA Anderson MSBA students to career resources and industry seminars for their target role. Returns three priority resources, a next-up list, a skip-for-now list, and a skill roadmap by difficulty. Free, no login.",
     stack: "Lovable",
+    link: "https://ucla-msba-career-compass.lovable.app",
   },
   {
     tag: "BUILD CHALLENGE · LOVABLE",

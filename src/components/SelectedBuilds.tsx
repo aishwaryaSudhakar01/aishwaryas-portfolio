@@ -40,7 +40,7 @@ const builds: Build[] = [
     tag: "PRODUCT BUILD · LOVABLE",
     name: "LinkedNetwork",
     description:
-      "A personal CRM for networking. Tracks contacts and conversations, and shows who to reach out to next using simple rule-based reminders with editable timing. No AI-written messages, nothing sends itself.",
+      "A networking CRM that turns a student’s LinkedIn connections into a managed pipeline, with stage-based follow-up reminders, a conversation history per contact, and reusable message templates.",
     stack: "Lovable · Lovable Cloud (Postgres)",
     link: "https://linked-network-crm.lovable.app",
   },
@@ -64,7 +64,7 @@ const builds: Build[] = [
     tag: "PRODUCT BUILD · UCLA MSBA",
     name: "UCLA MSBA Career Compass",
     description:
-      "A short quiz that matches UCLA Anderson MSBA students to career resources and industry seminars for their target role. Returns three priority resources, a next-up list, a skip-for-now list, and a skill roadmap by difficulty. Free, no login.",
+      "A career-guidance tool that applies a selection framework to UCLA’s career portal of hundreds of resources, giving each MSBA student tailored recommendations and a skill roadmap for their target role.",
     stack: "Lovable",
     link: "https://ucla-msba-career-compass.lovable.app",
   },

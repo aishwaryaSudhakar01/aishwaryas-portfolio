@@ -37,12 +37,11 @@ const builds: Build[] = [
     github: "https://github.com/aishwaryaSudhakar01/job-search-automation",
   },
   {
-    tag: "VOICE AI · WEEKEND HACKATHON",
-    name: "Sophie",
+    tag: "PRODUCT BUILD · LOVABLE",
+    name: "LinkedNetwork",
     description:
-      "A voice shopping agent with a personality. Searches the web mid-conversation, so you talk instead of typing and comparing tabs.",
-    stack: "ElevenLabs · Claude · built with Claude Code",
-    github: "https://github.com/aishwaryaSudhakar01/sophie",
+      "A personal CRM for networking. Tracks contacts and conversations, and shows who to reach out to next using simple rule-based reminders with editable timing. No AI-written messages, nothing sends itself.",
+    stack: "Lovable · Lovable Cloud (Postgres)",
   },
   {
     tag: "VOICE AI · WEEKEND HACKATHON",
@@ -51,6 +50,21 @@ const builds: Build[] = [
       "Plan a whole trip by talking. One conversation gives you real flights, hotels, a day-by-day plan, and a running budget.",
     stack: "Cloudflare Workers AI · built with Claude Code",
     github: "https://github.com/aishwaryaSudhakar01/voyage",
+  },
+  {
+    tag: "VOICE AI · WEEKEND HACKATHON",
+    name: "Sophie",
+    description:
+      "A voice shopping agent with a personality. Searches the web mid-conversation, so you talk instead of typing and comparing tabs.",
+    stack: "ElevenLabs · Claude · built with Claude Code",
+    github: "https://github.com/aishwaryaSudhakar01/sophie",
+  },
+  {
+    tag: "PRODUCT BUILD · UCLA MSBA",
+    name: "UCLA MSBA Career Compass",
+    description:
+      "A short quiz that matches UCLA Anderson MSBA students to career resources and industry seminars for their target role. Returns three priority resources, a next-up list, a skip-for-now list, and a skill roadmap by difficulty. Free, no login.",
+    stack: "Lovable",
   },
   {
     tag: "BUILD CHALLENGE · LOVABLE",

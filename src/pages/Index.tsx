@@ -86,7 +86,7 @@ const Index = () => {
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
                 className="block text-2xl sm:text-4xl lg:text-5xl font-display font-black leading-[1.1] tracking-tight"
               >
-                I build the tools that take the manual work out of <span className="italic text-gradient">operations</span>.
+                I turn messy operational friction into <span className="italic text-gradient">products</span> that scale.
               </motion.p>
             </div>
 
